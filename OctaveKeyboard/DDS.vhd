@@ -30,7 +30,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity DDS is
-    Port ( clk : in  STD_LOGIC);
+    Port ( 	clk 		: in  STD_LOGIC
+				key_tone : in 	STD_LOGIC_VECTOR(7 downto 0)
+				phase		: out	STD_LOGIC_VECTOR(7 downto 0);
 end DDS;
 
 architecture Behavioral of DDS is
