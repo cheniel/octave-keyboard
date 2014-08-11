@@ -19,10 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -30,15 +27,23 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity DDS is
-    Port ( 	clk 		: in  STD_LOGIC
-				key_tone : in 	STD_LOGIC_VECTOR(7 downto 0)
-				phase		: out	STD_LOGIC_VECTOR(7 downto 0);
+    Port ( 	clk 		: in  STD_LOGIC;
+				step		: in	STD_LOGIC_VECTOR(7 downto 0);
+				phase		: out	STD_LOGIC_VECTOR(7 downto 0));
 end DDS;
 
 architecture Behavioral of DDS is
-
+	signal curr_phase : unsigned(7 downto 0) := "00000000";
 begin
 
+	AccumPhase: process(clk)
+	begin
+		if (rising_edge(clk)) then
+			curr_phase <= curr_phase + unsigned(step);
+		end if;
+	end process AccumPhase;
+	
+	phase <= std_logic_vector(curr_phase);
 
 end Behavioral;
 

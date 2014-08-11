@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-08-11T14:57:58</DateModified>
+  <DateModified>2014-08-11T15:17:32</DateModified>
   <ModuleName>DDS</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>Y:/Documents/ENGS031/finalproject/OctaveKeyboard/iseconfig/DDS.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>Y:/Documents/ENGS031/finalproject/OctaveKeyboard\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/F000JW7/Desktop/OctaveKeyboard/OctaveKeyboard/iseconfig/DDS.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>Y:/Documents/ENGS031/finalproject/OctaveKeyboard</ImplementationReportsDirectory>
   <DateInitialized>2014-08-11T14:29:31</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
   <viewgroup label="Design Overview" >
-   <view inputState="Unknown" program="implementation" ShowPartitionData="false" type="FPGASummary" file="DDS_summary.html" label="Summary" >
+   <view inputState="Unknown" program="implementation" ExpandErrors="false" ShowPartitionData="false" type="FPGASummary" file="DDS_summary.html" label="Summary" ExpandWarnings="false" >
     <toc-item title="Design Overview" target="Design Overview" />
     <toc-item title="Design Utilization Summary" target="Design Utilization Summary" />
     <toc-item title="Performance Summary" target="Performance Summary" />
