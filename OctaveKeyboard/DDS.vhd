@@ -1,14 +1,14 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: ENGS031 14X
+-- Engineer: Vivian Hu and Daniel Chen
 -- 
 -- Create Date:    14:29:30 08/11/2014 
--- Design Name: 
+-- Design Name: Octave Keyboard
 -- Module Name:    DDS - Behavioral 
--- Project Name: 
+-- Project Name: Octive Keyboard
 -- Target Devices: 
 -- Tool versions: 
--- Description: 
+-- Description: Direct Digital Synthesis
 --
 -- Dependencies: 
 --
