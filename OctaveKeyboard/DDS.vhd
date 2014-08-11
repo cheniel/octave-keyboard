@@ -6,7 +6,7 @@
 -- Design Name: Octave Keyboard
 -- Module Name:    DDS - Behavioral 
 -- Project Name: Octive Keyboard
--- Target Devices: 
+-- Target Devices: Spartan 6
 -- Tool versions: 
 -- Description: Direct Digital Synthesis
 --
