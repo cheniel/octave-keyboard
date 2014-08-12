@@ -105,7 +105,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\F000JW7\Desktop\OctaveKeyboard\OctaveKeyboard\DDS.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\DDS.vhd" into library work
 Parsing entity <DDS>.
 Parsing architecture <Behavioral> of entity <dds>.
 
@@ -120,7 +120,7 @@ Elaborating entity <DDS> (architecture <Behavioral>) from library <work>.
 =========================================================================
 
 Synthesizing Unit <DDS>.
-    Related source file is "C:\Users\F000JW7\Desktop\OctaveKeyboard\OctaveKeyboard\DDS.vhd".
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\DDS.vhd".
     Found 8-bit register for signal <curr_phase>.
     Found 8-bit adder for signal <curr_phase[7]_step[7]_add_0_OUT> created at line 42.
     Summary:
@@ -372,12 +372,12 @@ clk            |    1.687|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 40.00 secs
-Total CPU time to Xst completion: 39.79 secs
+Total REAL time to Xst completion: 37.00 secs
+Total CPU time to Xst completion: 37.05 secs
  
 --> 
 
-Total memory usage is 782456 kilobytes
+Total memory usage is 783224 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
