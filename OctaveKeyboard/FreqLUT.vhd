@@ -30,12 +30,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity FreqLUT is
+	 Generic (	ACCUMSIZE	: integer := 7;
+					CLKFREQ 		: integer := 100000000);
+					
     Port ( clk : in  STD_LOGIC;
            key_in : in  STD_LOGIC_VECTOR (7 downto 0);
            increment : out  STD_LOGIC_VECTOR (7 downto 0));
 end FreqLUT;
 
 architecture Behavioral of FreqLUT is
+	constant PHASECONSTANT : integer := 2**ACCUMSIZE / CLKFREQ;
 
 begin
 
