@@ -31,7 +31,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity OctaveKeyboardTop is
 	 Generic (	ACCUMSIZE	: integer := 24;
-					LUTOUT		: integer := 10;
+					INDEXSIZE	: integer := 10;
+					LUTOUT		: integer := 12;
 					CLKFREQ 		: integer := 100000000);
 					
     Port ( keys : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -65,7 +66,7 @@ architecture Behavioral of OctaveKeyboardTop is
 	COMPONENT DDS
 		PORT ( clk 			: in  STD_LOGIC;
 				 step			: in	STD_LOGIC_VECTOR(ACCUMSIZE-1 downto 0);
-				 phase		: out	STD_LOGIC_VECTOR(ACCUMSIZE-1 downto 0));
+				 phase		: out	STD_LOGIC_VECTOR(INDEXSIZE-1 downto 0));
 	END COMPONENT;
 	
 	COMPONENT PWM
