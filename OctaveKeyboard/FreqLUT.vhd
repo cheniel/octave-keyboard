@@ -27,8 +27,8 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity FreqLUT is
-	 Generic (	ACCUMSIZE	: integer := 24;
-					CLKFREQ 		: integer := 100000000);
+	 Generic (	ACCUMSIZE	: integer := 13;
+					CLKFREQ 		: integer := 10000);
 					
     Port ( clk : in  STD_LOGIC;
            key_in : in  STD_LOGIC_VECTOR (7 downto 0);

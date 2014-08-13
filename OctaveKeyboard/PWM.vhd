@@ -42,11 +42,6 @@ begin
 
 	PWM: process(clk)
 	begin
-		if (sample(LUTOUT-1) = '0') then
-			offset <= '1' & sample(LUT-2 downto 0);
-		else
-			offset <= '0' & sample(LUT-2 downto 0);
-		end if;
 		
 		offset <= not sample(LUTOUT-1) & sample(LUTOUT-2 downto 0); -- two's complement to unsigned offset binary
 		

@@ -30,10 +30,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity OctaveKeyboardTop is
-	 Generic (	ACCUMSIZE	: integer := 24;
+	 Generic (	ACCUMSIZE	: integer := 13;
 					INDEXSIZE	: integer := 10;
 					LUTOUT		: integer := 12;
-					CLKFREQ 		: integer := 100000000);
+					CLKFREQ 		: integer := 10000);
 					
     Port ( keys : in  STD_LOGIC_VECTOR (7 downto 0);
            clk : in  STD_LOGIC;

@@ -27,7 +27,7 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity DDS is
-	 Generic (	ACCUMSIZE	: integer := 24;
+	 Generic (	ACCUMSIZE	: integer := 13;
 					INDEXSIZE	: integer := 10;
 					CLKFREQ 		: integer := 100000000);
 					
