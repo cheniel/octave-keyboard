@@ -35,13 +35,24 @@ entity FreqLUT is
 					
     Port ( clk : in  STD_LOGIC;
            key_in : in  STD_LOGIC_VECTOR (7 downto 0);
-           increment : out  STD_LOGIC_VECTOR (7 downto 0));
+           increment : out  STD_LOGIC_VECTOR (15 downto 0));
 end FreqLUT;
 
 architecture Behavioral of FreqLUT is
 	constant PHASECONSTANT : integer := 2**ACCUMSIZE / CLKFREQ;
-
+	constant LOWC : integer := 262;
+	constant D : integer := 294;
+	constant E : integer := 330;
+	constant F : integer := 349;
+	constant G : integer := 392;
+	constant A : integer := 440;
+	constant B : integer := 494;
+	constant HIGHC : integer := 523;
 begin
+	getIncrement: process(key_in)
+	begin
+	end process getIncrement;
+
 
 
 end Behavioral;

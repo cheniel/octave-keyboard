@@ -8,22 +8,14 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
-<<<<<<< HEAD
-      <SelectedItems/>
-=======
       <SelectedItems>
-         <SelectedItem>Controller - Behavioral (C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/Controller.vhd)</SelectedItem>
+         <SelectedItem>OctaveKeyboardTop - Behavioral (C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/OctaveKeyboardTop.vhd)</SelectedItem>
       </SelectedItems>
->>>>>>> c7cb181d599c723012a8a6b070cd9e1defe13e1b
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000018c000000020000000000000000000000000200000064ffffffff0000008100000003000000020000018c0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-<<<<<<< HEAD
-      <CurrentItem>OctaveKeyboardTop - Behavioral (Y:/Documents/ENGS031/finalproject/OctaveKeyboard/OctaveKeyboardTop.vhd)</CurrentItem>
-=======
-      <CurrentItem>Controller - Behavioral (C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/Controller.vhd)</CurrentItem>
->>>>>>> c7cb181d599c723012a8a6b070cd9e1defe13e1b
+      <CurrentItem>OctaveKeyboardTop - Behavioral (C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/OctaveKeyboardTop.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -46,11 +38,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-<<<<<<< HEAD
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000140000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000000740000000100000000</ViewHeaderState>
-=======
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000263000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000001970000000100000000</ViewHeaderState>
->>>>>>> c7cb181d599c723012a8a6b070cd9e1defe13e1b
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Controller.vhd</CurrentItem>
    </ItemView>
@@ -77,13 +65,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Synthesize - XST</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Synthesize - XST</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
       <ClosedNodes>

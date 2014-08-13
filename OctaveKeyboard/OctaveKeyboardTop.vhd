@@ -30,6 +30,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity OctaveKeyboardTop is
+	 Generic (	ACCUMSIZE	: integer := 7;
+					CLKFREQ 		: integer := 100000000);
+					
     Port ( keys : in  STD_LOGIC_VECTOR (7 downto 0);
            clk : in  STD_LOGIC;
            led_disable : in  STD_LOGIC;
@@ -39,9 +42,9 @@ end OctaveKeyboardTop;
 
 architecture Behavioral of OctaveKeyboardTop is
 
-	signal step : std_logic_vector(7 downto 0) := (others => '0');
+	signal step : std_logic_vector(ACCUMSIZE downto 0) := (others => '0');
 	signal controllerKeys : std_logic_vector(7 downto 0) := (others => '0');
-	signal phase : std_logic_vector(7 downto 0) := (others => '0');
+	signal phase : std_logic_vector(ACCUMSIZE downto 0) := (others => '0');
 
 	COMPONENT Controller
 		PORT (
@@ -56,15 +59,15 @@ architecture Behavioral of OctaveKeyboardTop is
 		PORT (
 				clk 			: in  STD_LOGIC;
 				key_in 		: in  STD_LOGIC_VECTOR (7 downto 0);
-				increment 	: out  STD_LOGIC_VECTOR (7 downto 0)
+				increment 	: out  STD_LOGIC_VECTOR (15 downto 0)
 				);
 	END COMPONENT;
 
 	COMPONENT DDS
 		PORT (
 				clk 			: in  STD_LOGIC;
-				step			: in	STD_LOGIC_VECTOR(7 downto 0);
-				phase			: out	STD_LOGIC_VECTOR(7 downto 0)
+				step			: in	STD_LOGIC_VECTOR(ACCUMSIZE downto 0);
+				phase			: out	STD_LOGIC_VECTOR(ACCUMSIZE downto 0)
 				);
 	END COMPONENT;
 
