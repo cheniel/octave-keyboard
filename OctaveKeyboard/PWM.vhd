@@ -37,13 +37,22 @@ end PWM;
 
 architecture Behavioral of PWM is
 	signal count : unsigned(LUTOUT-1 downto 0) := (others => '0');
+	signal offset : unsigned(LUTOUT-1 downto 0) := (others => '0');
 begin
 
 	PWM: process(clk)
 	begin
+		if (sample(LUTOUT-1) = '0') then
+			offset <= '1' & sample(LUT-2 downto 0);
+		else
+			offset <= '0' & sample(LUT-2 downto 0);
+		end if;
+		
+		offset <= not sample(LUTOUT-1) & sample(LUTOUT-2 downto 0); -- two's complement to unsigned offset binary
+		
 		if (rising_edge(clk)) then
 			count <= count + 1;
-			if (count < sample) then	
+			if (count < offset) then	
 				pulse <= '1';
 			else
 				pulse <= '0';
