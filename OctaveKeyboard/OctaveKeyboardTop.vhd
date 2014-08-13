@@ -30,7 +30,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity OctaveKeyboardTop is
-	 Generic (	ACCUMSIZE	: integer := 7;
+	 Generic (	ACCUMSIZE	: integer := 24;
+					LUTOUT		: integer := 10;
 					CLKFREQ 		: integer := 100000000);
 					
     Port ( keys : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -42,61 +43,61 @@ end OctaveKeyboardTop;
 
 architecture Behavioral of OctaveKeyboardTop is
 
-	signal step : std_logic_vector(ACCUMSIZE downto 0) := (others => '0');
+	signal step : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
 	signal controllerKeys : std_logic_vector(7 downto 0) := (others => '0');
-	signal phase : std_logic_vector(ACCUMSIZE downto 0) := (others => '0');
+	signal phase : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
+	signal lutfreq : std_logic_vector(LUTOUT-1 downto 0) := (others => '0');
+	signal tone : std_logic := '0';
 
 	COMPONENT Controller
-		PORT (
-				clk 			: in  STD_LOGIC;
-				key_in 		: in  STD_LOGIC_VECTOR (7 downto 0);
-				led_disable : in  STD_LOGIC;
-				key_out 		: out  STD_LOGIC_VECTOR (7 downto 0)
-				);
+		PORT ( clk 				: in  STD_LOGIC;
+				 key_in 			: in  STD_LOGIC_VECTOR (7 downto 0);
+				 led_disable 	: in  STD_LOGIC;
+				 key_out 		: out  STD_LOGIC_VECTOR (7 downto 0));
 	END COMPONENT;
 
 	COMPONENT FreqLUT
-		PORT (
-				clk 			: in  STD_LOGIC;
-				key_in 		: in  STD_LOGIC_VECTOR (7 downto 0);
-				increment 	: out  STD_LOGIC_VECTOR (15 downto 0)
-				);
+		PORT ( clk 			: in  STD_LOGIC;
+				 key_in 		: in  STD_LOGIC_VECTOR (7 downto 0);
+				 increment 	: out  STD_LOGIC_VECTOR (ACCUMSIZE-1 downto 0));
 	END COMPONENT;
 
 	COMPONENT DDS
-		PORT (
-				clk 			: in  STD_LOGIC;
-				step			: in	STD_LOGIC_VECTOR(ACCUMSIZE downto 0);
-				phase			: out	STD_LOGIC_VECTOR(ACCUMSIZE downto 0)
-				);
+		PORT ( clk 			: in  STD_LOGIC;
+				 step			: in	STD_LOGIC_VECTOR(ACCUMSIZE-1 downto 0);
+				 phase		: out	STD_LOGIC_VECTOR(ACCUMSIZE-1 downto 0));
 	END COMPONENT;
-
+	
+	COMPONENT PWM
+		PORT ( clk 		: in  STD_LOGIC;
+				 sample 	: in  STD_LOGIC_VECTOR(LUTOUT-1 downto 0);
+             pulse 	: out  STD_LOGIC);
+	END COMPONENT;
+	
 begin
 
 	key_out <= controllerKeys;
 
 	controller: Controller
-		 PORT MAP ( 
-			clk 		=> clk,
-         key_in 	=> keys,
-			led_disable => led_disable,
-			key_out 	=> controllerKeys
-		 );
+		PORT MAP ( clk 			=> clk,
+					  key_in 		=> keys,
+					  led_disable 	=> led_disable,
+					  key_out 		=> controllerKeys);
 
 	keyfrequencies : FreqLUT
-		PORT MAP (
-			clk 			=> clk,
-			key_in 		=> controllerKeys,
-			increment 	=> step
-		);
-
-
+		PORT MAP ( clk 			=> clk,
+					  key_in 		=> controllerKeys,
+					  increment 	=> step);
+					  
 	dds: DDS
-		PORT MAP (
-			clk 		=> clk,
-			step		=> step,
-			phase		=> phase
-		);
+		PORT MAP ( clk 		=> clk,
+					  step		=> step,
+					  phase		=> phase);
+					  
+	pwm: PWM
+		PORT MAP ( clk			=> clk,
+					  sample		=> lutfreq,
+					  pulse		=> tone);
 
 end Behavioral;
 
