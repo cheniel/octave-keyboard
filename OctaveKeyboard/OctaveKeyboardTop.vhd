@@ -39,26 +39,61 @@ end OctaveKeyboardTop;
 
 architecture Behavioral of OctaveKeyboardTop is
 
+	signal step : std_logic_vector(7 downto 0) := (others => '0');
+	signal controllerKeys : std_logic_vector(7 downto 0) := (others => '0');
+	signal phase : std_logic_vector(7 downto 0) := (others => '0');
 
 	COMPONENT Controller
 		PORT (
-				clk : in  STD_LOGIC;
-				key_in : in  STD_LOGIC_VECTOR (7 downto 0);
+				clk 			: in  STD_LOGIC;
+				key_in 		: in  STD_LOGIC_VECTOR (7 downto 0);
 				led_disable : in  STD_LOGIC;
-				key_out : out  STD_LOGIC_VECTOR (7 downto 0));
+				key_out 		: out  STD_LOGIC_VECTOR (7 downto 0)
+				);
 	END COMPONENT;
 
+	COMPONENT FreqLUT
+		PORT (
+				clk 			: in  STD_LOGIC;
+				key_in 		: in  STD_LOGIC_VECTOR (7 downto 0);
+				increment 	: out  STD_LOGIC_VECTOR (7 downto 0)
+				);
+	END COMPONENT;
 
+	COMPONENT DDS
+		PORT (
+				clk 			: in  STD_LOGIC;
+				step			: in	STD_LOGIC_VECTOR(7 downto 0);
+				phase			: out	STD_LOGIC_VECTOR(7 downto 0)
+				);
+	END COMPONENT;
 
 begin
 
+	key_out <= controllerKeys;
+
 	controller: Controller
-		 Port Map( 
-			clk => clk,
-         key_in => keys,
+		 PORT MAP ( 
+			clk 		=> clk,
+         key_in 	=> keys,
 			led_disable => led_disable,
-			key_out => key_out
-		  );
+			key_out 	=> controllerKeys
+		 );
+
+	keyfrequencies : FreqLUT
+		PORT MAP (
+			clk 			=> clk,
+			key_in 		=> controllerKeys,
+			increment 	=> step
+		);
+
+
+	dds: DDS
+		PORT MAP (
+			clk 		=> clk,
+			step		=> step,
+			phase		=> phase
+		);
 
 end Behavioral;
 
