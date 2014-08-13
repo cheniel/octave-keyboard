@@ -1,0 +1,15 @@
+# Output products list for <SinLUT>
+SinLUT.asy
+SinLUT.gise
+SinLUT.ngc
+SinLUT.sym
+SinLUT.vhd
+SinLUT.vho
+SinLUT.xco
+SinLUT.xise
+SinLUT\doc\dds_compiler_v5_0_readme.txt
+SinLUT\doc\dds_compiler_v5_0_vinfo.html
+SinLUT\doc\ds794_dds_compiler.pdf
+SinLUT_flist.txt
+SinLUT_xmdf.tcl
+demo_tb\tb_SinLUT.vhd
