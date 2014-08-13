@@ -9,13 +9,21 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
+<<<<<<< HEAD
          <SelectedItem>controller - Controller - Behavioral (Y:/Documents/ENGS031/finalproject/OctaveKeyboard/Controller.vhd)</SelectedItem>
+=======
+         <SelectedItem>pwm - PWM - Behavioral (C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/PWM.vhd)</SelectedItem>
+>>>>>>> 837a7c7dca2f3713d0a0284ee5afc612fc405038
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000018c000000020000000000000000000000000200000064ffffffff0000008100000003000000020000018c0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+<<<<<<< HEAD
       <CurrentItem>controller - Controller - Behavioral (Y:/Documents/ENGS031/finalproject/OctaveKeyboard/Controller.vhd)</CurrentItem>
+=======
+      <CurrentItem>pwm - PWM - Behavioral (C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/PWM.vhd)</CurrentItem>
+>>>>>>> 837a7c7dca2f3713d0a0284ee5afc612fc405038
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
