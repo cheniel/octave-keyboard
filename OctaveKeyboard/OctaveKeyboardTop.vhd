@@ -78,6 +78,14 @@ architecture Behavioral of OctaveKeyboardTop is
              pulse 	: out  STD_LOGIC);
 	END COMPONENT;
 	
+	COMPONENT SinLUT
+		PORT ( aclk : IN STD_LOGIC;
+				 s_axis_phase_tvalid : IN STD_LOGIC;
+				 s_axis_phase_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+				 m_axis_data_tvalid : OUT STD_LOGIC;
+				 m_axis_data_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0));
+		END COMPONENT;
+	
 begin
 
 	key_out <= controllerKeys;
@@ -104,6 +112,13 @@ begin
 					  sample		=> lutfreq,
 					  slowclk	=> reg_en,
 					  pulse		=> tone);
+					
+	SinFreqs : SinLUT
+		PORT MAP ( aclk  						=> clk,
+					  s_axis_phase_tvalid 	=> s_axis_phase_tvalid,
+					  s_axis_phase_tdata 	=> s_axis_phase_tdata,
+					  m_axis_data_tvalid 	=> m_axis_data_tvalid,
+					  m_axis_data_tdata 		=> m_axis_data_tdata);
 
 end Behavioral;
 

@@ -9,10 +9,10 @@ SET_PREFERENCE verilogsim false
 SET_PREFERENCE vhdlsim true
 SET_PREFERENCE simulationfiles Behavioral
 SET_PREFERENCE busformat BusFormatAngleBracketNotRipped
-SET_PREFERENCE outputdirectory O:/Desktop/octave-keyboard/OctaveKeyboard/ipcore_dir/
-SET_PREFERENCE workingdirectory O:/Desktop/octave-keyboard/OctaveKeyboard/ipcore_dir/tmp/
-SET_PREFERENCE subworkingdirectory O:/Desktop/octave-keyboard/OctaveKeyboard/ipcore_dir/tmp/_cg/
-SET_PREFERENCE transientdirectory O:/Desktop/octave-keyboard/OctaveKeyboard/ipcore_dir/tmp/_cg/_dbg/
+SET_PREFERENCE outputdirectory C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/ipcore_dir/
+SET_PREFERENCE workingdirectory C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/ipcore_dir/tmp/
+SET_PREFERENCE subworkingdirectory C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/ipcore_dir/tmp/_cg/
+SET_PREFERENCE transientdirectory C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/ipcore_dir/tmp/_cg/_dbg/
 SET_PREFERENCE designentry VHDL
 SET_PREFERENCE flowvendor Other
 SET_PREFERENCE addpads false
