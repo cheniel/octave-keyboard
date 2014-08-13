@@ -28,11 +28,12 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity DDS is
 	 Generic (	ACCUMSIZE	: integer := 13;
-					INDEXSIZE	: integer := 10;
+					INDEXSIZE	: integer := 8;
 					CLKFREQ 		: integer := 100000000);
 					
     Port ( 	clk 		: in  STD_LOGIC;
 				step		: in	STD_LOGIC_VECTOR(ACCUMSIZE-1 downto 0);
+				clk10		: in	STD_LOGIC;
 				phase		: out	STD_LOGIC_VECTOR(INDEXSIZE-1 downto 0));
 end DDS;
 
@@ -43,11 +44,14 @@ begin
 	AccumPhase: process(clk)
 	begin
 		if (rising_edge(clk)) then
+		
 			curr_phase <= curr_phase + unsigned(step);
+			
+			if (clk10 = '1') then
+				phase <= std_logic_vector(curr_phase(ACCUMSIZE-1 downto ACCUMSIZE-INDEXSIZE));
+			end if;
 		end if;
 	end process AccumPhase;
-	
-	phase <= std_logic_vector(curr_phase(ACCUMSIZE-1 downto ACCUMSIZE-INDEXSIZE));
 
 end Behavioral;
 

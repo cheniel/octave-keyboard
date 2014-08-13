@@ -49,6 +49,7 @@ architecture Behavioral of OctaveKeyboardTop is
 	signal phase : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
 	signal lutfreq : std_logic_vector(LUTOUT-1 downto 0) := (others => '0');
 	signal tone : std_logic := '0';
+	signal reg_en : std_logic := '0';
 
 	COMPONENT Controller
 		PORT ( clk 				: in  STD_LOGIC;
@@ -65,6 +66,7 @@ architecture Behavioral of OctaveKeyboardTop is
 
 	COMPONENT DDS
 		PORT ( clk 			: in  STD_LOGIC;
+				 clk10		: in STD_LOGIC;
 				 step			: in	STD_LOGIC_VECTOR(ACCUMSIZE-1 downto 0);
 				 phase		: out	STD_LOGIC_VECTOR(INDEXSIZE-1 downto 0));
 	END COMPONENT;
@@ -72,6 +74,7 @@ architecture Behavioral of OctaveKeyboardTop is
 	COMPONENT PWM
 		PORT ( clk 		: in  STD_LOGIC;
 				 sample 	: in  STD_LOGIC_VECTOR(LUTOUT-1 downto 0);
+				 slowclk : out STD_LOGIC;
              pulse 	: out  STD_LOGIC);
 	END COMPONENT;
 	
@@ -92,12 +95,14 @@ begin
 					  
 	dds: DDS
 		PORT MAP ( clk 		=> clk,
+					  clk10		=> reg_en,
 					  step		=> step,
 					  phase		=> phase);
 					  
 	pwm: PWM
 		PORT MAP ( clk			=> clk,
 					  sample		=> lutfreq,
+					  slowclk	=> reg_en,
 					  pulse		=> tone);
 
 end Behavioral;

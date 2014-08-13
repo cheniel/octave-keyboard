@@ -27,17 +27,19 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity PWM is
-	 Generic (	LUTOUT	: integer := 12;
+	 Generic (	LUTOUT	: integer := 10;
 					CLKFREQ 	: integer := 100000000);
 
     Port ( clk : in  STD_LOGIC;
            sample : in  STD_LOGIC_VECTOR(LUTOUT-1 downto 0);
+			  slowclk : out STD_LOGIC;
            pulse : out  STD_LOGIC);
 end PWM;
 
 architecture Behavioral of PWM is
 	signal count : unsigned(LUTOUT-1 downto 0) := (others => '0');
 	signal offset : unsigned(LUTOUT-1 downto 0) := (others => '0');
+	constant max : unsigned (LUTOUT-1 downto 0) := (others => '1');
 begin
 
 	PWM: process(clk)
@@ -46,11 +48,19 @@ begin
 		offset <= not sample(LUTOUT-1) & sample(LUTOUT-2 downto 0); -- two's complement to unsigned offset binary
 		
 		if (rising_edge(clk)) then
+		
 			count <= count + 1;
+			
 			if (count < offset) then	
 				pulse <= '1';
 			else
 				pulse <= '0';
+			end if;
+			
+			if (count = max) then
+				slowclk <= '1';
+			else
+				slowclk <= '0';
 			end if;
 		end if;
 	end process PWM;
