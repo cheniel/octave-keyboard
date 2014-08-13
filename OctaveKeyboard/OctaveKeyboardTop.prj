@@ -1,0 +1,4 @@
+vhdl work "FreqLUT.vhd"
+vhdl work "DDS.vhd"
+vhdl work "Controller.vhd"
+vhdl work "OctaveKeyboardTop.vhd"
