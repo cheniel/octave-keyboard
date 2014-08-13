@@ -19,10 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -51,9 +48,28 @@ architecture Behavioral of FreqLUT is
 begin
 	getIncrement: process(key_in)
 	begin
+	
+		if (key_in(0) = '1') then
+			increment <= std_logic_vector(to_unsigned(LOWC * PHASECONSTANT, 16));
+		elsif (key_in(1) = '1') then
+			increment <= std_logic_vector(to_unsigned(D * PHASECONSTANT, 16));
+		elsif (key_in(2) = '1') then
+			increment <= std_logic_vector(to_unsigned(E * PHASECONSTANT, 16));
+		elsif (key_in(3) = '1') then
+			increment <= std_logic_vector(to_unsigned(F * PHASECONSTANT, 16));
+		elsif (key_in(4) = '1') then
+			increment <= std_logic_vector(to_unsigned(G * PHASECONSTANT, 16));
+		elsif (key_in(5) = '1') then
+			increment <= std_logic_vector(to_unsigned(A * PHASECONSTANT, 16));
+		elsif (key_in(6) = '1') then
+			increment <= std_logic_vector(to_unsigned(B * PHASECONSTANT, 16));
+		elsif (key_in(7) = '1') then
+			increment <= std_logic_vector(to_unsigned(HIGHC * PHASECONSTANT, 16));
+		else 
+			increment <= (others => '0');
+		end if;
+	
 	end process getIncrement;
-
-
 
 end Behavioral;
 
