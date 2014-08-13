@@ -45,10 +45,12 @@
     <transform xil_pn:end_ts="1407784403" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-5671498706223246486" xil_pn:start_ts="1407784403">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1407784403" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-6651268115828271765" xil_pn:start_ts="1407784403">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1407784403" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1407784403">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -57,21 +59,30 @@
     <transform xil_pn:end_ts="1407784403" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="7888313390242453950" xil_pn:start_ts="1407784403">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1407784403" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="5702940744460053484" xil_pn:start_ts="1407784403">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1407784403" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="3477287644722429365" xil_pn:start_ts="1407784403">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1407784987" xil_pn:in_ck="-2952405462608659873" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="6109569487892529535" xil_pn:start_ts="1407784944">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="DDS.lso"/>
       <outfile xil_pn:name="DDS.ngc"/>
       <outfile xil_pn:name="DDS.ngr"/>
