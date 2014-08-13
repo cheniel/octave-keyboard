@@ -27,13 +27,16 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity DDS is
+	 Generic (	ACCUMSIZE	: integer := 7;
+					CLKFREQ 		: integer := 100000000);
+					
     Port ( 	clk 		: in  STD_LOGIC;
-				step		: in	STD_LOGIC_VECTOR(7 downto 0);
-				phase		: out	STD_LOGIC_VECTOR(7 downto 0));
+				step		: in	STD_LOGIC_VECTOR(ACCUMSIZE downto 0);
+				phase		: out	STD_LOGIC_VECTOR(ACCUMSIZE downto 0));
 end DDS;
 
 architecture Behavioral of DDS is
-	signal curr_phase : unsigned(7 downto 0) := "00000000";
+	signal curr_phase : unsigned(ACCUMSIZE downto 0) := (others => '0');
 begin
 
 	AccumPhase: process(clk)
