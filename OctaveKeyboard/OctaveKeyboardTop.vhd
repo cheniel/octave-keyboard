@@ -115,10 +115,10 @@ begin
 					
 	SinFreqs : SinLUT
 		PORT MAP ( aclk  						=> clk,
-					  s_axis_phase_tvalid 	=> s_axis_phase_tvalid,
-					  s_axis_phase_tdata 	=> s_axis_phase_tdata,
-					  m_axis_data_tvalid 	=> m_axis_data_tvalid,
-					  m_axis_data_tdata 		=> m_axis_data_tdata);
+					  s_axis_phase_tvalid 	=> reg_en,
+					  s_axis_phase_tdata 	=> phase,
+					  m_axis_data_tvalid 	=> open,
+					  m_axis_data_tdata 		=> lutfreq);
 
 end Behavioral;
 
