@@ -39,7 +39,7 @@ end Controller;
 architecture Behavioral of Controller is
 	type statetype is (idle, low_c, d, e, f, g, a, b, high_c);
 	signal curr_state, next_state : statetype := idle;
-	signal output : STD_LOGIC_VECTOR (7 downto 0) := (others => 0);
+	signal output : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 begin
 
 	StateUpdate: process(clk)
@@ -49,11 +49,11 @@ begin
 		end if;
 	end process StateUpdate;
 
-	CombLogic: process(curr_state, next_state, key_in)
+	CombLogic: process(curr_state, next_state, key_in, led_disable, output)
 	begin
 		-- defaults
 		next_state <= curr_state;
-		output <= (others => 0);
+		output <= (others => '0');
 		
 		if (led_disable = '1') then
 			key_out <= (others => '0');

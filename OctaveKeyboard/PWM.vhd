@@ -42,10 +42,10 @@ architecture Behavioral of PWM is
 	constant max : unsigned (LUTOUT-1 downto 0) := (others => '1');
 begin
 
-	PWM: process(clk)
+	PWM: process(clk, sample)
 	begin
 		
-		offset <= not sample(LUTOUT-1) & sample(LUTOUT-2 downto 0); -- two's complement to unsigned offset binary
+		offset <= unsigned(not sample(LUTOUT-1) & sample(LUTOUT-2 downto 0)); -- two's complement to unsigned offset binary
 		
 		if (rising_edge(clk)) then
 		

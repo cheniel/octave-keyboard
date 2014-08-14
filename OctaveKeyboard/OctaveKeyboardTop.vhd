@@ -31,8 +31,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity OctaveKeyboardTop is
 	 Generic (	ACCUMSIZE	: integer := 13;
-					INDEXSIZE	: integer := 10;
-					LUTOUT		: integer := 12;
+					INDEXSIZE	: integer := 8;
+					LUTOUT		: integer := 10;
 					CLKFREQ 		: integer := 10000);
 					
     Port ( keys : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -46,9 +46,9 @@ architecture Behavioral of OctaveKeyboardTop is
 
 	signal step : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
 	signal controllerKeys : std_logic_vector(7 downto 0) := (others => '0');
-	signal phase : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
-	signal lutfreq : std_logic_vector(LUTOUT-1 downto 0) := (others => '0');
-	signal tone : std_logic := '0';
+	signal phase : std_logic_vector(INDEXSIZE-1 downto 0) := (others => '0');
+	signal lutfreq : std_logic_vector(31 downto 0) := (others => '0');
+	--signal tone : std_logic := '0';
 	signal reg_en : std_logic := '0';
 
 	COMPONENT Controller
@@ -90,7 +90,7 @@ begin
 
 	key_out <= controllerKeys;
 
-	controller: Controller
+	KeyControl: Controller
 		PORT MAP ( clk 			=> clk,
 					  key_in 		=> keys,
 					  led_disable 	=> led_disable,
@@ -101,15 +101,15 @@ begin
 					  key_in 		=> controllerKeys,
 					  increment 	=> step);
 					  
-	dds: DDS
+	PhaseAccum: DDS
 		PORT MAP ( clk 		=> clk,
 					  clk10		=> reg_en,
 					  step		=> step,
 					  phase		=> phase);
 					  
-	pwm: PWM
+	PulseWM: PWM
 		PORT MAP ( clk			=> clk,
-					  sample		=> lutfreq,
+					  sample		=> lutfreq(25 downto 16),
 					  slowclk	=> reg_en,
 					  pulse		=> tone);
 					
