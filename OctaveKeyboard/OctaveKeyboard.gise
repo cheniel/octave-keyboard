@@ -59,10 +59,6 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1408030012" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1408030012">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
     <transform xil_pn:end_ts="1407978851" xil_pn:in_ck="8511942557556024364" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1407978851">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -92,7 +88,6 @@
     <transform xil_pn:end_ts="1407978920" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1407978920">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-
     </transform>
     <transform xil_pn:end_ts="1408030012" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="959166456462382503" xil_pn:start_ts="1408030012">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -147,11 +142,14 @@
     <transform xil_pn:end_ts="1408030022" xil_pn:in_ck="5030772817780360165" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="7702471102953791870" xil_pn:start_ts="1408030022">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1408030029" xil_pn:in_ck="-5814541499603135387" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2681150154583735872" xil_pn:start_ts="1408030022">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="OctaveKeyboardTop.bld"/>
       <outfile xil_pn:name="OctaveKeyboardTop.ngd"/>
       <outfile xil_pn:name="OctaveKeyboardTop_ngdbuild.xrpt"/>
