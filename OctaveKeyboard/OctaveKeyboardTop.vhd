@@ -43,12 +43,18 @@ entity OctaveKeyboardTop is
 end OctaveKeyboardTop;
 
 architecture Behavioral of OctaveKeyboardTop is
-
+	
+	-- signals for 100MHz to 10Mhz clk divider
+	constant CLK_DIV_VALUE 	: integer := 5;
+	signal clkcount			: integer := 0;
+	signal clk_en				: std_logic := '0';
+	signal slowclk				: std_logic;
+	
+	-- mapping signals
 	signal step : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
 	signal controllerKeys : std_logic_vector(7 downto 0) := (others => '0');
 	signal phase : std_logic_vector(INDEXSIZE-1 downto 0) := (others => '0');
 	signal lutfreq : std_logic_vector(15 downto 0) := (others => '0');
-	--signal tone : std_logic := '0';
 	signal reg_en : std_logic := '0';
 
 	COMPONENT Controller
@@ -88,33 +94,47 @@ architecture Behavioral of OctaveKeyboardTop is
 	
 begin
 
+	clkDivider: process(clk)
+	begin
+		if rising_edge(clk) then
+				if clkcount = CLK_DIV_VALUE-1 then 
+					clk_en <= NOT(clk_en);		
+				clkcount <= 0;
+			else
+				clkcount <= clkcount + 1;
+			end if;
+		end if;
+	end process clkDivider;
+
+	-- map signals
 	key_out <= controllerKeys;
+	slowclk <= clk_en;
 
 	KeyControl: Controller
-		PORT MAP ( clk 			=> clk,
+		PORT MAP ( clk 			=> slowclk,
 					  key_in 		=> keys,
 					  led_disable 	=> led_disable,
 					  key_out 		=> controllerKeys);
 
 	keyfrequencies : FreqLUT
-		PORT MAP ( clk 			=> clk,
+		PORT MAP ( clk 			=> slowclk,
 					  key_in 		=> controllerKeys,
 					  increment 	=> step);
 					  
 	PhaseAccum: DDS
-		PORT MAP ( clk 		=> clk,
+		PORT MAP ( clk 		=> slowclk,
 					  clk10		=> reg_en,
 					  step		=> step,
 					  phase		=> phase);
 					  
 	PulseWM: PWM
-		PORT MAP ( clk			=> clk,
+		PORT MAP ( clk			=> slowclk,
 					  sample		=> lutfreq(9 downto 0),
 					  slowclk	=> reg_en,
 					  pulse		=> tone);
 					
 	SinFreqs : SinLUT
-		PORT MAP ( aclk  						=> clk,
+		PORT MAP ( aclk  						=> slowclk,
 					  s_axis_phase_tvalid 	=> '1',
 					  s_axis_phase_tdata 	=> phase,
 					  m_axis_data_tvalid 	=> open,

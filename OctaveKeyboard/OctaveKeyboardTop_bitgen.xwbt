@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.ncd
+OUTFILE=C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.bit
+FAMILY=Spartan6
+PART=xc6slx16-2csg324
+WORKINGDIR=C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard
+LICENSE=ISE
+USER_INFO=210643936_1777485687_210562918_764

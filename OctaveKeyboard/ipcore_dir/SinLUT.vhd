@@ -108,7 +108,7 @@ END COMPONENT;
       c_s_phase_tdata_width => 8,
       c_s_phase_tuser_width => 1,
       c_use_dsp48 => 0,
-      c_xdevicefamily => "aartix7"
+      c_xdevicefamily => "spartan6"
     );
 -- synthesis translate_on
 BEGIN

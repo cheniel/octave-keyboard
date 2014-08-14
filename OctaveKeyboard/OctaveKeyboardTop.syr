@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -153,9 +153,13 @@ Synthesizing Unit <OctaveKeyboardTop>.
         INDEXSIZE = 8
         LUTOUT = 10
         CLKFREQ = 10000
-INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 116: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 136: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+    Found 32-bit register for signal <clkcount>.
+    Found 1-bit register for signal <clk_en>.
+    Found 32-bit adder for signal <clkcount[31]_GND_3_o_add_1_OUT> created at line 104.
     Summary:
-	no macro.
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
 Unit <OctaveKeyboardTop> synthesized.
 
 Synthesizing Unit <Controller>.
@@ -217,13 +221,15 @@ Unit <PWM> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 3
  10-bit adder                                          : 1
  13-bit adder                                          : 1
-# Registers                                            : 4
- 1-bit register                                        : 2
+ 32-bit adder                                          : 1
+# Registers                                            : 6
+ 1-bit register                                        : 3
  10-bit register                                       : 1
  13-bit register                                       : 1
+ 32-bit register                                       : 1
 # Comparators                                          : 1
  10-bit comparator greater                             : 1
 # Multiplexers                                         : 8
@@ -245,6 +251,10 @@ Synthesizing (advanced) Unit <DDS>.
 The following registers are absorbed into accumulator <curr_phase>: 1 register on signal <curr_phase>.
 Unit <DDS> synthesized (advanced).
 
+Synthesizing (advanced) Unit <OctaveKeyboardTop>.
+The following registers are absorbed into counter <clkcount>: 1 register on signal <clkcount>.
+Unit <OctaveKeyboardTop> synthesized (advanced).
+
 Synthesizing (advanced) Unit <PWM>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 Unit <PWM> synthesized (advanced).
@@ -253,12 +263,13 @@ Unit <PWM> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 1
+# Counters                                             : 2
  10-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
 # Accumulators                                         : 1
  13-bit up accumulator                                 : 1
-# Registers                                            : 2
- Flip-Flops                                            : 2
+# Registers                                            : 3
+ Flip-Flops                                            : 3
 # Comparators                                          : 1
  10-bit comparator greater                             : 1
 # Multiplexers                                         : 8
@@ -291,8 +302,7 @@ Optimizing unit <OctaveKeyboardTop> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 0.
-WARNING:Xst:2957 - There are clock and non-clock loads on clock signal clk_BUFGP. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
+Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -300,8 +310,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 34
- Flip-Flops                                            : 34
+# Registers                                            : 67
+ Flip-Flops                                            : 67
 
 =========================================================================
 
@@ -324,23 +334,24 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 115
+# BELS                             : 251
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 12
-#      LUT2                        : 9
+#      INV                         : 3
+#      LUT1                        : 43
+#      LUT2                        : 43
 #      LUT3                        : 3
 #      LUT4                        : 13
 #      LUT5                        : 9
-#      LUT6                        : 14
-#      MUXCY                       : 27
+#      LUT6                        : 21
+#      MUXCY                       : 58
 #      MUXF7                       : 1
 #      VCC                         : 1
-#      XORCY                       : 23
-# FlipFlops/Latches                : 34
-#      FD                          : 21
+#      XORCY                       : 55
+# FlipFlops/Latches                : 67
+#      FD                          : 54
 #      FDE                         : 13
-# Clock Buffers                    : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 18
 #      IBUF                        : 9
@@ -353,23 +364,23 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              34  out of  18224     0%  
- Number of Slice LUTs:                   62  out of   9112     0%  
-    Number used as Logic:                62  out of   9112     0%  
+ Number of Slice Registers:              67  out of  18224     0%  
+ Number of Slice LUTs:                  135  out of   9112     1%  
+    Number used as Logic:               135  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     64
-   Number with an unused Flip Flop:      30  out of     64    46%  
-   Number with an unused LUT:             2  out of     64     3%  
-   Number of fully used LUT-FF pairs:    32  out of     64    50%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:    137
+   Number with an unused Flip Flop:      70  out of    137    51%  
+   Number with an unused LUT:             2  out of    137     1%  
+   Number of fully used LUT-FF pairs:    65  out of    137    47%  
+   Number of unique control sets:         3
 
 IO Utilization: 
  Number of IOs:                          19
  Number of bonded IOBs:                  19  out of    232     8%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -392,7 +403,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 45    |
+clk_en                             | BUFG                   | 46    |
+clk                                | BUFGP                  | 33    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -403,7 +415,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 3.919ns (Maximum Frequency: 255.151MHz)
+   Minimum period: 4.907ns (Maximum Frequency: 203.791MHz)
    Minimum input arrival time before clock: 5.105ns
    Maximum output required time after clock: 5.510ns
    Maximum combinational path delay: 6.628ns
@@ -413,47 +425,64 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.919ns (frequency: 255.151MHz)
-  Total number of paths / destination ports: 844 / 57
+Timing constraint: Default period analysis for Clock 'clk_en'
+  Clock period: 4.271ns (frequency: 234.123MHz)
+  Total number of paths / destination ports: 896 / 73
 -------------------------------------------------------------------------
-Delay:               3.919ns (Levels of Logic = 13)
-  Source:            KeyControl/curr_state_FSM_FFd4 (FF)
-  Destination:       PhaseAccum/curr_phase_12 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
+Delay:               4.271ns (Levels of Logic = 5)
+  Source:            sec_inst (RAM)
+  Destination:       PulseWM/pulse (FF)
+  Source Clock:      clk_en rising
+  Destination Clock: clk_en rising
 
-  Data Path: KeyControl/curr_state_FSM_FFd4 to PhaseAccum/curr_phase_12
+  Data Path: sec_inst to PulseWM/pulse
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               6   0.525   0.876  KeyControl/curr_state_FSM_FFd4 (KeyControl/curr_state_FSM_FFd4)
-     LUT2:I1->O            6   0.254   1.306  KeyControl/Mmux_key_out51 (key_out_4_OBUF)
-     LUT6:I1->O            1   0.254   0.000  PhaseAccum/Maccum_curr_phase_lut<2> (PhaseAccum/Maccum_curr_phase_lut<2>)
-     MUXCY:S->O            1   0.215   0.000  PhaseAccum/Maccum_curr_phase_cy<2> (PhaseAccum/Maccum_curr_phase_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<3> (PhaseAccum/Maccum_curr_phase_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<4> (PhaseAccum/Maccum_curr_phase_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<5> (PhaseAccum/Maccum_curr_phase_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<6> (PhaseAccum/Maccum_curr_phase_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<7> (PhaseAccum/Maccum_curr_phase_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<8> (PhaseAccum/Maccum_curr_phase_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<9> (PhaseAccum/Maccum_curr_phase_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<10> (PhaseAccum/Maccum_curr_phase_cy<10>)
-     MUXCY:CI->O           0   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<11> (PhaseAccum/Maccum_curr_phase_cy<11>)
-     XORCY:CI->O           1   0.206   0.000  PhaseAccum/Maccum_curr_phase_xor<12> (Result<12>)
-     FDE:D                     0.074          PhaseAccum/curr_phase_12
+     SEC:CLKAWRCLK->out    1   1.700   0.681  sec_inst (sec_net)
+     end scope: 'SinFreqs/blk00000001:m_axis_data_tdata<9>'
+     end scope: 'SinFreqs:m_axis_data_tdata<9>'
+     INV:I->O              2   0.255   0.834  PulseWM/offset<9>1_INV_0 (PulseWM/offset<9>)
+     LUT4:I2->O            1   0.250   0.000  PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_lut<4> (PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_lut<4>)
+     MUXCY:S->O            1   0.215   0.000  PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_cy<4> (PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_cy<4>)
+     MUXCY:CI->O           1   0.262   0.000  PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_cy<4>_inv1_cy (PulseWM/count[9]_offset[9]_LessThan_2_o)
+     FD:D                      0.074          PulseWM/pulse
     ----------------------------------------
-    Total                      3.919ns (1.737ns logic, 2.182ns route)
-                                       (44.3% logic, 55.7% route)
+    Total                      4.271ns (2.756ns logic, 1.515ns route)
+                                       (64.5% logic, 35.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 351 / 23
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.907ns (frequency: 203.790MHz)
+  Total number of paths / destination ports: 1585 / 33
+-------------------------------------------------------------------------
+Delay:               4.907ns (Levels of Logic = 3)
+  Source:            clkcount_25 (FF)
+  Destination:       clk_en (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: clkcount_25 to clk_en
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   1.181  clkcount_25 (clkcount_25)
+     LUT6:I0->O            2   0.254   1.156  GND_3_o_clkcount[31]_equal_1_o<31>5 (GND_3_o_clkcount[31]_equal_1_o<31>4)
+     LUT6:I1->O           17   0.254   1.209  GND_3_o_clkcount[31]_equal_1_o<31>7 (GND_3_o_clkcount[31]_equal_1_o)
+     LUT2:I1->O            1   0.254   0.000  clk_en_rstpot (clk_en_rstpot)
+     FD:D                      0.074          clk_en
+    ----------------------------------------
+    Total                      4.907ns (1.361ns logic, 3.546ns route)
+                                       (27.7% logic, 72.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_en'
+  Total number of paths / destination ports: 331 / 22
 -------------------------------------------------------------------------
 Offset:              5.105ns (Levels of Logic = 14)
   Source:            led_disable (PAD)
   Destination:       PhaseAccum/curr_phase_12 (FF)
-  Destination Clock: clk rising
+  Destination Clock: clk_en rising
 
   Data Path: led_disable to PhaseAccum/curr_phase_12
                                 Gate     Net
@@ -472,20 +501,20 @@ Offset:              5.105ns (Levels of Logic = 14)
      MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<9> (PhaseAccum/Maccum_curr_phase_cy<9>)
      MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<10> (PhaseAccum/Maccum_curr_phase_cy<10>)
      MUXCY:CI->O           0   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<11> (PhaseAccum/Maccum_curr_phase_cy<11>)
-     XORCY:CI->O           1   0.206   0.000  PhaseAccum/Maccum_curr_phase_xor<12> (Result<12>)
+     XORCY:CI->O           1   0.206   0.000  PhaseAccum/Maccum_curr_phase_xor<12> (Result<12>1)
      FDE:D                     0.074          PhaseAccum/curr_phase_12
     ----------------------------------------
     Total                      5.105ns (2.536ns logic, 2.569ns route)
                                        (49.7% logic, 50.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 41 / 25
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
+  Total number of paths / destination ports: 9 / 9
 -------------------------------------------------------------------------
 Offset:              5.510ns (Levels of Logic = 2)
   Source:            KeyControl/curr_state_FSM_FFd1 (FF)
   Destination:       key_out<7> (PAD)
-  Source Clock:      clk rising
+  Source Clock:      clk_en rising
 
   Data Path: KeyControl/curr_state_FSM_FFd1 to key_out<7>
                                 Gate     Net
@@ -527,20 +556,28 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.919|         |         |         |
+clk            |    4.907|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_en
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_en         |    4.271|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.09 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.28 secs
  
 --> 
 
-Total memory usage is 262420 kilobytes
+Total memory usage is 263636 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 
