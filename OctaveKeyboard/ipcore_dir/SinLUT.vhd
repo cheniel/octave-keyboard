@@ -46,7 +46,7 @@ ENTITY SinLUT IS
     s_axis_phase_tvalid : IN STD_LOGIC;
     s_axis_phase_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     m_axis_data_tvalid : OUT STD_LOGIC;
-    m_axis_data_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    m_axis_data_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END SinLUT;
 
@@ -58,7 +58,7 @@ COMPONENT wrapped_SinLUT
     s_axis_phase_tvalid : IN STD_LOGIC;
     s_axis_phase_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     m_axis_data_tvalid : OUT STD_LOGIC;
-    m_axis_data_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    m_axis_data_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END COMPONENT;
 
@@ -84,7 +84,7 @@ END COMPONENT;
       c_has_tready => 0,
       c_latency => 2,
       c_m_data_has_tuser => 0,
-      c_m_data_tdata_width => 32,
+      c_m_data_tdata_width => 16,
       c_m_data_tuser_width => 1,
       c_m_phase_has_tuser => 0,
       c_m_phase_tdata_width => 1,
@@ -95,7 +95,7 @@ END COMPONENT;
       c_noise_shaping => 0,
       c_optimise_goal => 0,
       c_output_width => 10,
-      c_outputs_required => 2,
+      c_outputs_required => 0,
       c_phase_angle_width => 8,
       c_phase_increment => 2,
       c_phase_increment_value => "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

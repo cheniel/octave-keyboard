@@ -47,7 +47,7 @@ architecture Behavioral of OctaveKeyboardTop is
 	signal step : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
 	signal controllerKeys : std_logic_vector(7 downto 0) := (others => '0');
 	signal phase : std_logic_vector(INDEXSIZE-1 downto 0) := (others => '0');
-	signal lutfreq : std_logic_vector(31 downto 0) := (others => '0');
+	signal lutfreq : std_logic_vector(15 downto 0) := (others => '0');
 	--signal tone : std_logic := '0';
 	signal reg_en : std_logic := '0';
 
@@ -83,7 +83,7 @@ architecture Behavioral of OctaveKeyboardTop is
 				 s_axis_phase_tvalid : IN STD_LOGIC;
 				 s_axis_phase_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 				 m_axis_data_tvalid : OUT STD_LOGIC;
-				 m_axis_data_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0));
+				 m_axis_data_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
 		END COMPONENT;
 	
 begin
@@ -109,13 +109,13 @@ begin
 					  
 	PulseWM: PWM
 		PORT MAP ( clk			=> clk,
-					  sample		=> lutfreq(25 downto 16),
+					  sample		=> lutfreq(9 downto 0),
 					  slowclk	=> reg_en,
 					  pulse		=> tone);
 					
 	SinFreqs : SinLUT
 		PORT MAP ( aclk  						=> clk,
-					  s_axis_phase_tvalid 	=> reg_en,
+					  s_axis_phase_tvalid 	=> '1',
 					  s_axis_phase_tdata 	=> phase,
 					  m_axis_data_tvalid 	=> open,
 					  m_axis_data_tdata 		=> lutfreq);

@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -46,7 +46,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "OctaveKeyboardTop"
 Output Format                      : NGC
-Target Device                      : xa7a100t-2I-csg324
+Target Device                      : xc6slx16-2-csg324
 
 ---- Source Options
 Top Module Name                    : OctaveKeyboardTop
@@ -70,7 +70,7 @@ LUT Combining                      : Auto
 Reduce Control Sets                : Auto
 Add IO Buffers                     : YES
 Global Maximum Fanout              : 100000
-Add Generic Clock Buffer(BUFG)     : 32
+Add Generic Clock Buffer(BUFG)     : 16
 Register Duplication               : YES
 Optimize Instantiated Primitives   : NO
 Use Clock Enable                   : Auto
@@ -181,10 +181,9 @@ Synthesizing Unit <FreqLUT>.
     Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\FreqLUT.vhd".
         ACCUMSIZE = 13
         CLKFREQ = 10000
-WARNING:Xst:647 - Input <key_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
-	no macro.
+	inferred   7 Multiplexer(s).
 Unit <FreqLUT> synthesized.
 
 Synthesizing Unit <DDS>.
@@ -192,12 +191,11 @@ Synthesizing Unit <DDS>.
         ACCUMSIZE = 13
         INDEXSIZE = 8
         CLKFREQ = 100000000
-    Found 8-bit register for signal <phase>.
     Found 13-bit register for signal <curr_phase>.
     Found 13-bit adder for signal <curr_phase[12]_step[12]_add_0_OUT> created at line 48.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  21 D-type flip-flop(s).
+	inferred  13 D-type flip-flop(s).
 Unit <DDS> synthesized.
 
 Synthesizing Unit <PWM>.
@@ -222,14 +220,14 @@ Macro Statistics
 # Adders/Subtractors                                   : 2
  10-bit adder                                          : 1
  13-bit adder                                          : 1
-# Registers                                            : 5
+# Registers                                            : 4
  1-bit register                                        : 2
  10-bit register                                       : 1
  13-bit register                                       : 1
- 8-bit register                                        : 1
 # Comparators                                          : 1
  10-bit comparator greater                             : 1
-# Multiplexers                                         : 1
+# Multiplexers                                         : 8
+ 13-bit 2-to-1 multiplexer                             : 7
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
@@ -239,12 +237,9 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst - The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.
-Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.4\ISE_DS\ISE\.
 Reading core <ipcore_dir/SinLUT.ngc>.
 Reading Secure Unit <blk00000001>.
 Loading core <SinLUT> for timing and area information for instance <SinFreqs>.
-Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.4\ISE_DS\ISE\.
 
 Synthesizing (advanced) Unit <DDS>.
 The following registers are absorbed into accumulator <curr_phase>: 1 register on signal <curr_phase>.
@@ -262,11 +257,12 @@ Macro Statistics
  10-bit up counter                                     : 1
 # Accumulators                                         : 1
  13-bit up accumulator                                 : 1
-# Registers                                            : 10
- Flip-Flops                                            : 10
+# Registers                                            : 2
+ Flip-Flops                                            : 2
 # Comparators                                          : 1
  10-bit comparator greater                             : 1
-# Multiplexers                                         : 1
+# Multiplexers                                         : 8
+ 13-bit 2-to-1 multiplexer                             : 7
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
@@ -290,33 +286,13 @@ Optimizing FSM <FSM_0> on signal <curr_state[1:9]> with one-hot encoding.
  b      | 000000100
  high_c | 000000010
 ---------------------
-WARNING:Xst:1293 - FF/Latch <curr_phase_5> has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <curr_phase_6> has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <curr_phase_7> has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <curr_phase_8> has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <curr_phase_9> has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <curr_phase_10> has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <curr_phase_11> has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <curr_phase_12> has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <phase_0> (without init value) has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <phase_1> (without init value) has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <phase_2> (without init value) has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <phase_3> (without init value) has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <phase_4> (without init value) has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <phase_5> (without init value) has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <phase_6> (without init value) has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <phase_7> (without init value) has a constant value of 0 in block <DDS>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <curr_phase_0> of sequential type is unconnected in block <DDS>.
-WARNING:Xst:2677 - Node <curr_phase_1> of sequential type is unconnected in block <DDS>.
-WARNING:Xst:2677 - Node <curr_phase_2> of sequential type is unconnected in block <DDS>.
-WARNING:Xst:2677 - Node <curr_phase_3> of sequential type is unconnected in block <DDS>.
-WARNING:Xst:2677 - Node <curr_phase_4> of sequential type is unconnected in block <DDS>.
 
 Optimizing unit <OctaveKeyboardTop> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 0.
+WARNING:Xst:2957 - There are clock and non-clock loads on clock signal clk_BUFGP. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
 
 Final Macro Processing ...
 
@@ -324,8 +300,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 21
- Flip-Flops                                            : 21
+# Registers                                            : 34
+ Flip-Flops                                            : 34
 
 =========================================================================
 
@@ -348,20 +324,22 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 71
+# BELS                             : 115
 #      GND                         : 1
 #      INV                         : 2
-#      LUT1                        : 9
-#      LUT2                        : 8
-#      LUT3                        : 2
-#      LUT4                        : 12
-#      LUT5                        : 5
-#      LUT6                        : 6
-#      MUXCY                       : 15
+#      LUT1                        : 12
+#      LUT2                        : 9
+#      LUT3                        : 3
+#      LUT4                        : 13
+#      LUT5                        : 9
+#      LUT6                        : 14
+#      MUXCY                       : 27
+#      MUXF7                       : 1
 #      VCC                         : 1
-#      XORCY                       : 10
-# FlipFlops/Latches                : 21
+#      XORCY                       : 23
+# FlipFlops/Latches                : 34
 #      FD                          : 21
+#      FDE                         : 13
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 18
@@ -371,27 +349,27 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : xa7a100tcsg324-2i 
+Selected Device : 6slx16csg324-2 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              21  out of  126800     0%  
- Number of Slice LUTs:                   44  out of  63400     0%  
-    Number used as Logic:                44  out of  63400     0%  
+ Number of Slice Registers:              34  out of  18224     0%  
+ Number of Slice LUTs:                   62  out of   9112     0%  
+    Number used as Logic:                62  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     45
-   Number with an unused Flip Flop:      24  out of     45    53%  
-   Number with an unused LUT:             1  out of     45     2%  
-   Number of fully used LUT-FF pairs:    20  out of     45    44%  
-   Number of unique control sets:         1
+ Number of LUT Flip Flop pairs used:     64
+   Number with an unused Flip Flop:      30  out of     64    46%  
+   Number with an unused LUT:             2  out of     64     3%  
+   Number of fully used LUT-FF pairs:    32  out of     64    50%  
+   Number of unique control sets:         2
 
 IO Utilization: 
  Number of IOs:                          19
- Number of bonded IOBs:                  19  out of    210     9%  
+ Number of bonded IOBs:                  19  out of    232     8%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -414,26 +392,21 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 33    |
+clk                                | BUFGP                  | 45    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------------------------------------------+---------------------------------------+-------+
-Control Signal                                                         | Buffer(FF name)                       | Load  |
------------------------------------------------------------------------+---------------------------------------+-------+
-SinFreqs/blk00000001/debug_phase_nd(SinFreqs/blk00000001/blk00000003:G)| NONE(SinFreqs/blk00000001/blk00000018)| 6     |
-SinFreqs/blk00000001/sig0000002a(SinFreqs/blk00000001/blk00000002:P)   | NONE(SinFreqs/blk00000001/blk00000018)| 4     |
------------------------------------------------------------------------+---------------------------------------+-------+
+No asynchronous control signals found in this design
 
 Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.350ns (Maximum Frequency: 425.460MHz)
-   Minimum input arrival time before clock: 1.799ns
-   Maximum output required time after clock: 1.164ns
-   Maximum combinational path delay: 0.915ns
+   Minimum period: 3.919ns (Maximum Frequency: 255.151MHz)
+   Minimum input arrival time before clock: 5.105ns
+   Maximum output required time after clock: 5.510ns
+   Maximum combinational path delay: 6.628ns
 
 Timing Details:
 ---------------
@@ -441,58 +414,75 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.350ns (frequency: 425.460MHz)
-  Total number of paths / destination ports: 188 / 55
+  Clock period: 3.919ns (frequency: 255.151MHz)
+  Total number of paths / destination ports: 844 / 57
 -------------------------------------------------------------------------
-Delay:               2.350ns (Levels of Logic = 5)
-  Source:            sec_inst (RAM)
-  Destination:       PulseWM/pulse (FF)
+Delay:               3.919ns (Levels of Logic = 13)
+  Source:            KeyControl/curr_state_FSM_FFd4 (FF)
+  Destination:       PhaseAccum/curr_phase_12 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: sec_inst to PulseWM/pulse
+  Data Path: KeyControl/curr_state_FSM_FFd4 to PhaseAccum/curr_phase_12
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     SEC:CLKARDCLK->out    1   0.734   0.339  sec_inst (sec_net)
-     end scope: 'SinFreqs/blk00000001:m_axis_data_tdata<25>'
-     end scope: 'SinFreqs:m_axis_data_tdata<25>'
-     INV:I->O              2   0.113   0.444  PulseWM/offset<9>1_INV_0 (PulseWM/offset<9>)
-     LUT4:I2->O            1   0.097   0.000  PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_lut<4> (PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_lut<4>)
-     MUXCY:S->O            1   0.353   0.000  PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_cy<4> (PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_cy<4>)
-     MUXCY:CI->O           1   0.262   0.000  PulseWM/Mcompar_count[9]_offset[9]_LessThan_2_o_cy<4>_inv1_cy (PulseWM/count[9]_offset[9]_LessThan_2_o)
-     FD:D                      0.008          PulseWM/pulse
+     FD:C->Q               6   0.525   0.876  KeyControl/curr_state_FSM_FFd4 (KeyControl/curr_state_FSM_FFd4)
+     LUT2:I1->O            6   0.254   1.306  KeyControl/Mmux_key_out51 (key_out_4_OBUF)
+     LUT6:I1->O            1   0.254   0.000  PhaseAccum/Maccum_curr_phase_lut<2> (PhaseAccum/Maccum_curr_phase_lut<2>)
+     MUXCY:S->O            1   0.215   0.000  PhaseAccum/Maccum_curr_phase_cy<2> (PhaseAccum/Maccum_curr_phase_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<3> (PhaseAccum/Maccum_curr_phase_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<4> (PhaseAccum/Maccum_curr_phase_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<5> (PhaseAccum/Maccum_curr_phase_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<6> (PhaseAccum/Maccum_curr_phase_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<7> (PhaseAccum/Maccum_curr_phase_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<8> (PhaseAccum/Maccum_curr_phase_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<9> (PhaseAccum/Maccum_curr_phase_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<10> (PhaseAccum/Maccum_curr_phase_cy<10>)
+     MUXCY:CI->O           0   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<11> (PhaseAccum/Maccum_curr_phase_cy<11>)
+     XORCY:CI->O           1   0.206   0.000  PhaseAccum/Maccum_curr_phase_xor<12> (Result<12>)
+     FDE:D                     0.074          PhaseAccum/curr_phase_12
     ----------------------------------------
-    Total                      2.350ns (1.567ns logic, 0.783ns route)
-                                       (66.7% logic, 33.3% route)
+    Total                      3.919ns (1.737ns logic, 2.182ns route)
+                                       (44.3% logic, 55.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 51 / 9
+  Total number of paths / destination ports: 351 / 23
 -------------------------------------------------------------------------
-Offset:              1.799ns (Levels of Logic = 4)
-  Source:            keys<1> (PAD)
-  Destination:       KeyControl/curr_state_FSM_FFd9 (FF)
+Offset:              5.105ns (Levels of Logic = 14)
+  Source:            led_disable (PAD)
+  Destination:       PhaseAccum/curr_phase_12 (FF)
   Destination Clock: clk rising
 
-  Data Path: keys<1> to KeyControl/curr_state_FSM_FFd9
+  Data Path: led_disable to PhaseAccum/curr_phase_12
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   0.001   0.766  keys_1_IBUF (keys_1_IBUF)
-     LUT5:I0->O            5   0.097   0.378  KeyControl/curr_state_FSM_FFd9-In111 (KeyControl/curr_state_FSM_FFd9-In11)
-     LUT6:I5->O            1   0.097   0.355  KeyControl/curr_state_FSM_FFd9-In1 (KeyControl/curr_state_FSM_FFd9-In1)
-     LUT5:I4->O            1   0.097   0.000  KeyControl/curr_state_FSM_FFd9-In4 (KeyControl/curr_state_FSM_FFd9-In)
-     FD:D                      0.008          KeyControl/curr_state_FSM_FFd9
+     IBUF:I->O            15   1.328   1.263  led_disable_IBUF (led_disable_IBUF)
+     LUT2:I0->O            6   0.250   1.306  KeyControl/Mmux_key_out51 (key_out_4_OBUF)
+     LUT6:I1->O            1   0.254   0.000  PhaseAccum/Maccum_curr_phase_lut<2> (PhaseAccum/Maccum_curr_phase_lut<2>)
+     MUXCY:S->O            1   0.215   0.000  PhaseAccum/Maccum_curr_phase_cy<2> (PhaseAccum/Maccum_curr_phase_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<3> (PhaseAccum/Maccum_curr_phase_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<4> (PhaseAccum/Maccum_curr_phase_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<5> (PhaseAccum/Maccum_curr_phase_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<6> (PhaseAccum/Maccum_curr_phase_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<7> (PhaseAccum/Maccum_curr_phase_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<8> (PhaseAccum/Maccum_curr_phase_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<9> (PhaseAccum/Maccum_curr_phase_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<10> (PhaseAccum/Maccum_curr_phase_cy<10>)
+     MUXCY:CI->O           0   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<11> (PhaseAccum/Maccum_curr_phase_cy<11>)
+     XORCY:CI->O           1   0.206   0.000  PhaseAccum/Maccum_curr_phase_xor<12> (Result<12>)
+     FDE:D                     0.074          PhaseAccum/curr_phase_12
     ----------------------------------------
-    Total                      1.799ns (0.300ns logic, 1.499ns route)
-                                       (16.7% logic, 83.3% route)
+    Total                      5.105ns (2.536ns logic, 2.569ns route)
+                                       (49.7% logic, 50.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 9 / 9
+  Total number of paths / destination ports: 41 / 25
 -------------------------------------------------------------------------
-Offset:              1.164ns (Levels of Logic = 2)
+Offset:              5.510ns (Levels of Logic = 2)
   Source:            KeyControl/curr_state_FSM_FFd1 (FF)
   Destination:       key_out<7> (PAD)
   Source Clock:      clk rising
@@ -501,18 +491,18 @@ Offset:              1.164ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.361   0.367  KeyControl/curr_state_FSM_FFd1 (KeyControl/curr_state_FSM_FFd1)
-     LUT2:I1->O            1   0.097   0.339  KeyControl/Mmux_key_out81 (key_out_7_OBUF)
-     OBUF:I->O                 0.000          key_out_7_OBUF (key_out<7>)
+     FD:C->Q               8   0.525   0.944  KeyControl/curr_state_FSM_FFd1 (KeyControl/curr_state_FSM_FFd1)
+     LUT2:I1->O            6   0.254   0.875  KeyControl/Mmux_key_out81 (key_out_7_OBUF)
+     OBUF:I->O                 2.912          key_out_7_OBUF (key_out<7>)
     ----------------------------------------
-    Total                      1.164ns (0.458ns logic, 0.706ns route)
-                                       (39.3% logic, 60.7% route)
+    Total                      5.510ns (3.691ns logic, 1.819ns route)
+                                       (67.0% logic, 33.0% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
-Delay:               0.915ns (Levels of Logic = 3)
+Delay:               6.628ns (Levels of Logic = 3)
   Source:            led_disable (PAD)
   Destination:       key_out<7> (PAD)
 
@@ -520,12 +510,12 @@ Delay:               0.915ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             8   0.001   0.478  led_disable_IBUF (led_disable_IBUF)
-     LUT2:I0->O            1   0.097   0.339  KeyControl/Mmux_key_out81 (key_out_7_OBUF)
-     OBUF:I->O                 0.000          key_out_7_OBUF (key_out<7>)
+     IBUF:I->O            15   1.328   1.263  led_disable_IBUF (led_disable_IBUF)
+     LUT2:I0->O            6   0.250   0.875  KeyControl/Mmux_key_out81 (key_out_7_OBUF)
+     OBUF:I->O                 2.912          key_out_7_OBUF (key_out<7>)
     ----------------------------------------
-    Total                      0.915ns (0.098ns logic, 0.817ns route)
-                                       (10.7% logic, 89.3% route)
+    Total                      6.628ns (4.490ns logic, 2.138ns route)
+                                       (67.7% logic, 32.3% route)
 
 =========================================================================
 
@@ -537,20 +527,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.350|         |         |         |
+clk            |    3.919|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 38.00 secs
-Total CPU time to Xst completion: 38.52 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.09 secs
  
 --> 
 
-Total memory usage is 787832 kilobytes
+Total memory usage is 262420 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   24 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

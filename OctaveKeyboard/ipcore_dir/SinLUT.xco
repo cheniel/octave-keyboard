@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.4
-# Date: Wed Aug 13 20:31:03 2014
+# Date: Thu Aug 14 14:50:55 2014
 #
 ##############################################################
 #
@@ -56,11 +56,11 @@ CSET latency=2
 CSET latency_configuration=Auto
 CSET m_data_has_tuser=Not_Required
 CSET m_phase_has_tuser=Not_Required
-CSET memory_type=Auto
+CSET memory_type=Block_ROM
 CSET negative_cosine=false
 CSET negative_sine=false
 CSET noise_shaping=None
-CSET optimization_goal=Auto
+CSET optimization_goal=Area
 CSET output_frequency1=0
 CSET output_frequency10=0
 CSET output_frequency11=0
@@ -77,7 +77,7 @@ CSET output_frequency6=0
 CSET output_frequency7=0
 CSET output_frequency8=0
 CSET output_frequency9=0
-CSET output_selection=Sine_and_Cosine
+CSET output_selection=Sine
 CSET output_width=10
 CSET parameter_entry=Hardware_Parameters
 CSET partspresent=SIN_COS_LUT_only
@@ -143,4 +143,4 @@ CSET spurious_free_dynamic_range=36
 MISC pkg_timestamp=2012-11-05T14:48:58Z
 # END Extra information
 GENERATE
-# CRC: 69b13300
+# CRC: 8512225a

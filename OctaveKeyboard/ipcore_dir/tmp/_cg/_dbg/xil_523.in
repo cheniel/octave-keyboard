@@ -35,12 +35,12 @@ SET_PARAMETER Phase_Width 8
 SET_PARAMETER Output_Width 10
 SET_PARAMETER Phase_Increment Fixed
 SET_PARAMETER Phase_offset None
-SET_PARAMETER Output_Selection Sine_and_Cosine
+SET_PARAMETER Output_Selection Sine
 SET_PARAMETER Negative_Sine false
 SET_PARAMETER Negative_Cosine false
 SET_PARAMETER Amplitude_Mode Full_Range
-SET_PARAMETER Memory_Type Auto
-SET_PARAMETER Optimization_Goal Auto
+SET_PARAMETER Memory_Type Block_ROM
+SET_PARAMETER Optimization_Goal Area
 SET_PARAMETER DSP48_Use Minimal
 SET_PARAMETER Has_Phase_Out false
 SET_PARAMETER DATA_Has_TLAST Not_Required

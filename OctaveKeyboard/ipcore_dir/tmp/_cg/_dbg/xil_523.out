@@ -17,13 +17,13 @@ SET_PARAMETER pinc14 0
 SET_PARAMETER pinc15 0
 SET_PARAMETER pinc16 0
 SET_PARAMETER phase_width 8
-SET_PARAMETER output_selection Sine_and_Cosine
+SET_PARAMETER output_selection Sine
 SET_PARAMETER spurious_free_dynamic_range 36
 SET_PARAMETER negative_sine false
 SET_PARAMETER data_has_tlast Not_Required
 SET_PARAMETER explicit_period false
 SET_PARAMETER gui_behaviour Coregen
-SET_PARAMETER memory_type Auto
+SET_PARAMETER memory_type Block_ROM
 SET_PARAMETER has_phase_out false
 SET_PARAMETER phase_increment Fixed
 SET_PARAMETER negative_cosine false
@@ -39,7 +39,7 @@ SET_PARAMETER dds_clock_rate 100
 SET_PARAMETER output_width 10
 SET_PARAMETER latency 2
 SET_PARAMETER noise_shaping None
-SET_PARAMETER optimization_goal Auto
+SET_PARAMETER optimization_goal Area
 SET_PARAMETER component_name SinLUT
 SET_PARAMETER m_data_has_tuser Not_Required
 SET_PARAMETER poff1 0
