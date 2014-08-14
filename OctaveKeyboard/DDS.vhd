@@ -41,7 +41,7 @@ architecture Behavioral of DDS is
 	signal curr_phase : unsigned(ACCUMSIZE-1 downto 0) := (others => '0');
 begin
 
-	AccumPhase: process(clk)
+	AccumPhase: process(clk, clk10)
 	begin
 		if (rising_edge(clk)) then
 		
