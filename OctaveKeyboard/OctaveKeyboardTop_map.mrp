@@ -11,7 +11,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Thu Aug 14 15:30:50 2014
+Mapped Date    : Thu Aug 14 16:11:03 2014
 
 Design Summary
 --------------
@@ -36,7 +36,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    42 out of   2,278    1%
+  Number of occupied Slices:                    41 out of   2,278    1%
   Number of MUXCYs used:                        68 out of   4,556    1%
   Number of LUT Flip Flop pairs used:          123
     Number with an unused Flip Flop:            58 out of     123   47%
@@ -53,8 +53,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        19 out of     232    8%
-    Number of LOCed IOBs:                       19 out of      19  100%
+  Number of bonded IOBs:                        20 out of     232    8%
+    Number of LOCed IOBs:                       20 out of      20  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -83,9 +83,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                2.47
 
-Peak Memory Usage:  365 MB
-Total REAL time to MAP completion:  6 secs 
-Total CPU time to MAP completion:   6 secs 
+Peak Memory Usage:  364 MB
+Total REAL time to MAP completion:  8 secs 
+Total CPU time to MAP completion:   5 secs 
 
 Table of Contents
 -----------------
@@ -215,6 +215,7 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | clk                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| high                               | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | key_out<0>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | key_out<1>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 | key_out<2>                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |

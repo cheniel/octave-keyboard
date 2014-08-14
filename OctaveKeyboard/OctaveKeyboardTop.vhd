@@ -34,6 +34,7 @@ entity OctaveKeyboardTop is
            clk : in  STD_LOGIC;
            led_disable : in  STD_LOGIC;
 			  tone : out STD_LOGIC;
+			  high : out STD_LOGIC;
            key_out : out  STD_LOGIC_VECTOR (7 downto 0));
 end OctaveKeyboardTop;
 
@@ -44,7 +45,7 @@ architecture Behavioral of OctaveKeyboardTop is
 	signal clkcount			: integer := 0;
 	signal clk_en				: std_logic := '0';
 	signal slowclk				: std_logic;
-	
+
 	-- mapping signals
 	signal step : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
 	signal controllerKeys : std_logic_vector(7 downto 0) := (others => '0');
@@ -107,6 +108,7 @@ begin
 
 	-- map signals
 	key_out <= controllerKeys;
+	high <= '1';
 
 	KeyControl: Controller
 		PORT MAP ( clk 			=> slowclk,

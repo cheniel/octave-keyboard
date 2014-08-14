@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.49d on Thu Aug 14 15:30:56 2014
+// Written by: Map P.49d on Thu Aug 14 16:11:10 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -13,7 +13,8 @@ COMP "clk" LOCATE = SITE "V10" LEVEL 1;
 COMP "keys<6>" LOCATE = SITE "V8" LEVEL 1;
 COMP "keys<7>" LOCATE = SITE "T5" LEVEL 1;
 COMP "led_disable" LOCATE = SITE "B8" LEVEL 1;
-COMP "tone" LOCATE = SITE "T12" LEVEL 1;
+COMP "high" LOCATE = SITE "E11" LEVEL 1;
+COMP "tone" LOCATE = SITE "G11" LEVEL 1;
 COMP "key_out<0>" LOCATE = SITE "U16" LEVEL 1;
 COMP "key_out<1>" LOCATE = SITE "V16" LEVEL 1;
 COMP "key_out<2>" LOCATE = SITE "U15" LEVEL 1;

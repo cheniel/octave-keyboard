@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -153,10 +153,10 @@ Synthesizing Unit <OctaveKeyboardTop>.
         INDEXSIZE = 8
         LUTOUT = 10
         CLKFREQ = 10000
-INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 134: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 136: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
     Found 32-bit register for signal <clkcount>.
     Found 1-bit register for signal <clk_en>.
-    Found 32-bit adder for signal <clkcount[31]_GND_5_o_add_1_OUT> created at line 103.
+    Found 32-bit adder for signal <clkcount[31]_GND_5_o_add_1_OUT> created at line 104.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  33 D-type flip-flop(s).
@@ -353,9 +353,9 @@ Primitive and Black Box Usage:
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 18
+# IO Buffers                       : 19
 #      IBUF                        : 9
-#      OBUF                        : 9
+#      OBUF                        : 10
 
 Device utilization summary:
 ---------------------------
@@ -376,8 +376,8 @@ Slice Logic Distribution:
    Number of unique control sets:         3
 
 IO Utilization: 
- Number of IOs:                          19
- Number of bonded IOBs:                  19  out of    232     8%  
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    232     8%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
@@ -570,12 +570,12 @@ clk_en         |    4.271|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.13 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.08 secs
  
 --> 
 
-Total memory usage is 275604 kilobytes
+Total memory usage is 276564 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
