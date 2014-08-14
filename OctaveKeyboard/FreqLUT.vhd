@@ -50,21 +50,21 @@ begin
 	getIncrement: process(key_in)
 	begin
 	
-		if (key_in(0) = '1') then
+		if (key_in(7) = '1') then
 			increment <= std_logic_vector(to_unsigned(LOWC * PHASECONSTANT, ACCUMSIZE));
-		elsif (key_in(1) = '1') then
-			increment <= std_logic_vector(to_unsigned(D * PHASECONSTANT, ACCUMSIZE));
-		elsif (key_in(2) = '1') then
-			increment <= std_logic_vector(to_unsigned(E * PHASECONSTANT, ACCUMSIZE));
-		elsif (key_in(3) = '1') then
-			increment <= std_logic_vector(to_unsigned(F * PHASECONSTANT, ACCUMSIZE));
-		elsif (key_in(4) = '1') then
-			increment <= std_logic_vector(to_unsigned(G * PHASECONSTANT, ACCUMSIZE));
-		elsif (key_in(5) = '1') then
-			increment <= std_logic_vector(to_unsigned(A * PHASECONSTANT, ACCUMSIZE));
 		elsif (key_in(6) = '1') then
+			increment <= std_logic_vector(to_unsigned(D * PHASECONSTANT, ACCUMSIZE));
+		elsif (key_in(5) = '1') then
+			increment <= std_logic_vector(to_unsigned(E * PHASECONSTANT, ACCUMSIZE));
+		elsif (key_in(4) = '1') then
+			increment <= std_logic_vector(to_unsigned(F * PHASECONSTANT, ACCUMSIZE));
+		elsif (key_in(3) = '1') then
+			increment <= std_logic_vector(to_unsigned(G * PHASECONSTANT, ACCUMSIZE));
+		elsif (key_in(2) = '1') then
+			increment <= std_logic_vector(to_unsigned(A * PHASECONSTANT, ACCUMSIZE));
+		elsif (key_in(1) = '1') then
 			increment <= std_logic_vector(to_unsigned(B * PHASECONSTANT, ACCUMSIZE));
-		elsif (key_in(7) = '1') then
+		elsif (key_in(0) = '1') then
 			increment <= std_logic_vector(to_unsigned(HIGHC * PHASECONSTANT, ACCUMSIZE));
 		else 
 			increment <= (others => '0');

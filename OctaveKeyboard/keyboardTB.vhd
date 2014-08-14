@@ -60,7 +60,7 @@ ARCHITECTURE behavior OF KeyBoardTB IS
    signal key_out : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 100 us;
+   constant clk_period : time := 10 ns;
  
 BEGIN
  
@@ -95,6 +95,7 @@ BEGIN
 		keys <= "10000000";
 		
 		wait for clk_period*10;
+		keys <= "00001000";
 
       wait;
    end process;

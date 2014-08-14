@@ -25,14 +25,14 @@ TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
 
 
 ## Leds
-NET "key_out<7>"         LOC = "U16" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L2P_CMPCLK,                     Sch name = LD0
-NET "key_out<6>"         LOC = "V16" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L2N_CMPMOSI,                    Sch name = LD1
-NET "key_out<5>"         LOC = "U15" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L5P,                            Sch name = LD2
-NET "key_out<4>"         LOC = "V15" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L5N,                            Sch name = LD3
-NET "key_out<3>"         LOC = "M11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L15P,                           Sch name = LD4
-NET "key_out<2>"         LOC = "N11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L15N,                           Sch name = LD5
-NET "key_out<1>"         LOC = "R11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L16P,                           Sch name = LD6
-NET "key_out<0>"         LOC = "T11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L16N_VREF,                      Sch name = LD7
+NET "key_out<0>"         LOC = "U16" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L2P_CMPCLK,                     Sch name = LD0
+NET "key_out<1>"         LOC = "V16" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L2N_CMPMOSI,                    Sch name = LD1
+NET "key_out<2>"         LOC = "U15" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L5P,                            Sch name = LD2
+NET "key_out<3>"         LOC = "V15" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L5N,                            Sch name = LD3
+NET "key_out<4>"         LOC = "M11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L15P,                           Sch name = LD4
+NET "key_out<5>"         LOC = "N11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L15N,                           Sch name = LD5
+NET "key_out<6>"         LOC = "R11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L16P,                           Sch name = LD6
+NET "key_out<7>"         LOC = "T11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L16N_VREF,                      Sch name = LD7
 
 ## Switches
 NET "keys<0>"          LOC = "T10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L29N_GCLK2,                     Sch name = SW0
