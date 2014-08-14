@@ -19,15 +19,10 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+library UNISIM;
+use UNISIM.VComponents.all;
 
 entity OctaveKeyboardTop is
 	 Generic (	ACCUMSIZE	: integer := 13;
@@ -94,11 +89,15 @@ architecture Behavioral of OctaveKeyboardTop is
 	
 begin
 
+	slowclk_buf: BUFG
+      port map (I => clk_en,
+                O => slowclk );
+
 	clkDivider: process(clk)
 	begin
 		if rising_edge(clk) then
-				if clkcount = CLK_DIV_VALUE-1 then 
-					clk_en <= NOT(clk_en);		
+			if clkcount = CLK_DIV_VALUE-1 then 
+				clk_en <= NOT(clk_en);		
 				clkcount <= 0;
 			else
 				clkcount <= clkcount + 1;
@@ -108,7 +107,6 @@ begin
 
 	-- map signals
 	key_out <= controllerKeys;
-	slowclk <= clk_en;
 
 	KeyControl: Controller
 		PORT MAP ( clk 			=> slowclk,

@@ -60,12 +60,12 @@ Slack (setup path):     5.656ns (requirement - (data path - clock path skew + un
     SLICE_X21Y38.DQ      Tcko                  0.430   clkcount<11>
                                                        clkcount_11
     SLICE_X18Y38.A2      net (fanout=2)        0.931   clkcount<11>
-    SLICE_X18Y38.A       Tilo                  0.254   GND_3_o_clkcount[31]_equal_1_o<31>1
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>2
-    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_3_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X18Y38.A       Tilo                  0.254   GND_5_o_clkcount[31]_equal_1_o<31>1
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>2
+    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_5_o_clkcount[31]_equal_1_o<31>1
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X21Y44.D3      net (fanout=16)       1.051   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X21Y44.D3      net (fanout=16)       1.051   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X21Y44.CLK     Tas                   0.373   clkcount<30>
                                                        clkcount_30_rstpot
                                                        clkcount_30
@@ -97,12 +97,12 @@ Slack (setup path):     5.807ns (requirement - (data path - clock path skew + un
     SLICE_X21Y38.CQ      Tcko                  0.430   clkcount<11>
                                                        clkcount_10
     SLICE_X18Y38.A1      net (fanout=2)        0.780   clkcount<10>
-    SLICE_X18Y38.A       Tilo                  0.254   GND_3_o_clkcount[31]_equal_1_o<31>1
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>2
-    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_3_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X18Y38.A       Tilo                  0.254   GND_5_o_clkcount[31]_equal_1_o<31>1
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>2
+    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_5_o_clkcount[31]_equal_1_o<31>1
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X21Y44.D3      net (fanout=16)       1.051   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X21Y44.D3      net (fanout=16)       1.051   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X21Y44.CLK     Tas                   0.373   clkcount<30>
                                                        clkcount_30_rstpot
                                                        clkcount_30
@@ -135,11 +135,11 @@ Slack (setup path):     5.809ns (requirement - (data path - clock path skew + un
                                                        clkcount_5
     SLICE_X21Y39.D2      net (fanout=2)        1.009   clkcount<5>
     SLICE_X21Y39.D       Tilo                  0.259   clk_en
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>1
-    SLICE_X21Y40.A1      net (fanout=2)        0.763   GND_3_o_clkcount[31]_equal_1_o<31>
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X21Y40.A1      net (fanout=2)        0.763   GND_5_o_clkcount[31]_equal_1_o<31>
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X21Y44.D3      net (fanout=16)       1.051   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X21Y44.D3      net (fanout=16)       1.051   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X21Y44.CLK     Tas                   0.373   clkcount<30>
                                                        clkcount_30_rstpot
                                                        clkcount_30
@@ -174,12 +174,12 @@ Slack (setup path):     5.683ns (requirement - (data path - clock path skew + un
     SLICE_X21Y38.DQ      Tcko                  0.430   clkcount<11>
                                                        clkcount_11
     SLICE_X18Y38.A2      net (fanout=2)        0.931   clkcount<11>
-    SLICE_X18Y38.A       Tilo                  0.254   GND_3_o_clkcount[31]_equal_1_o<31>1
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>2
-    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_3_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X18Y38.A       Tilo                  0.254   GND_5_o_clkcount[31]_equal_1_o<31>1
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>2
+    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_5_o_clkcount[31]_equal_1_o<31>1
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X20Y44.C3      net (fanout=16)       1.048   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X20Y44.C3      net (fanout=16)       1.048   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X20Y44.CLK     Tas                   0.349   clkcount<26>
                                                        clkcount_25_rstpot
                                                        clkcount_25
@@ -211,12 +211,12 @@ Slack (setup path):     5.834ns (requirement - (data path - clock path skew + un
     SLICE_X21Y38.CQ      Tcko                  0.430   clkcount<11>
                                                        clkcount_10
     SLICE_X18Y38.A1      net (fanout=2)        0.780   clkcount<10>
-    SLICE_X18Y38.A       Tilo                  0.254   GND_3_o_clkcount[31]_equal_1_o<31>1
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>2
-    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_3_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X18Y38.A       Tilo                  0.254   GND_5_o_clkcount[31]_equal_1_o<31>1
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>2
+    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_5_o_clkcount[31]_equal_1_o<31>1
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X20Y44.C3      net (fanout=16)       1.048   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X20Y44.C3      net (fanout=16)       1.048   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X20Y44.CLK     Tas                   0.349   clkcount<26>
                                                        clkcount_25_rstpot
                                                        clkcount_25
@@ -249,11 +249,11 @@ Slack (setup path):     5.836ns (requirement - (data path - clock path skew + un
                                                        clkcount_5
     SLICE_X21Y39.D2      net (fanout=2)        1.009   clkcount<5>
     SLICE_X21Y39.D       Tilo                  0.259   clk_en
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>1
-    SLICE_X21Y40.A1      net (fanout=2)        0.763   GND_3_o_clkcount[31]_equal_1_o<31>
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X21Y40.A1      net (fanout=2)        0.763   GND_5_o_clkcount[31]_equal_1_o<31>
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X20Y44.C3      net (fanout=16)       1.048   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X20Y44.C3      net (fanout=16)       1.048   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X20Y44.CLK     Tas                   0.349   clkcount<26>
                                                        clkcount_25_rstpot
                                                        clkcount_25
@@ -288,12 +288,12 @@ Slack (setup path):     5.689ns (requirement - (data path - clock path skew + un
     SLICE_X21Y38.DQ      Tcko                  0.430   clkcount<11>
                                                        clkcount_11
     SLICE_X18Y38.A2      net (fanout=2)        0.931   clkcount<11>
-    SLICE_X18Y38.A       Tilo                  0.254   GND_3_o_clkcount[31]_equal_1_o<31>1
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>2
-    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_3_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X18Y38.A       Tilo                  0.254   GND_5_o_clkcount[31]_equal_1_o<31>1
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>2
+    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_5_o_clkcount[31]_equal_1_o<31>1
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X21Y44.C3      net (fanout=16)       1.018   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X21Y44.C3      net (fanout=16)       1.018   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X21Y44.CLK     Tas                   0.373   clkcount<30>
                                                        clkcount_29_rstpot
                                                        clkcount_29
@@ -325,12 +325,12 @@ Slack (setup path):     5.840ns (requirement - (data path - clock path skew + un
     SLICE_X21Y38.CQ      Tcko                  0.430   clkcount<11>
                                                        clkcount_10
     SLICE_X18Y38.A1      net (fanout=2)        0.780   clkcount<10>
-    SLICE_X18Y38.A       Tilo                  0.254   GND_3_o_clkcount[31]_equal_1_o<31>1
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>2
-    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_3_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X18Y38.A       Tilo                  0.254   GND_5_o_clkcount[31]_equal_1_o<31>1
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>2
+    SLICE_X21Y40.A2      net (fanout=2)        1.001   GND_5_o_clkcount[31]_equal_1_o<31>1
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X21Y44.C3      net (fanout=16)       1.018   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X21Y44.C3      net (fanout=16)       1.018   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X21Y44.CLK     Tas                   0.373   clkcount<30>
                                                        clkcount_29_rstpot
                                                        clkcount_29
@@ -363,11 +363,11 @@ Slack (setup path):     5.842ns (requirement - (data path - clock path skew + un
                                                        clkcount_5
     SLICE_X21Y39.D2      net (fanout=2)        1.009   clkcount<5>
     SLICE_X21Y39.D       Tilo                  0.259   clk_en
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>1
-    SLICE_X21Y40.A1      net (fanout=2)        0.763   GND_3_o_clkcount[31]_equal_1_o<31>
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>1
+    SLICE_X21Y40.A1      net (fanout=2)        0.763   GND_5_o_clkcount[31]_equal_1_o<31>
     SLICE_X21Y40.A       Tilo                  0.259   clkcount<18>
-                                                       GND_3_o_clkcount[31]_equal_1_o<31>7_1
-    SLICE_X21Y44.C3      net (fanout=16)       1.018   GND_3_o_clkcount[31]_equal_1_o<31>7
+                                                       GND_5_o_clkcount[31]_equal_1_o<31>7_1
+    SLICE_X21Y44.C3      net (fanout=16)       1.018   GND_5_o_clkcount[31]_equal_1_o<31>7
     SLICE_X21Y44.CLK     Tas                   0.373   clkcount<30>
                                                        clkcount_29_rstpot
                                                        clkcount_29
@@ -649,7 +649,7 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Aug 14 14:41:19 2014 
+Analysis completed Thu Aug 14 15:31:12 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:

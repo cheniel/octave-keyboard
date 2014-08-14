@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -153,10 +153,10 @@ Synthesizing Unit <OctaveKeyboardTop>.
         INDEXSIZE = 8
         LUTOUT = 10
         CLKFREQ = 10000
-INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 136: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 134: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
     Found 32-bit register for signal <clkcount>.
     Found 1-bit register for signal <clk_en>.
-    Found 32-bit adder for signal <clkcount[31]_GND_3_o_add_1_OUT> created at line 104.
+    Found 32-bit adder for signal <clkcount[31]_GND_5_o_add_1_OUT> created at line 103.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  33 D-type flip-flop(s).
@@ -209,7 +209,7 @@ Synthesizing Unit <PWM>.
     Found 1-bit register for signal <pulse>.
     Found 1-bit register for signal <slowclk>.
     Found 10-bit register for signal <count>.
-    Found 10-bit adder for signal <count[9]_GND_8_o_add_0_OUT> created at line 1241.
+    Found 10-bit adder for signal <count[9]_GND_9_o_add_0_OUT> created at line 1241.
     Found 10-bit comparator greater for signal <count[9]_offset[9]_LessThan_2_o> created at line 54
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -467,8 +467,8 @@ Delay:               4.907ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               2   0.525   1.181  clkcount_25 (clkcount_25)
-     LUT6:I0->O            2   0.254   1.156  GND_3_o_clkcount[31]_equal_1_o<31>5 (GND_3_o_clkcount[31]_equal_1_o<31>4)
-     LUT6:I1->O           17   0.254   1.209  GND_3_o_clkcount[31]_equal_1_o<31>7 (GND_3_o_clkcount[31]_equal_1_o)
+     LUT6:I0->O            2   0.254   1.156  GND_5_o_clkcount[31]_equal_1_o<31>5 (GND_5_o_clkcount[31]_equal_1_o<31>4)
+     LUT6:I1->O           17   0.254   1.209  GND_5_o_clkcount[31]_equal_1_o<31>7 (GND_5_o_clkcount[31]_equal_1_o)
      LUT2:I1->O            1   0.254   0.000  clk_en_rstpot (clk_en_rstpot)
      FD:D                      0.074          clk_en
     ----------------------------------------
@@ -570,12 +570,12 @@ clk_en         |    4.271|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.28 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.13 secs
  
 --> 
 
-Total memory usage is 263636 kilobytes
+Total memory usage is 275604 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

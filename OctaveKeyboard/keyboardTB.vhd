@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   21:40:46 08/13/2014
+-- Create Date:   15:01:47 08/14/2014
 -- Design Name:   
 -- Module Name:   C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/KeyBoardTB.vhd
 -- Project Name:  OctaveKeyboard
@@ -60,7 +60,7 @@ ARCHITECTURE behavior OF KeyBoardTB IS
    signal key_out : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 100 ns;
+   constant clk_period : time := 10 ns;
  
 BEGIN
  
@@ -87,15 +87,11 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      --wait for 100 ns;	
-
       wait for clk_period*10;
-
-      -- insert stimulus here 
 		keys <= "10000000";
 		
 		wait for clk_period*10;
-		keys <= "00001000";
+		keys <= "00010000";
 
       wait;
    end process;
