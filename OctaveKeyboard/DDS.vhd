@@ -43,15 +43,15 @@ begin
 
 	AccumPhase: process(clk, clk10)
 	begin
-		if (rising_edge(clk)) then
-		
-			curr_phase <= curr_phase + unsigned(step);
-			
-			if (clk10 = '1') then
-				phase <= std_logic_vector(curr_phase(ACCUMSIZE-1 downto ACCUMSIZE-INDEXSIZE));
+		if (rising_edge(clk)) then			
+			if (clk10 = '1') then			
+				curr_phase <= curr_phase + unsigned(step);
 			end if;
 		end if;
 	end process AccumPhase;
+	
+	phase <= std_logic_vector(curr_phase(ACCUMSIZE-1 downto ACCUMSIZE-INDEXSIZE));
+
 
 end Behavioral;
 

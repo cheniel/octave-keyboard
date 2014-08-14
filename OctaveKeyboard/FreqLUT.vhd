@@ -36,7 +36,7 @@ entity FreqLUT is
 end FreqLUT;
 
 architecture Behavioral of FreqLUT is
-	constant PHASECONSTANT : integer := 2**ACCUMSIZE / CLKFREQ;
+	constant PHASECONSTANT : integer := 2**ACCUMSIZE;
 	constant LOWC : integer := 262;
 	constant D : integer := 294;
 	constant E : integer := 330;
@@ -51,21 +51,21 @@ begin
 	begin
 	
 		if (key_in(7) = '1') then
-			increment <= std_logic_vector(to_unsigned(LOWC * PHASECONSTANT, ACCUMSIZE));
+			increment <= std_logic_vector(to_unsigned(LOWC * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
 		elsif (key_in(6) = '1') then
-			increment <= std_logic_vector(to_unsigned(D * PHASECONSTANT, ACCUMSIZE));
+			increment <= std_logic_vector(to_unsigned(D * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
 		elsif (key_in(5) = '1') then
-			increment <= std_logic_vector(to_unsigned(E * PHASECONSTANT, ACCUMSIZE));
+			increment <= std_logic_vector(to_unsigned(E * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
 		elsif (key_in(4) = '1') then
-			increment <= std_logic_vector(to_unsigned(F * PHASECONSTANT, ACCUMSIZE));
+			increment <= std_logic_vector(to_unsigned(F * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
 		elsif (key_in(3) = '1') then
-			increment <= std_logic_vector(to_unsigned(G * PHASECONSTANT, ACCUMSIZE));
+			increment <= std_logic_vector(to_unsigned(G * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
 		elsif (key_in(2) = '1') then
-			increment <= std_logic_vector(to_unsigned(A * PHASECONSTANT, ACCUMSIZE));
+			increment <= std_logic_vector(to_unsigned(A * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
 		elsif (key_in(1) = '1') then
-			increment <= std_logic_vector(to_unsigned(B * PHASECONSTANT, ACCUMSIZE));
+			increment <= std_logic_vector(to_unsigned(B * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
 		elsif (key_in(0) = '1') then
-			increment <= std_logic_vector(to_unsigned(HIGHC * PHASECONSTANT, ACCUMSIZE));
+			increment <= std_logic_vector(to_unsigned(HIGHC * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
 		else 
 			increment <= (others => '0');
 		end if;

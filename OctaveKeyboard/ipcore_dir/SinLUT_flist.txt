@@ -12,4 +12,5 @@ SinLUT\doc\dds_compiler_v5_0_vinfo.html
 SinLUT\doc\ds794_dds_compiler.pdf
 SinLUT_flist.txt
 SinLUT_xmdf.tcl
+_xmsgs\pn_parser.xmsgs
 demo_tb\tb_SinLUT.vhd
