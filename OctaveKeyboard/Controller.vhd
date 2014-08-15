@@ -82,6 +82,8 @@ begin
 					next_state <= b;
 				elsif key_in(0) = '1' then
 					next_state <= high_c;
+				else
+					next_state <= idle;
 				end if;
 
 			when low_c =>
@@ -131,6 +133,9 @@ begin
 				if key_in(0) = '0' then
 					next_state <= idle;
 				end if;	
+			
+			when others =>
+				next_state <= idle;
 			
 		end case;
 

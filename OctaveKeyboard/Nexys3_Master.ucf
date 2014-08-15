@@ -134,18 +134,18 @@ NET "led_out<7>"         LOC = "T11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin
 
 
 ## Switches
-NET "keys<0>"          LOC = "T10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L29N_GCLK2,                     Sch name = SW0
-NET "keys<1>"          LOC = "T9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L32P_GCLK29,                    Sch name = SW1
-NET "keys<2>"          LOC = "V9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L32N_GCLK28,                    Sch name = SW2
-NET "keys<3>"          LOC = "M8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L40P,                           Sch name = SW3
-NET "keys<4>"          LOC = "N8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L40N,                           Sch name = SW4
-NET "keys<5>"          LOC = "U8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L41P,                           Sch name = SW5
-NET "keys<6>"          LOC = "V8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L41N_VREF,                      Sch name = SW6
-NET "keys<7>"          LOC = "T5"  | IOSTANDARD = "LVCMOS33";   #Bank = MISC, Pin name = IO_L48N_RDWR_B_VREF_2,          Sch name = SW7
+NET "led_disable"          LOC = "T10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L29N_GCLK2,                     Sch name = SW0
+#NET "keys<1>"          LOC = "T9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L32P_GCLK29,                    Sch name = SW1
+#NET "keys<2>"          LOC = "V9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L32N_GCLK28,                    Sch name = SW2
+#NET "keys<3>"          LOC = "M8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L40P,                           Sch name = SW3
+#NET "keys<4>"          LOC = "N8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L40N,                           Sch name = SW4
+#NET "keys<5>"          LOC = "U8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L41P,                           Sch name = SW5
+#NET "keys<6>"          LOC = "V8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L41N_VREF,                      Sch name = SW6
+#NET "keys<7>"          LOC = "T5"  | IOSTANDARD = "LVCMOS33";   #Bank = MISC, Pin name = IO_L48N_RDWR_B_VREF_2,          Sch name = SW7
 
 
 ## Buttons
-NET "led_disable"         LOC = "B8"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L33P,                           Sch name = BTNS
+#NET "led_disable"         LOC = "B8"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L33P,                           Sch name = BTNS
 #NET "play_en"         LOC = "A8"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L33N,                           Sch name = BTNU
 #NET "btn<2>"         LOC = "C4"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L1N_VREF,                       Sch name = BTNL
 #NET "btn<3>"         LOC = "C9"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L34N_GCLK18,                    Sch name = BTND
@@ -169,20 +169,20 @@ NET "led_disable"         LOC = "B8"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pi
 ## 12 pin connectors
 
 ##JA
-#NET "tone"          LOC = "T12" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L19P,                           Sch name = JA1
-#NET "high"          LOC = "V12" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L19N,                           Sch name = JA2  
-#NET "JA<2>"          LOC = "N10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L20P,                           Sch name = JA3
-#NET "high"          LOC = "P11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L20N,                           Sch name = JA4
+NET "keys<4>"          LOC = "T12" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L19P,                           Sch name = JA1
+NET "keys<0>"          LOC = "V12" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L19N,                           Sch name = JA2  
+NET "keys<5>"          LOC = "N10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L20P,                           Sch name = JA3
+NET "keys<1>"          LOC = "P11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L20N,                           Sch name = JA4
 #NET "JA<4>"          LOC = "M10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L22P,                           Sch name = JA7
 #NET "JA<5>"          LOC = "N9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L22N,                           Sch name = JA8
 #NET "JA<6>"          LOC = "U11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L23P,                           Sch name = JA9
 #NET "JA<7>"          LOC = "V11" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L23N,                           Sch name = JA10
 
 ##JB
-#NET "JB<0>"          LOC = "K2"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L38P_M3DQ2,                     Sch name = JB1
-#NET "JB<1>"          LOC = "K1"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L38N_M3DQ3,                     Sch name = JB2
-#NET "JB<2>"          LOC = "L4"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L39P_M3LDQS,                    Sch name = JB3
-#NET "JB<3>"          LOC = "L3"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L39N_M3LDQSN,                   Sch name = JB4
+NET "keys<6>"          LOC = "K2"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L38P_M3DQ2,                     Sch name = JB1
+NET "keys<2>"          LOC = "K1"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L38N_M3DQ3,                     Sch name = JB2
+NET "keys<7>"          LOC = "L4"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L39P_M3LDQS,                    Sch name = JB3
+NET "keys<3>"          LOC = "L3"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L39N_M3LDQSN,                   Sch name = JB4
 #NET "JB<4>"          LOC = "J3"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L40P_M3DQ6,                     Sch name = JB7
 #NET "JB<5>"          LOC = "J1"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L40N_M3DQ7,                     Sch name = JB8
 #NET "JB<6>"          LOC = "K3"  | IOSTANDARD = "LVCMOS33";   #Bank = 3, Pin name = IO_L42N_GCLK24_M3LDM,              Sch name = JB9

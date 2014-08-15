@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -134,6 +134,7 @@ Parsing architecture <Behavioral> of entity <octavekeyboardtop>.
 Elaborating entity <OctaveKeyboardTop> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <Controller> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 137. Case statement is complete. others clause is never selected
 
 Elaborating entity <FreqLUT> (architecture <Behavioral>) with generics from library <work>.
 
@@ -548,11 +549,11 @@ clk_en         |    4.271|         |         |         |
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.95 secs
+Total CPU time to Xst completion: 6.17 secs
  
 --> 
 
-Total memory usage is 275832 kilobytes
+Total memory usage is 275320 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
