@@ -33,15 +33,17 @@ entity OctaveKeyboardTop is
     Port ( keys : in  STD_LOGIC_VECTOR (7 downto 0);
            clk : in  STD_LOGIC;
            led_disable : in  STD_LOGIC;
+			  --play_en	: in STD_LOGIC;
 			  tone : out STD_LOGIC;
-			  high : out STD_LOGIC;
-           key_out : out  STD_LOGIC_VECTOR (7 downto 0));
+			  shutdown : out STD_LOGIC;
+           key_out : out  STD_LOGIC_VECTOR (7 downto 0);
+			  led_out : out  STD_LOGIC_VECTOR (7 downto 0));
 end OctaveKeyboardTop;
 
 architecture Behavioral of OctaveKeyboardTop is
 	
 	-- signals for 100MHz to 10Mhz clk divider
-	constant CLK_DIV_VALUE 	: integer := 5;
+	constant CLK_DIV_VALUE 	: integer := 1;
 	signal clkcount			: integer := 0;
 	signal clk_en				: std_logic := '0';
 	signal slowclk				: std_logic;
@@ -57,7 +59,8 @@ architecture Behavioral of OctaveKeyboardTop is
 		PORT ( clk 				: in  STD_LOGIC;
 				 key_in 			: in  STD_LOGIC_VECTOR (7 downto 0);
 				 led_disable 	: in  STD_LOGIC;
-				 key_out 		: out  STD_LOGIC_VECTOR (7 downto 0));
+				 key_out 		: out  STD_LOGIC_VECTOR (7 downto 0);
+				 led_out			: out STD_LOGIC_VECTOR (7 downto 0));
 	END COMPONENT;
 
 	COMPONENT FreqLUT
@@ -108,13 +111,14 @@ begin
 
 	-- map signals
 	key_out <= controllerKeys;
-	high <= '1';
+	shutdown <= '1';
 
 	KeyControl: Controller
 		PORT MAP ( clk 			=> slowclk,
 					  key_in 		=> keys,
 					  led_disable 	=> led_disable,
-					  key_out 		=> controllerKeys);
+					  key_out 		=> controllerKeys,
+					  led_out		=> led_out);
 
 	keyfrequencies : FreqLUT
 		PORT MAP ( clk 			=> slowclk,

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.49d on Thu Aug 14 16:11:10 2014
+// Written by: Map P.49d on Fri Aug 15 11:45:29 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -12,17 +12,17 @@ COMP "keys<5>" LOCATE = SITE "U8" LEVEL 1;
 COMP "clk" LOCATE = SITE "V10" LEVEL 1;
 COMP "keys<6>" LOCATE = SITE "V8" LEVEL 1;
 COMP "keys<7>" LOCATE = SITE "T5" LEVEL 1;
+COMP "led_out<0>" LOCATE = SITE "U16" LEVEL 1;
+COMP "led_out<1>" LOCATE = SITE "V16" LEVEL 1;
+COMP "led_out<2>" LOCATE = SITE "U15" LEVEL 1;
+COMP "led_out<3>" LOCATE = SITE "V15" LEVEL 1;
+COMP "led_out<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "led_out<5>" LOCATE = SITE "N11" LEVEL 1;
+COMP "led_out<6>" LOCATE = SITE "R11" LEVEL 1;
+COMP "led_out<7>" LOCATE = SITE "T11" LEVEL 1;
 COMP "led_disable" LOCATE = SITE "B8" LEVEL 1;
-COMP "high" LOCATE = SITE "E11" LEVEL 1;
 COMP "tone" LOCATE = SITE "G11" LEVEL 1;
-COMP "key_out<0>" LOCATE = SITE "U16" LEVEL 1;
-COMP "key_out<1>" LOCATE = SITE "V16" LEVEL 1;
-COMP "key_out<2>" LOCATE = SITE "U15" LEVEL 1;
-COMP "key_out<3>" LOCATE = SITE "V15" LEVEL 1;
-COMP "key_out<4>" LOCATE = SITE "M11" LEVEL 1;
-COMP "key_out<5>" LOCATE = SITE "N11" LEVEL 1;
-COMP "key_out<6>" LOCATE = SITE "R11" LEVEL 1;
-COMP "key_out<7>" LOCATE = SITE "T11" LEVEL 1;
+COMP "shutdown" LOCATE = SITE "E11" LEVEL 1;
 TIMEGRP sys_clk_pin = BEL "clk_en" BEL "clkcount_0" BEL "clkcount_1" BEL
         "clkcount_2" BEL "clkcount_3" BEL "clkcount_4" BEL "clkcount_5" BEL
         "clkcount_6" BEL "clkcount_7" BEL "clkcount_8" BEL "clkcount_9" BEL

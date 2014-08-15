@@ -39,7 +39,7 @@ end PWM;
 architecture Behavioral of PWM is
 	signal count : unsigned(LUTOUT-1 downto 0) := (others => '0');
 	signal offset : unsigned(LUTOUT-1 downto 0) := (others => '0');
-	constant max : unsigned (LUTOUT-1 downto 0) := (others => '1');
+	constant max : unsigned(13 downto 0) := "01001110001000";
 begin
 
 	PWM: process(clk, sample)
@@ -51,7 +51,7 @@ begin
 		
 			count <= count + 1;
 			
-			if (count < offset) then	
+			if (count(9 downto 0) < offset) then	
 				pulse <= '1';
 			else
 				pulse <= '0';
@@ -59,6 +59,7 @@ begin
 			
 			if (count = max) then
 				slowclk <= '1';
+				count <= (others => '0');
 			else
 				slowclk <= '0';
 			end if;

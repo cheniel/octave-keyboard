@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -153,10 +153,10 @@ Synthesizing Unit <OctaveKeyboardTop>.
         INDEXSIZE = 8
         LUTOUT = 10
         CLKFREQ = 10000
-INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 136: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 140: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
     Found 32-bit register for signal <clkcount>.
     Found 1-bit register for signal <clk_en>.
-    Found 32-bit adder for signal <clkcount[31]_GND_5_o_add_1_OUT> created at line 104.
+    Found 32-bit adder for signal <clkcount[31]_GND_5_o_add_1_OUT> created at line 107.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  33 D-type flip-flop(s).
@@ -207,13 +207,13 @@ Synthesizing Unit <PWM>.
         LUTOUT = 10
         CLKFREQ = 100000000
     Found 1-bit register for signal <pulse>.
-    Found 1-bit register for signal <slowclk>.
     Found 10-bit register for signal <count>.
-    Found 10-bit adder for signal <count[9]_GND_9_o_add_0_OUT> created at line 1241.
+    Found 10-bit adder for signal <count[9]_GND_9_o_mux_3_OUT> created at line 1241.
     Found 10-bit comparator greater for signal <count[9]_offset[9]_LessThan_2_o> created at line 54
+    WARNING:Xst:2404 -  FFs/Latches <slowclk<0:0>> (without init value) have a constant value of 0 in block <PWM>.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  12 D-type flip-flop(s).
+	inferred  11 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 Unit <PWM> synthesized.
 
@@ -225,8 +225,8 @@ Macro Statistics
  10-bit adder                                          : 1
  13-bit adder                                          : 1
  32-bit adder                                          : 1
-# Registers                                            : 6
- 1-bit register                                        : 3
+# Registers                                            : 5
+ 1-bit register                                        : 2
  10-bit register                                       : 1
  13-bit register                                       : 1
  32-bit register                                       : 1
@@ -246,6 +246,21 @@ Macro Statistics
 Reading core <ipcore_dir/SinLUT.ngc>.
 Reading Secure Unit <blk00000001>.
 Loading core <SinLUT> for timing and area information for instance <SinFreqs>.
+WARNING:Xst:1293 - FF/Latch <curr_phase_0> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_1> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_2> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_3> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_4> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_5> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_6> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_7> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_8> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_9> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_10> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_11> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <curr_phase_12> has a constant value of 0 in block <PhaseAccum>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1290 - Hierarchical block <keyfrequencies> is unconnected in block <OctaveKeyboardTop>.
+   It will be removed from the design.
 
 Synthesizing (advanced) Unit <DDS>.
 The following registers are absorbed into accumulator <curr_phase>: 1 register on signal <curr_phase>.
@@ -268,8 +283,8 @@ Macro Statistics
  32-bit up counter                                     : 1
 # Accumulators                                         : 1
  13-bit up accumulator                                 : 1
-# Registers                                            : 3
- Flip-Flops                                            : 3
+# Registers                                            : 2
+ Flip-Flops                                            : 2
 # Comparators                                          : 1
  10-bit comparator greater                             : 1
 # Multiplexers                                         : 8
@@ -297,6 +312,19 @@ Optimizing FSM <FSM_0> on signal <curr_state[1:9]> with one-hot encoding.
  b      | 000000100
  high_c | 000000010
 ---------------------
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_0> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_1> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_2> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_3> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_4> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_5> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_6> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_7> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_8> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_9> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_10> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_11> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PhaseAccum/curr_phase_12> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <OctaveKeyboardTop> ...
 
@@ -310,8 +338,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 67
- Flip-Flops                                            : 67
+# Registers                                            : 53
+ Flip-Flops                                            : 53
 
 =========================================================================
 
@@ -334,28 +362,26 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 251
+# BELS                             : 205
 #      GND                         : 1
 #      INV                         : 3
-#      LUT1                        : 43
-#      LUT2                        : 43
-#      LUT3                        : 3
-#      LUT4                        : 13
-#      LUT5                        : 9
-#      LUT6                        : 21
-#      MUXCY                       : 58
-#      MUXF7                       : 1
+#      LUT1                        : 40
+#      LUT2                        : 42
+#      LUT3                        : 2
+#      LUT4                        : 12
+#      LUT5                        : 4
+#      LUT6                        : 12
+#      MUXCY                       : 46
 #      VCC                         : 1
-#      XORCY                       : 55
-# FlipFlops/Latches                : 67
-#      FD                          : 54
-#      FDE                         : 13
+#      XORCY                       : 42
+# FlipFlops/Latches                : 53
+#      FD                          : 53
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 19
+# IO Buffers                       : 27
 #      IBUF                        : 9
-#      OBUF                        : 10
+#      OBUF                        : 18
 
 Device utilization summary:
 ---------------------------
@@ -364,20 +390,20 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              67  out of  18224     0%  
- Number of Slice LUTs:                  135  out of   9112     1%  
-    Number used as Logic:               135  out of   9112     1%  
+ Number of Slice Registers:              53  out of  18224     0%  
+ Number of Slice LUTs:                  115  out of   9112     1%  
+    Number used as Logic:               115  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    137
-   Number with an unused Flip Flop:      70  out of    137    51%  
-   Number with an unused LUT:             2  out of    137     1%  
-   Number of fully used LUT-FF pairs:    65  out of    137    47%  
-   Number of unique control sets:         3
+ Number of LUT Flip Flop pairs used:    116
+   Number with an unused Flip Flop:      63  out of    116    54%  
+   Number with an unused LUT:             1  out of    116     0%  
+   Number of fully used LUT-FF pairs:    52  out of    116    44%  
+   Number of unique control sets:         2
 
 IO Utilization: 
- Number of IOs:                          20
- Number of bonded IOBs:                  20  out of    232     8%  
+ Number of IOs:                          28
+ Number of bonded IOBs:                  28  out of    232    12%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
@@ -403,7 +429,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk_en                             | BUFG                   | 46    |
+clk_en                             | BUFG                   | 32    |
 clk                                | BUFGP                  | 33    |
 -----------------------------------+------------------------+-------+
 
@@ -416,9 +442,9 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 4.907ns (Maximum Frequency: 203.791MHz)
-   Minimum input arrival time before clock: 5.105ns
-   Maximum output required time after clock: 5.510ns
-   Maximum combinational path delay: 6.628ns
+   Minimum input arrival time before clock: 4.958ns
+   Maximum output required time after clock: 5.176ns
+   Maximum combinational path delay: 6.223ns
 
 Timing Details:
 ---------------
@@ -427,7 +453,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_en'
   Clock period: 4.271ns (frequency: 234.123MHz)
-  Total number of paths / destination ports: 896 / 73
+  Total number of paths / destination ports: 146 / 46
 -------------------------------------------------------------------------
 Delay:               4.271ns (Levels of Logic = 5)
   Source:            sec_inst (RAM)
@@ -477,74 +503,64 @@ Delay:               4.907ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_en'
-  Total number of paths / destination ports: 331 / 22
+  Total number of paths / destination ports: 51 / 9
 -------------------------------------------------------------------------
-Offset:              5.105ns (Levels of Logic = 14)
-  Source:            led_disable (PAD)
-  Destination:       PhaseAccum/curr_phase_12 (FF)
+Offset:              4.958ns (Levels of Logic = 4)
+  Source:            keys<6> (PAD)
+  Destination:       KeyControl/curr_state_FSM_FFd9 (FF)
   Destination Clock: clk_en rising
 
-  Data Path: led_disable to PhaseAccum/curr_phase_12
+  Data Path: keys<6> to KeyControl/curr_state_FSM_FFd9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            15   1.328   1.263  led_disable_IBUF (led_disable_IBUF)
-     LUT2:I0->O            6   0.250   1.306  KeyControl/Mmux_key_out51 (key_out_4_OBUF)
-     LUT6:I1->O            1   0.254   0.000  PhaseAccum/Maccum_curr_phase_lut<2> (PhaseAccum/Maccum_curr_phase_lut<2>)
-     MUXCY:S->O            1   0.215   0.000  PhaseAccum/Maccum_curr_phase_cy<2> (PhaseAccum/Maccum_curr_phase_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<3> (PhaseAccum/Maccum_curr_phase_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<4> (PhaseAccum/Maccum_curr_phase_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<5> (PhaseAccum/Maccum_curr_phase_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<6> (PhaseAccum/Maccum_curr_phase_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<7> (PhaseAccum/Maccum_curr_phase_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<8> (PhaseAccum/Maccum_curr_phase_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<9> (PhaseAccum/Maccum_curr_phase_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<10> (PhaseAccum/Maccum_curr_phase_cy<10>)
-     MUXCY:CI->O           0   0.023   0.000  PhaseAccum/Maccum_curr_phase_cy<11> (PhaseAccum/Maccum_curr_phase_cy<11>)
-     XORCY:CI->O           1   0.206   0.000  PhaseAccum/Maccum_curr_phase_xor<12> (Result<12>1)
-     FDE:D                     0.074          PhaseAccum/curr_phase_12
+     IBUF:I->O             5   1.328   1.271  keys_6_IBUF (keys_6_IBUF)
+     LUT5:I0->O            5   0.254   0.841  KeyControl/curr_state_FSM_FFd9-In111 (KeyControl/curr_state_FSM_FFd9-In11)
+     LUT6:I5->O            1   0.254   0.682  KeyControl/curr_state_FSM_FFd9-In1 (KeyControl/curr_state_FSM_FFd9-In1)
+     LUT5:I4->O            1   0.254   0.000  KeyControl/curr_state_FSM_FFd9-In4 (KeyControl/curr_state_FSM_FFd9-In)
+     FD:D                      0.074          KeyControl/curr_state_FSM_FFd9
     ----------------------------------------
-    Total                      5.105ns (2.536ns logic, 2.569ns route)
-                                       (49.7% logic, 50.3% route)
+    Total                      4.958ns (2.164ns logic, 2.794ns route)
+                                       (43.6% logic, 56.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
-  Total number of paths / destination ports: 9 / 9
+  Total number of paths / destination ports: 17 / 17
 -------------------------------------------------------------------------
-Offset:              5.510ns (Levels of Logic = 2)
+Offset:              5.176ns (Levels of Logic = 2)
   Source:            KeyControl/curr_state_FSM_FFd1 (FF)
-  Destination:       key_out<7> (PAD)
+  Destination:       led_out<7> (PAD)
   Source Clock:      clk_en rising
 
-  Data Path: KeyControl/curr_state_FSM_FFd1 to key_out<7>
+  Data Path: KeyControl/curr_state_FSM_FFd1 to led_out<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               8   0.525   0.944  KeyControl/curr_state_FSM_FFd1 (KeyControl/curr_state_FSM_FFd1)
-     LUT2:I1->O            6   0.254   0.875  KeyControl/Mmux_key_out81 (key_out_7_OBUF)
-     OBUF:I->O                 2.912          key_out_7_OBUF (key_out<7>)
+     FD:C->Q               4   0.525   0.804  KeyControl/curr_state_FSM_FFd1 (KeyControl/curr_state_FSM_FFd1)
+     LUT2:I1->O            1   0.254   0.681  KeyControl/Mmux_led_out81 (led_out_7_OBUF)
+     OBUF:I->O                 2.912          led_out_7_OBUF (led_out<7>)
     ----------------------------------------
-    Total                      5.510ns (3.691ns logic, 1.819ns route)
-                                       (67.0% logic, 33.0% route)
+    Total                      5.176ns (3.691ns logic, 1.485ns route)
+                                       (71.3% logic, 28.7% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
-Delay:               6.628ns (Levels of Logic = 3)
+Delay:               6.223ns (Levels of Logic = 3)
   Source:            led_disable (PAD)
-  Destination:       key_out<7> (PAD)
+  Destination:       led_out<7> (PAD)
 
-  Data Path: led_disable to key_out<7>
+  Data Path: led_disable to led_out<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            15   1.328   1.263  led_disable_IBUF (led_disable_IBUF)
-     LUT2:I0->O            6   0.250   0.875  KeyControl/Mmux_key_out81 (key_out_7_OBUF)
-     OBUF:I->O                 2.912          key_out_7_OBUF (key_out<7>)
+     IBUF:I->O             8   1.328   1.052  led_disable_IBUF (led_disable_IBUF)
+     LUT2:I0->O            1   0.250   0.681  KeyControl/Mmux_led_out81 (led_out_7_OBUF)
+     OBUF:I->O                 2.912          led_out_7_OBUF (led_out<7>)
     ----------------------------------------
-    Total                      6.628ns (4.490ns logic, 2.138ns route)
-                                       (67.7% logic, 32.3% route)
+    Total                      6.223ns (4.490ns logic, 1.733ns route)
+                                       (72.2% logic, 27.8% route)
 
 =========================================================================
 
@@ -571,13 +587,13 @@ clk_en         |    4.271|         |         |         |
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.08 secs
+Total CPU time to Xst completion: 6.97 secs
  
 --> 
 
-Total memory usage is 276564 kilobytes
+Total memory usage is 275604 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :   29 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

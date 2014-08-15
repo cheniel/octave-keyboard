@@ -33,7 +33,8 @@ entity Controller is
     Port ( 	clk 			: in  STD_LOGIC;
            	key_in 		: in  STD_LOGIC_VECTOR(7 downto 0);
 				led_disable : in  STD_LOGIC;
-           	key_out 		: out  STD_LOGIC_VECTOR(7 downto 0));
+           	key_out 		: out  STD_LOGIC_VECTOR(7 downto 0);
+				led_out		: out STD_LOGIC_VECTOR(7 downto 0));
 end Controller;
 
 architecture Behavioral of Controller is
@@ -54,11 +55,12 @@ begin
 		-- defaults
 		next_state <= curr_state;
 		output <= (others => '0');
+		key_out <= output;
 		
 		if (led_disable = '1') then
-			key_out <= (others => '0');
+			led_out <= (others => '0');
 		else
-			key_out <= output;
+			led_out <= output;
 		end if;
 
 		case curr_state is
