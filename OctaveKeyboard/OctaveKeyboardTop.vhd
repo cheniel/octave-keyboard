@@ -100,12 +100,13 @@ begin
 	clkDivider: process(clk)
 	begin
 		if rising_edge(clk) then
-			if clkcount = CLK_DIV_VALUE-1 then 
-				clk_en <= NOT(clk_en);		
-				clkcount <= 0;
-			else
-				clkcount <= clkcount + 1;
-			end if;
+--			if clkcount = CLK_DIV_VALUE-1 then 
+--				clk_en <= NOT(clk_en);		
+--				clkcount <= 0;
+--			else
+--				clkcount <= clkcount + 1;
+--			end if;
+			clk_en <= NOT(clk_en);
 		end if;
 	end process clkDivider;
 
