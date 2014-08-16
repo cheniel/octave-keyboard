@@ -55,6 +55,8 @@ architecture Behavioral of OctaveKeyboardTop is
 	signal lutfreq : std_logic_vector(15 downto 0) := (others => '0');
 	signal reg_en : std_logic := '0';
 
+	signal keyDB : std_logic_vector(7 downto 0) := (others => '0');
+
 	COMPONENT Controller
 		PORT ( clk 				: in  STD_LOGIC;
 				 key_in 			: in  STD_LOGIC_VECTOR (7 downto 0);
@@ -114,9 +116,49 @@ begin
 	key_out <= controllerKeys;
 	shutdown <= '1';
 
+	debouncer0: debounce
+		Port map ( 	clk => slowclk,	
+					switch => keys(0),
+					dbswitch => keyDB(0) );		
+
+	debouncer1: debounce
+		Port map ( 	clk => slowclk,	
+					switch => keys(1),
+					dbswitch => keyDB(1) );		
+
+	debouncer2: debounce
+		Port map ( 	clk => slowclk,	
+					switch => keys(2),
+					dbswitch => keyDB(2) );		
+
+	debouncer3: debounce
+		Port map ( 	clk => slowclk,	
+					switch => keys(3),
+					dbswitch => keyDB(3) );		
+
+	debouncer4: debounce
+		Port map ( 	clk => slowclk,	
+					switch => keys(4),
+					dbswitch => keyDB(4) );		
+
+	debouncer5: debounce
+		Port map ( 	clk => slowclk,	
+					switch => keys(5),
+					dbswitch => keyDB(5) );		
+
+	debouncer6: debounce
+		Port map ( 	clk => slowclk,	
+					switch => keys(6),
+					dbswitch => keyDB(6) );		
+
+	debouncer7: debounce
+		Port map ( 	clk => slowclk,	
+					switch => keys(7),
+					dbswitch => keyDB(7) );		
+
 	KeyControl: Controller
 		PORT MAP ( clk 			=> slowclk,
-					  key_in 		=> keys,
+					  key_in 		=> keyDB,
 					  led_disable 	=> led_disable,
 					  key_out 		=> controllerKeys,
 					  led_out		=> led_out);
