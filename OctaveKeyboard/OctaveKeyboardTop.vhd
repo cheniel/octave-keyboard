@@ -92,6 +92,12 @@ architecture Behavioral of OctaveKeyboardTop is
 				 m_axis_data_tvalid : OUT STD_LOGIC;
 				 m_axis_data_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
 		END COMPONENT;
+		
+	COMPONENT debounce
+		PORT ( clk : IN STD_LOGIC;
+				 switch : IN STD_LOGIC;
+				 dbswitch : OUT STD_LOGIC);
+	END COMPONENT;
 	
 begin
 

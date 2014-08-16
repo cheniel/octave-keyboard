@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -132,6 +132,7 @@ Parsing architecture <Behavioral> of entity <octavekeyboardtop>.
 =========================================================================
 
 Elaborating entity <OctaveKeyboardTop> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:89 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 96: <debounce> remains a black-box since it has no binding entity.
 
 Elaborating entity <Controller> (architecture <Behavioral>) from library <work>.
 INFO:HDLCompiler:679 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 137. Case statement is complete. others clause is never selected
@@ -154,7 +155,7 @@ Synthesizing Unit <OctaveKeyboardTop>.
         INDEXSIZE = 8
         LUTOUT = 10
         CLKFREQ = 10000
-INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 141: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 189: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <clk_en>.
     Summary:
 	inferred   1 D-type flip-flop(s).
@@ -239,8 +240,17 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+Reading core <debounce.ngc>.
 Reading core <ipcore_dir/SinLUT.ngc>.
 Reading Secure Unit <blk00000001>.
+Loading core <debounce> for timing and area information for instance <debouncer0>.
+Loading core <debounce> for timing and area information for instance <debouncer1>.
+Loading core <debounce> for timing and area information for instance <debouncer2>.
+Loading core <debounce> for timing and area information for instance <debouncer3>.
+Loading core <debounce> for timing and area information for instance <debouncer4>.
+Loading core <debounce> for timing and area information for instance <debouncer5>.
+Loading core <debounce> for timing and area information for instance <debouncer6>.
+Loading core <debounce> for timing and area information for instance <debouncer7>.
 Loading core <SinLUT> for timing and area information for instance <SinFreqs>.
 
 Synthesizing (advanced) Unit <DDS>.
@@ -293,7 +303,7 @@ Optimizing unit <OctaveKeyboardTop> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 2.
 
 Final Macro Processing ...
 
@@ -325,21 +335,21 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 137
-#      GND                         : 1
-#      INV                         : 3
-#      LUT1                        : 16
+# BELS                             : 465
+#      GND                         : 9
+#      INV                         : 19
+#      LUT1                        : 88
 #      LUT2                        : 9
-#      LUT3                        : 4
-#      LUT4                        : 14
-#      LUT5                        : 22
-#      LUT6                        : 9
-#      MUXCY                       : 31
-#      VCC                         : 1
-#      XORCY                       : 27
-# FlipFlops/Latches                : 39
-#      FD                          : 26
-#      FDE                         : 13
+#      LUT3                        : 12
+#      LUT4                        : 22
+#      LUT5                        : 46
+#      LUT6                        : 41
+#      MUXCY                       : 103
+#      VCC                         : 9
+#      XORCY                       : 107
+# FlipFlops/Latches                : 151
+#      FD                          : 106
+#      FDE                         : 45
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
@@ -354,16 +364,16 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              39  out of  18224     0%  
- Number of Slice LUTs:                   77  out of   9112     0%  
-    Number used as Logic:                77  out of   9112     0%  
+ Number of Slice Registers:             151  out of  18224     0%  
+ Number of Slice LUTs:                  237  out of   9112     2%  
+    Number used as Logic:               237  out of   9112     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     79
-   Number with an unused Flip Flop:      40  out of     79    50%  
-   Number with an unused LUT:             2  out of     79     2%  
-   Number of fully used LUT-FF pairs:    37  out of     79    46%  
-   Number of unique control sets:         3
+ Number of LUT Flip Flop pairs used:    239
+   Number with an unused Flip Flop:      88  out of    239    36%  
+   Number with an unused LUT:             2  out of    239     0%  
+   Number of fully used LUT-FF pairs:   149  out of    239    62%  
+   Number of unique control sets:        19
 
 IO Utilization: 
  Number of IOs:                          28
@@ -394,7 +404,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 1     |
-clk_en                             | BUFG                   | 50    |
+clk_en                             | BUFG                   | 162   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -406,7 +416,7 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 4.271ns (Maximum Frequency: 234.123MHz)
-   Minimum input arrival time before clock: 4.958ns
+   Minimum input arrival time before clock: 3.930ns
    Maximum output required time after clock: 5.348ns
    Maximum combinational path delay: 6.223ns
 
@@ -439,7 +449,7 @@ Delay:               2.216ns (Levels of Logic = 1)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_en'
   Clock period: 4.271ns (frequency: 234.123MHz)
-  Total number of paths / destination ports: 893 / 77
+  Total number of paths / destination ports: 1808 / 221
 -------------------------------------------------------------------------
 Delay:               4.271ns (Levels of Logic = 5)
   Source:            sec_inst (RAM)
@@ -465,25 +475,25 @@ Delay:               4.271ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_en'
-  Total number of paths / destination ports: 51 / 9
+  Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
-Offset:              4.958ns (Levels of Logic = 4)
-  Source:            keys<6> (PAD)
-  Destination:       KeyControl/curr_state_FSM_FFd9 (FF)
+Offset:              3.930ns (Levels of Logic = 4)
+  Source:            keys<7> (PAD)
+  Destination:       debouncer7/dbreg_1 (FF)
   Destination Clock: clk_en rising
 
-  Data Path: keys<6> to KeyControl/curr_state_FSM_FFd9
+  Data Path: keys<7> to debouncer7/dbreg_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   1.328   1.271  keys_6_IBUF (keys_6_IBUF)
-     LUT5:I0->O            5   0.254   0.841  KeyControl/curr_state_FSM_FFd9-In111 (KeyControl/curr_state_FSM_FFd9-In11)
-     LUT6:I5->O            1   0.254   0.682  KeyControl/curr_state_FSM_FFd9-In1 (KeyControl/curr_state_FSM_FFd9-In1)
-     LUT5:I4->O            1   0.254   0.000  KeyControl/curr_state_FSM_FFd9-In4 (KeyControl/curr_state_FSM_FFd9-In)
-     FD:D                      0.074          KeyControl/curr_state_FSM_FFd9
+     IBUF:I->O             4   1.328   1.234  keys_7_IBUF (keys_7_IBUF)
+     begin scope: 'debouncer7:switch'
+     LUT5:I0->O            1   0.254   0.790  CE<9>_rstpot_SW2 (N9)
+     LUT6:I4->O            1   0.250   0.000  dbreg_1_dpot (dbreg_1_dpot)
+     FDE:D                     0.074          dbreg_1
     ----------------------------------------
-    Total                      4.958ns (2.164ns logic, 2.794ns route)
-                                       (43.6% logic, 56.4% route)
+    Total                      3.930ns (1.906ns logic, 2.024ns route)
+                                       (48.5% logic, 51.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
@@ -548,14 +558,14 @@ clk_en         |    4.271|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.17 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.19 secs
  
 --> 
 
-Total memory usage is 275320 kilobytes
+Total memory usage is 275988 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 
