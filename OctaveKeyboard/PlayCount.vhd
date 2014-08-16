@@ -46,7 +46,7 @@ begin
 			tc_tick <= '0';
 			
 			if (clkcount = QRTR_CLK_DIV - 1) then
-				if (count = count_to) then
+				if (count = unsigned(count_to)) then
 					tc_tick <= '1';
 					count <= "000";
 				else
