@@ -33,6 +33,7 @@ entity OctaveKeyboardTop is
     Port ( keys : in  STD_LOGIC_VECTOR (7 downto 0);
            clk : in  STD_LOGIC;
            led_disable : in  STD_LOGIC;
+			  song_enable : in STD_LOGIC;
 			  --play_en	: in STD_LOGIC;
 			  tone : out STD_LOGIC;
 			  shutdown : out STD_LOGIC;
@@ -61,6 +62,7 @@ architecture Behavioral of OctaveKeyboardTop is
 		PORT ( clk 				: in  STD_LOGIC;
 				 key_in 			: in  STD_LOGIC_VECTOR (7 downto 0);
 				 led_disable 	: in  STD_LOGIC;
+				 song_enable 	: in 	STD_LOGIC;
 				 key_out 		: out  STD_LOGIC_VECTOR (7 downto 0);
 				 led_out			: out STD_LOGIC_VECTOR (7 downto 0));
 	END COMPONENT;
@@ -108,12 +110,6 @@ begin
 	clkDivider: process(clk)
 	begin
 		if rising_edge(clk) then
---			if clkcount = CLK_DIV_VALUE-1 then 
---				clk_en <= NOT(clk_en);		
---				clkcount <= 0;
---			else
---				clkcount <= clkcount + 1;
---			end if;
 			clk_en <= NOT(clk_en);
 		end if;
 	end process clkDivider;
@@ -166,6 +162,7 @@ begin
 		PORT MAP ( clk 			=> slowclk,
 					  key_in 		=> keyDB,
 					  led_disable 	=> led_disable,
+					  song_enable 	=> song_enable,
 					  key_out 		=> controllerKeys,
 					  led_out		=> led_out);
 

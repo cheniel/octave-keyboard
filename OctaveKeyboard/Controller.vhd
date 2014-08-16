@@ -33,14 +33,20 @@ entity Controller is
     Port ( 	clk 			: in  STD_LOGIC;
            	key_in 		: in  STD_LOGIC_VECTOR(7 downto 0);
 				led_disable : in  STD_LOGIC;
+				song_enable : in 	STD_LOGIC;
            	key_out 		: out  STD_LOGIC_VECTOR(7 downto 0);
 				led_out		: out STD_LOGIC_VECTOR(7 downto 0));
 end Controller;
 
 architecture Behavioral of Controller is
-	type statetype is (idle, low_c, d, e, f, g, a, b, high_c);
+	type statetype is (idle, low_c, d, e, f, g, a, b, high_c,
+							intro1c, intro1cr, intro1d, intro1dr, intro1e, intro1er, intro1f, intro1fr,
+							endg, endgr, enda, endg2, endf, endfr, ende, endd,
+							intro2c, intro2a, intro2ar, intro2b, intro2br, intro2f, intro2fr,
+							);
 	signal curr_state, next_state : statetype := idle;
 	signal output : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+	signal reps : integer := 0;
 begin
 
 	StateUpdate: process(clk)
@@ -66,7 +72,11 @@ begin
 		case curr_state is
 		
 			when idle =>			
-				if key_in(7) = '1' then
+				
+				if song_enable = '1' then
+					-- reps <= 0;
+					next_state <= intro1c;
+				elsif key_in(7) = '1' then
 					next_state <= low_c;
 				elsif key_in(6) = '1' then
 					next_state <= d;
@@ -133,6 +143,172 @@ begin
 				if key_in(0) = '0' then
 					next_state <= idle;
 				end if;	
+			
+			when intro1c =>
+				output <= "10000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro1cr =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro1d =>
+				output <= "01000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro1dr =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro1e =>
+				output <= "00100000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro1er =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro1f =>
+				output <= "00010000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro1fr =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when endg =>
+				output <= "00001000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when endgr =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when enda =>
+				output <= "00000100";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when endg2 =>
+				output <= "00001000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when endf =>
+				output <= "00010000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when endfr =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when ende =>
+				output <= "00100000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when endd =>
+				output <= "01000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro2c =>
+				output <= "10000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro2a =>
+				output <= "00000100";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro2ar =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro2b =>
+				output <= "00000010";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro2br =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro2f =>
+				output <= "00010000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+			when intro2fr =>
+				output <= "00000000";
+				if (song_enable = '0') then
+					next_state <= idle;
+				end if;
+
+
+
+			
+			
+			
 			
 			when others =>
 				next_state <= idle;
