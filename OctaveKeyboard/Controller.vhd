@@ -34,6 +34,8 @@ entity Controller is
            	key_in 		: in  STD_LOGIC_VECTOR(7 downto 0);
 				led_disable : in  STD_LOGIC;
 				song_enable : in 	STD_LOGIC;
+				beat_tick 	: in 	STD_LOGIC;
+				count_out	: out STD_LOGIC_VECTOR(3 downto 0);
            	key_out 		: out  STD_LOGIC_VECTOR(7 downto 0);
 				led_out		: out STD_LOGIC_VECTOR(7 downto 0));
 end Controller;
@@ -56,7 +58,7 @@ begin
 		end if;
 	end process StateUpdate;
 
-	CombLogic: process(curr_state, next_state, key_in, led_disable, output)
+	CombLogic: process(curr_state, next_state, key_in, led_disable, output, beat_tick)
 	begin
 		-- defaults
 		next_state <= curr_state;
@@ -146,168 +148,251 @@ begin
 			
 			when intro1c =>
 				output <= "10000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro1cr;
 				end if;
 
 
 			when intro1cr =>
 				output <= "00000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro1d;
 				end if;
 
 
 			when intro1d =>
 				output <= "01000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro1dr;
 				end if;
 
 
 			when intro1dr =>
 				output <= "00000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro1e;
 				end if;
 
 
 			when intro1e =>
 				output <= "00100000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro1er;
 				end if;
 
 
 			when intro1er =>
 				output <= "00000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro1f;
 				end if;
 
 
 			when intro1f =>
 				output <= "00010000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro1fr;
 				end if;
 
 
 			when intro1fr =>
 				output <= "00000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= endg;
 				end if;
 
 
 			when endg =>
 				output <= "00001000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= endgr;
 				end if;
 
 
 			when endgr =>
 				output <= "00000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= enda;
 				end if;
 
 
 			when enda =>
 				output <= "00000100";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= endg2;
 				end if;
 
 
 			when endg2 =>
 				output <= "00001000";
+				count_out <= "0010";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= endf;
 				end if;
 
 
 			when endf =>
 				output <= "00010000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= endfr;
 				end if;
 
 
 			when endfr =>
 				output <= "00000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= ende;
 				end if;
 
 
 			when ende =>
 				output <= "00100000";
+				count_out <= "1001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= endd;
 				end if;
 
 
 			when endd =>
 				output <= "01000000";
+				count_out <= "1000";
 				if (song_enable = '0') then
 					next_state <= idle;
+					reps <= 0;
+
+				elsif(beat_tick = '1') then;
+					
+					if (reps > 3) then
+						next_state <= intro1c;
+						reps <= 1;
+
+					elsif (reps = 0 or reps = 1) then
+						next_state <= intro1c;
+						reps <= reps + 1;
+
+					elsif (reps = 2) then
+						next_state <= intro2c;
+						reps <= reps + 1;
+
+					elsif (reps = 3) then
+						next_state <= intro2c;
+						reps <= reps + 1;
+
+					end if; 
+
 				end if;
 
-
 			when intro2c =>
-				output <= "10000000";
+				output <= "00000001";
+				count_out <= "0010";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro2a;
 				end if;
 
 
 			when intro2a =>
 				output <= "00000100";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro2ar;
 				end if;
 
 
 			when intro2ar =>
 				output <= "00000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro2b;
 				end if;
 
 
 			when intro2b =>
 				output <= "00000010";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro2br;
 				end if;
 
 
-			when intro2br =>
-				output <= "00000000";
-				if (song_enable = '0') then
-					next_state <= idle;
-				end if;
+			when intro2br => 
+				output <= "00000000"; 
+				count_out <= "0001"; 
+				if (song_enable = '0') then 
+					next_state <= idle; 
+				elsif(beat_tick = '1') then 
+					next_state <= intro2f; 
+				end if; 
 
 
 			when intro2f =>
 				output <= "00010000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= intro2fr;
 				end if;
 
 
 			when intro2fr =>
 				output <= "00000000";
+				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
-				end if;
-
-
-
-			
-			
+				elsif(beat_tick = '1') then
+					next_state <= endg;
+				end if;			
 			
 			
 			when others =>

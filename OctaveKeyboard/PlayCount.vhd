@@ -28,14 +28,14 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity PlayCount is
     Port ( clk : in  STD_LOGIC;
-           count_to : in  STD_LOGIC_VECTOR (2 downto 0);
+           count_to : in  STD_LOGIC_VECTOR (3 downto 0);
            tc_tick : out  STD_LOGIC);
 end PlayCount;
 
 architecture Behavioral of PlayCount is
 	constant QRTR_CLK_DIV	: integer := 12500000;
 	signal 	clkcount	: integer := 0;
-	signal	count		: unsigned(2 downto 0) := "000";
+	signal	count		: unsigned(3 downto 0) := "000";
 begin
 	
 	Qrtr_Sec_Count: process(clk)
