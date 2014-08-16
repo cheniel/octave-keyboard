@@ -1,7 +1,7 @@
 Release 14.4 par P.49d (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-MECHA-3::  Sat Aug 16 11:21:05 2014
+MECHA-3::  Sat Aug 16 12:50:17 2014
 
 par -w -intstyle ise -ol high -mt off OctaveKeyboardTop_map.ncd
 OctaveKeyboardTop.ncd OctaveKeyboardTop.pcf 
@@ -35,30 +35,30 @@ Device speed data version:  "PRODUCTION 1.23 2012-12-04".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   151 out of  18,224    1%
-    Number used as Flip Flops:                 151
-    Number used as Latches:                      0
+  Number of Slice Registers:                   213 out of  18,224    1%
+    Number used as Flip Flops:                 178
+    Number used as Latches:                     35
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        227 out of   9,112    2%
-    Number used as logic:                      217 out of   9,112    2%
-      Number using O6 output only:             118
-      Number using O5 output only:              79
-      Number using O5 and O6:                   20
+  Number of Slice LUTs:                        387 out of   9,112    4%
+    Number used as logic:                      375 out of   9,112    4%
+      Number using O6 output only:             210
+      Number using O5 output only:             130
+      Number using O5 and O6:                   35
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:     10
+    Number used exclusively as route-thrus:     12
       Number with same-slice register load:      0
-      Number with same-slice carry load:        10
+      Number with same-slice carry load:        12
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    89 out of   2,278    3%
-  Number of MUXCYs used:                       136 out of   4,556    2%
-  Number of LUT Flip Flop pairs used:          227
-    Number with an unused Flip Flop:            78 out of     227   34%
-    Number with an unused LUT:                   0 out of     227    0%
-    Number of fully used LUT-FF pairs:         149 out of     227   65%
+  Number of occupied Slices:                   139 out of   2,278    6%
+  Number of MUXCYs used:                       200 out of   4,556    4%
+  Number of LUT Flip Flop pairs used:          391
+    Number with an unused Flip Flop:           185 out of     391   47%
+    Number with an unused LUT:                   4 out of     391    1%
+    Number of fully used LUT-FF pairs:         202 out of     391   51%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -69,16 +69,16 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        28 out of     232   12%
-    Number of LOCed IOBs:                       20 out of      28   71%
+  Number of bonded IOBs:                        29 out of     232   12%
+    Number of LOCed IOBs:                       21 out of      29   72%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
   Number of RAMB8BWERs:                          1 out of      64    1%
   Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
-  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
-    Number used as BUFGs:                        2
+  Number of BUFG/BUFGMUXs:                       3 out of      16   18%
+    Number used as BUFGs:                        3
     Number used as BUFGMUX:                      0
   Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
@@ -101,35 +101,35 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 3 secs 
-Finished initial Timing Analysis.  REAL time: 3 secs 
+Starting initial Timing Analysis.  REAL time: 4 secs 
+Finished initial Timing Analysis.  REAL time: 4 secs 
 
 Starting Router
 
 
-Phase  1  : 968 unrouted;      REAL time: 4 secs 
+Phase  1  : 1646 unrouted;      REAL time: 4 secs 
 
-Phase  2  : 782 unrouted;      REAL time: 4 secs 
+Phase  2  : 1376 unrouted;      REAL time: 5 secs 
 
-Phase  3  : 271 unrouted;      REAL time: 5 secs 
+Phase  3  : 537 unrouted;      REAL time: 5 secs 
 
-Phase  4  : 271 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  4  : 537 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
 
 Updating file: OctaveKeyboardTop.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
-Total REAL time to Router completion: 5 secs 
-Total CPU time to Router completion: 5 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
+Total REAL time to Router completion: 7 secs 
+Total CPU time to Router completion: 6 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -147,9 +147,17 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
+|             slowclk |  BUFGMUX_X2Y3| No   |   64 |  0.058     |  1.135      |
++---------------------+--------------+------+------+------------+-------------+
 |           clk_BUFGP | BUFGMUX_X3Y13| No   |    1 |  0.000     |  1.083      |
 +---------------------+--------------+------+------+------------+-------------+
-|             slowclk |  BUFGMUX_X2Y3| No   |   55 |  0.055     |  1.132      |
+|KeyControl/curr_stat |              |      |      |            |             |
+|e[4]_GND_11_o_Mux_97 |              |      |      |            |             |
+|             _o_BUFG |  BUFGMUX_X2Y2| No   |    9 |  0.008     |  1.087      |
++---------------------+--------------+------+------+------------+-------------+
+|KeyControl/curr_stat |              |      |      |            |             |
+|e[4]_PWR_7_o_Mux_89_ |              |      |      |            |             |
+|                   o |         Local|      |    1 |  0.000     |  0.578      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -182,10 +190,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 6 secs 
-Total CPU time to PAR completion: 5 secs 
+Total REAL time to PAR completion: 7 secs 
+Total CPU time to PAR completion: 7 secs 
 
-Peak Memory Usage:  321 MB
+Peak Memory Usage:  322 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

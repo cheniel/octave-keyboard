@@ -35,7 +35,7 @@ end PlayCount;
 architecture Behavioral of PlayCount is
 	constant QRTR_CLK_DIV	: integer := 12500000;
 	signal 	clkcount	: integer := 0;
-	signal	count		: unsigned(3 downto 0) := "000";
+	signal	count		: unsigned(3 downto 0) := "0000";
 begin
 	
 	Qrtr_Sec_Count: process(clk)
@@ -48,7 +48,7 @@ begin
 			if (clkcount = QRTR_CLK_DIV - 1) then
 				if (count = unsigned(count_to)) then
 					tc_tick <= '1';
-					count <= "000";
+					count <= "0000";
 				else
 					count <= count + 1;
 				end if;

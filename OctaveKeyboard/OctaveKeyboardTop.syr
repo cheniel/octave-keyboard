@@ -1,10 +1,10 @@
-Release 14.4 - xst P.49d (nt)
+Release 14.4 - xst P.49d (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -108,46 +108,686 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\ipcore_dir\SinLUT.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\ipcore_dir\SinLUT.vhd" into library work
 Parsing entity <SinLUT>.
 Parsing architecture <SinLUT_a> of entity <sinlut>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PWM.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PWM.vhd" into library work
 Parsing entity <PWM>.
 Parsing architecture <Behavioral> of entity <pwm>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\FreqLUT.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PlayCount.vhd" into library work
+Parsing entity <PlayCount>.
+Parsing architecture <Behavioral> of entity <playcount>.
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\FreqLUT.vhd" into library work
 Parsing entity <FreqLUT>.
 Parsing architecture <Behavioral> of entity <freqlut>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\DDS.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\DDS.vhd" into library work
 Parsing entity <DDS>.
 Parsing architecture <Behavioral> of entity <dds>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" into library work
 Parsing entity <Controller>.
 Parsing architecture <Behavioral> of entity <controller>.
-ERROR:HDLCompiler:806 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 48: Syntax error near ")".
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 49: <idle> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 80: <intro1c> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 82: <low_c> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 84: <d> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 86: <e> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 88: <f> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 90: <g> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 92: <a> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 94: <b> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 96: <high_c> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 98: <idle> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 104: <idle> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 110: <idle> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 116: <idle> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 122: <idle> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 128: <idle> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 134: <idle> is not declared.
-ERROR:HDLCompiler:69 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 140: <idle> is not declared.
-Sorry, too many errors..
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" into library work
+Parsing entity <OctaveKeyboardTop>.
+Parsing architecture <Behavioral> of entity <octavekeyboardtop>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <OctaveKeyboardTop> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:89 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 103: <debounce> remains a black-box since it has no binding entity.
+
+Elaborating entity <Controller> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 78: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 152: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 162: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 172: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 182: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 192: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 202: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 212: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 222: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 232: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 242: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 252: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 262: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 272: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 282: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 292: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 302: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 308: reps should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 312: reps should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 314: reps should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 316: reps should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 318: reps should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 320: reps should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 322: reps should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 331: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 341: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 351: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 361: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 371: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 381: song_enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 391: song_enable should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 398. Case statement is complete. others clause is never selected
+
+Elaborating entity <FreqLUT> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <DDS> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <PWM> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <SinLUT> (architecture <SinLUT_a>) from library <work>.
+
+Elaborating entity <PlayCount> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <OctaveKeyboardTop>.
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd".
+        ACCUMSIZE = 13
+        INDEXSIZE = 8
+        LUTOUT = 10
+        CLKFREQ = 10000
+INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 199: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <clk_en>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <OctaveKeyboardTop> synthesized.
+
+Synthesizing Unit <Controller>.
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd".
+    Found 5-bit register for signal <curr_state>.
+    Found finite state machine <FSM_0> for signal <curr_state>.
+    -----------------------------------------------------------------------
+    | States             | 32                                             |
+    | Transitions        | 99                                             |
+    | Inputs             | 15                                             |
+    | Outputs            | 17                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <reps[31]_GND_6_o_add_56_OUT> created at line 322.
+WARNING:Xst:737 - Found 1-bit latch for signal <count_out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <count_out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <count_out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <count_out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reps<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 32-bit comparator greater for signal <reps[31]_GND_6_o_LessThan_50_o> created at line 308
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  36 Latch(s).
+	inferred   1 Comparator(s).
+	inferred  66 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Controller> synthesized.
+
+Synthesizing Unit <FreqLUT>.
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\FreqLUT.vhd".
+        ACCUMSIZE = 13
+        CLKFREQ = 10000
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred   7 Multiplexer(s).
+Unit <FreqLUT> synthesized.
+
+Synthesizing Unit <DDS>.
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\DDS.vhd".
+        ACCUMSIZE = 13
+        INDEXSIZE = 8
+        CLKFREQ = 100000000
+    Found 13-bit register for signal <curr_phase>.
+    Found 13-bit adder for signal <curr_phase[12]_step[12]_add_0_OUT> created at line 48.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  13 D-type flip-flop(s).
+Unit <DDS> synthesized.
+
+Synthesizing Unit <PWM>.
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PWM.vhd".
+        LUTOUT = 10
+        CLKFREQ = 100000000
+    Found 1-bit register for signal <pulse>.
+    Found 1-bit register for signal <slowclk>.
+    Found 14-bit register for signal <count>.
+    Found 14-bit adder for signal <count[13]_GND_45_o_add_0_OUT> created at line 1241.
+    Found 10-bit comparator greater for signal <count[9]_offset[9]_LessThan_2_o> created at line 54
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <PWM> synthesized.
+
+Synthesizing Unit <PlayCount>.
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PlayCount.vhd".
+    Found 4-bit register for signal <count>.
+    Found 32-bit register for signal <clkcount>.
+    Found 1-bit register for signal <tc_tick>.
+    Found 4-bit adder for signal <count[3]_GND_47_o_add_2_OUT> created at line 1241.
+    Found 32-bit adder for signal <clkcount[31]_GND_47_o_add_4_OUT> created at line 58.
+    Found 4-bit comparator equal for signal <count[3]_count_to[3]_equal_2_o> created at line 49
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  37 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <PlayCount> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 13-bit adder                                          : 1
+ 14-bit adder                                          : 1
+ 32-bit adder                                          : 2
+ 4-bit adder                                           : 1
+# Registers                                            : 8
+ 1-bit register                                        : 4
+ 13-bit register                                       : 1
+ 14-bit register                                       : 1
+ 32-bit register                                       : 1
+ 4-bit register                                        : 1
+# Latches                                              : 36
+ 1-bit latch                                           : 36
+# Comparators                                          : 3
+ 10-bit comparator greater                             : 1
+ 32-bit comparator greater                             : 1
+ 4-bit comparator equal                                : 1
+# Multiplexers                                         : 73
+ 1-bit 2-to-1 multiplexer                              : 65
+ 13-bit 2-to-1 multiplexer                             : 7
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <debounce.ngc>.
+Reading core <ipcore_dir/SinLUT.ngc>.
+Reading Secure Unit <blk00000001>.
+Loading core <debounce> for timing and area information for instance <debouncer0>.
+Loading core <debounce> for timing and area information for instance <debouncer1>.
+Loading core <debounce> for timing and area information for instance <debouncer2>.
+Loading core <debounce> for timing and area information for instance <debouncer3>.
+Loading core <debounce> for timing and area information for instance <debouncer4>.
+Loading core <debounce> for timing and area information for instance <debouncer5>.
+Loading core <debounce> for timing and area information for instance <debouncer6>.
+Loading core <debounce> for timing and area information for instance <debouncer7>.
+Loading core <SinLUT> for timing and area information for instance <SinFreqs>.
+WARNING:Xst:1710 - FF/Latch <count_out_2> (without init value) has a constant value of 0 in block <KeyControl>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <DDS>.
+The following registers are absorbed into accumulator <curr_phase>: 1 register on signal <curr_phase>.
+Unit <DDS> synthesized (advanced).
+
+Synthesizing (advanced) Unit <PWM>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <PWM> synthesized (advanced).
+
+Synthesizing (advanced) Unit <PlayCount>.
+The following registers are absorbed into counter <clkcount>: 1 register on signal <clkcount>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <PlayCount> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 3
+ 14-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 13-bit up accumulator                                 : 1
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+# Comparators                                          : 3
+ 10-bit comparator greater                             : 1
+ 32-bit comparator greater                             : 1
+ 4-bit comparator equal                                : 1
+# Multiplexers                                         : 73
+ 1-bit 2-to-1 multiplexer                              : 65
+ 13-bit 2-to-1 multiplexer                             : 7
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <count_out_2> (without init value) has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <KeyControl/FSM_0> on signal <curr_state[1:5]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ idle     | 00000
+ low_c    | 00001
+ d        | 00010
+ e        | 00011
+ f        | 00100
+ g        | 00101
+ a        | 00110
+ b        | 00111
+ high_c   | 01000
+ intro1c  | 01001
+ intro1cr | 01010
+ intro1d  | 01011
+ intro1dr | 01100
+ intro1e  | 01101
+ intro1er | 01110
+ intro1f  | 01111
+ intro1fr | 10000
+ endg     | 10001
+ endgr    | 10010
+ enda     | 10011
+ endg2    | 10100
+ endf     | 10101
+ endfr    | 10110
+ ende     | 10111
+ endd     | 11000
+ intro2c  | 11001
+ intro2a  | 11010
+ intro2ar | 11011
+ intro2b  | 11100
+ intro2br | 11101
+ intro2f  | 11110
+ intro2fr | 11111
+----------------------
+
+Optimizing unit <OctaveKeyboardTop> ...
+
+Optimizing unit <Controller> ...
+WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_24> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_25> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_26> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_27> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_28> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_29> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_30> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_31> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PulseWM/count_13> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 3.
+FlipFlop KeyControl/curr_state_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop KeyControl/curr_state_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop KeyControl/curr_state_FSM_FFd4 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 66
+ Flip-Flops                                            : 66
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : OctaveKeyboardTop.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 747
+#      GND                         : 9
+#      INV                         : 21
+#      LUT1                        : 141
+#      LUT2                        : 1
+#      LUT3                        : 44
+#      LUT4                        : 38
+#      LUT5                        : 72
+#      LUT6                        : 88
+#      MUXCY                       : 162
+#      VCC                         : 9
+#      XORCY                       : 162
+# FlipFlops/Latches                : 213
+#      FD                          : 132
+#      FDE                         : 45
+#      FDRE                        : 1
+#      LD                          : 35
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 28
+#      IBUF                        : 10
+#      OBUF                        : 18
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             213  out of  18224     1%  
+ Number of Slice LUTs:                  405  out of   9112     4%  
+    Number used as Logic:               405  out of   9112     4%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    410
+   Number with an unused Flip Flop:     197  out of    410    48%  
+   Number with an unused LUT:             5  out of    410     1%  
+   Number of fully used LUT-FF pairs:   208  out of    410    50%  
+   Number of unique control sets:        22
+
+IO Utilization: 
+ Number of IOs:                          29
+ Number of bonded IOBs:                  29  out of    232    12%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------------------------------------------------+--------------------------------+-------+
+Clock Signal                                                                                  | Clock buffer(FF name)          | Load  |
+----------------------------------------------------------------------------------------------+--------------------------------+-------+
+clk                                                                                           | BUFGP                          | 1     |
+clk_en                                                                                        | BUFG                           | 189   |
+KeyControl/curr_state[4]_PWR_7_o_Mux_89_o(KeyControl/curr_state__n0512<9>1:O)                 | NONE(*)(KeyControl/count_out_3)| 3     |
+KeyControl/curr_state[4]_GND_11_o_Mux_97_o(KeyControl/Mmux_curr_state[4]_GND_11_o_Mux_97_o1:O)| BUFG(*)(KeyControl/reps_0)     | 32    |
+----------------------------------------------------------------------------------------------+--------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.791ns (Maximum Frequency: 208.725MHz)
+   Minimum input arrival time before clock: 4.943ns
+   Maximum output required time after clock: 6.531ns
+   Maximum combinational path delay: 6.574ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.216ns (frequency: 451.264MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.216ns (Levels of Logic = 1)
+  Source:            clk_en (FF)
+  Destination:       clk_en (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: clk_en to clk_en
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.525   0.681  clk_en (clk_en)
+     INV:I->O              1   0.255   0.681  clk_en_INV_3_o1_INV_0 (clk_en_INV_3_o)
+     FD:D                      0.074          clk_en
+    ----------------------------------------
+    Total                      2.216ns (0.854ns logic, 1.362ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_en'
+  Clock period: 4.791ns (frequency: 208.725MHz)
+  Total number of paths / destination ports: 3092 / 250
+-------------------------------------------------------------------------
+Delay:               4.791ns (Levels of Logic = 3)
+  Source:            kidsCounter/count_1 (FF)
+  Destination:       kidsCounter/count_3 (FF)
+  Source Clock:      clk_en rising
+  Destination Clock: clk_en rising
+
+  Data Path: kidsCounter/count_1 to kidsCounter/count_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               5   0.525   0.841  kidsCounter/count_1 (kidsCounter/count_1)
+     LUT2:I1->O            1   0.254   0.682  kidsCounter/count[3]_count_to[3]_equal_2_o4_SW0 (N0)
+     LUT6:I5->O            1   0.254   0.682  kidsCounter/count[3]_count_to[3]_equal_2_o4 (kidsCounter/count[3]_count_to[3]_equal_2_o)
+     LUT5:I4->O            5   0.254   0.840  kidsCounter/_n00231 (kidsCounter/tc_tick_rstpot)
+     FDRE:R                    0.459          kidsCounter/count_3
+    ----------------------------------------
+    Total                      4.791ns (1.746ns logic, 3.045ns route)
+                                       (36.4% logic, 63.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'KeyControl/curr_state[4]_GND_11_o_Mux_97_o'
+  Clock period: 4.434ns (frequency: 225.507MHz)
+  Total number of paths / destination ports: 1520 / 32
+-------------------------------------------------------------------------
+Delay:               4.434ns (Levels of Logic = 8)
+  Source:            KeyControl/reps_2 (LATCH)
+  Destination:       KeyControl/reps_0 (LATCH)
+  Source Clock:      KeyControl/curr_state[4]_GND_11_o_Mux_97_o falling
+  Destination Clock: KeyControl/curr_state[4]_GND_11_o_Mux_97_o falling
+
+  Data Path: KeyControl/reps_2 to KeyControl/reps_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               3   0.581   1.196  KeyControl/reps_2 (KeyControl/reps_2)
+     LUT5:I0->O            1   0.254   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_lut<0> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<0> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<1> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<2> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<3> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<4> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<4>)
+     MUXCY:CI->O          35   0.235   1.570  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<5> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<5>)
+     LUT3:I2->O            1   0.254   0.000  KeyControl/Mmux_reps[31]_GND_6_o_MUX_300_o11 (KeyControl/reps[31]_GND_6_o_MUX_300_o)
+     LD:D                      0.036          KeyControl/reps_0
+    ----------------------------------------
+    Total                      4.434ns (1.668ns logic, 2.766ns route)
+                                       (37.6% logic, 62.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_en'
+  Total number of paths / destination ports: 47 / 40
+-------------------------------------------------------------------------
+Offset:              4.943ns (Levels of Logic = 3)
+  Source:            song_enable (PAD)
+  Destination:       KeyControl/curr_state_FSM_FFd4 (FF)
+  Destination Clock: clk_en rising
+
+  Data Path: song_enable to KeyControl/curr_state_FSM_FFd4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            42   1.328   2.142  song_enable_IBUF (song_enable_IBUF)
+     LUT6:I0->O            1   0.254   0.910  KeyControl/curr_state_FSM_FFd4-In1 (KeyControl/curr_state_FSM_FFd4-In1)
+     LUT6:I3->O            2   0.235   0.000  KeyControl/curr_state_FSM_FFd4-In5 (KeyControl/curr_state_FSM_FFd4-In)
+     FD:D                      0.074          KeyControl/curr_state_FSM_FFd4
+    ----------------------------------------
+    Total                      4.943ns (1.891ns logic, 3.052ns route)
+                                       (38.3% logic, 61.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'KeyControl/curr_state[4]_GND_11_o_Mux_97_o'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              3.514ns (Levels of Logic = 2)
+  Source:            song_enable (PAD)
+  Destination:       KeyControl/reps_0 (LATCH)
+  Destination Clock: KeyControl/curr_state[4]_GND_11_o_Mux_97_o falling
+
+  Data Path: song_enable to KeyControl/reps_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            42   1.328   1.915  song_enable_IBUF (song_enable_IBUF)
+     LUT3:I0->O            1   0.235   0.000  KeyControl/Mmux_reps[31]_GND_6_o_MUX_300_o11 (KeyControl/reps[31]_GND_6_o_MUX_300_o)
+     LD:D                      0.036          KeyControl/reps_0
+    ----------------------------------------
+    Total                      3.514ns (1.599ns logic, 1.915ns route)
+                                       (45.5% logic, 54.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
+  Total number of paths / destination ports: 79 / 17
+-------------------------------------------------------------------------
+Offset:              6.531ns (Levels of Logic = 2)
+  Source:            KeyControl/curr_state_FSM_FFd5 (FF)
+  Destination:       led_out<5> (PAD)
+  Source Clock:      clk_en rising
+
+  Data Path: KeyControl/curr_state_FSM_FFd5 to led_out<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              43   0.525   2.159  KeyControl/curr_state_FSM_FFd5 (KeyControl/curr_state_FSM_FFd5)
+     LUT6:I0->O            1   0.254   0.681  KeyControl/Mmux_led_out61 (led_out_5_OBUF)
+     OBUF:I->O                 2.912          led_out_5_OBUF (led_out<5>)
+    ----------------------------------------
+    Total                      6.531ns (3.691ns logic, 2.840ns route)
+                                       (56.5% logic, 43.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               6.574ns (Levels of Logic = 3)
+  Source:            led_disable (PAD)
+  Destination:       led_out<3> (PAD)
+
+  Data Path: led_disable to led_out<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   1.328   1.399  led_disable_IBUF (led_disable_IBUF)
+     LUT6:I0->O            1   0.254   0.681  KeyControl/Mmux_led_out41 (led_out_3_OBUF)
+     OBUF:I->O                 2.912          led_out_3_OBUF (led_out<3>)
+    ----------------------------------------
+    Total                      6.574ns (4.494ns logic, 2.080ns route)
+                                       (68.4% logic, 31.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock KeyControl/curr_state[4]_GND_11_o_Mux_97_o
+------------------------------------------+---------+---------+---------+---------+
+                                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------+---------+---------+---------+---------+
+KeyControl/curr_state[4]_GND_11_o_Mux_97_o|         |         |    4.434|         |
+------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock KeyControl/curr_state[4]_PWR_7_o_Mux_89_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_en         |         |         |    2.882|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.216|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_en
+------------------------------------------+---------+---------+---------+---------+
+                                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------+---------+---------+---------+---------+
+KeyControl/curr_state[4]_GND_11_o_Mux_97_o|         |   11.107|         |         |
+KeyControl/curr_state[4]_PWR_7_o_Mux_89_o |         |    4.792|         |         |
+clk_en                                    |    4.791|         |         |         |
+------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.41 secs
+ 
 --> 
 
-Total memory usage is 161356 kilobytes
+Total memory usage is 276628 kilobytes
 
-Number of errors   :   19 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   80 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

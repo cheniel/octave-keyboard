@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.49d on Sat Aug 16 11:21:01 2014
+// Written by: Map P.49d on Sat Aug 16 12:50:14 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -22,6 +22,7 @@ COMP "led_out<4>" LOCATE = SITE "M11" LEVEL 1;
 COMP "led_out<5>" LOCATE = SITE "N11" LEVEL 1;
 COMP "led_out<6>" LOCATE = SITE "R11" LEVEL 1;
 COMP "led_out<7>" LOCATE = SITE "T11" LEVEL 1;
+COMP "song_enable" LOCATE = SITE "T9" LEVEL 1;
 COMP "shutdown" LOCATE = SITE "E11" LEVEL 1;
 TIMEGRP sys_clk_pin = BEL "clk_en" BEL "clk_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;

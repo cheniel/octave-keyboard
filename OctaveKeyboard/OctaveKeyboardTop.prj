@@ -1,5 +1,6 @@
 vhdl work "ipcore_dir/SinLUT.vhd"
 vhdl work "PWM.vhd"
+vhdl work "PlayCount.vhd"
 vhdl work "FreqLUT.vhd"
 vhdl work "DDS.vhd"
 vhdl work "Controller.vhd"

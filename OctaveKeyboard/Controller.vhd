@@ -44,7 +44,7 @@ architecture Behavioral of Controller is
 	type statetype is (idle, low_c, d, e, f, g, a, b, high_c,
 							intro1c, intro1cr, intro1d, intro1dr, intro1e, intro1er, intro1f, intro1fr,
 							endg, endgr, enda, endg2, endf, endfr, ende, endd,
-							intro2c, intro2a, intro2ar, intro2b, intro2br, intro2f, intro2fr,
+							intro2c, intro2a, intro2ar, intro2b, intro2br, intro2f, intro2fr
 							);
 	signal curr_state, next_state : statetype := idle;
 	signal output : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
@@ -303,7 +303,7 @@ begin
 					next_state <= idle;
 					reps <= 0;
 
-				elsif(beat_tick = '1') then;
+				elsif(beat_tick = '1') then
 					
 					if (reps > 3) then
 						next_state <= intro1c;
