@@ -63,7 +63,7 @@ begin
 		next_state <= curr_state;
 		output <= (others => '0');
 		key_out <= output;
-		count_out <= "0000";
+		count_out <= "0001";
 		repeat_tick <= '0';
 		
 		if (led_disable = '1') then
@@ -394,7 +394,7 @@ begin
 	RepeatCounter: process(repeat_tick, reps)
 	begin
 		if rising_edge(repeat_tick) then
-			if (reps = 2) then
+			if (reps = 1) then
 				introSelector <= not introSelector;
 				reps <= "000";
 			else
