@@ -87,13 +87,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1408306109" xil_pn:in_ck="-5111468303735795790" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1408306109">
+    <transform xil_pn:end_ts="1408309157" xil_pn:in_ck="-5111468303735795790" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1408309157">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Controller.vhd"/>
       <outfile xil_pn:name="DDS.vhd"/>
       <outfile xil_pn:name="FreqLUT.vhd"/>
@@ -116,14 +112,9 @@
       <outfile xil_pn:name="ipcore_dir/SinLUT.ngc"/>
       <outfile xil_pn:name="ipcore_dir/SinLUT.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1408306109" xil_pn:in_ck="-2379298410522691696" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1408306109">
+    <transform xil_pn:end_ts="1408309157" xil_pn:in_ck="-5111468303735795790" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1408309157">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Controller.vhd"/>
       <outfile xil_pn:name="DDS.vhd"/>
       <outfile xil_pn:name="FreqLUT.vhd"/>
@@ -131,14 +122,10 @@
       <outfile xil_pn:name="OctaveKeyboardTop.vhd"/>
       <outfile xil_pn:name="PWM.vhd"/>
       <outfile xil_pn:name="PlayCount.vhd"/>
-      <outfile xil_pn:name="ipcore_dir/SinLUT.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1408306124" xil_pn:in_ck="-2379298410522691696" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4163922703810090598" xil_pn:start_ts="1408306109">
+    <transform xil_pn:end_ts="1408309168" xil_pn:in_ck="-2379298410522691696" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4163922703810090598" xil_pn:start_ts="1408309157">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="KeyBoardTB_beh.prj"/>
       <outfile xil_pn:name="KeyboardTB_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -146,10 +133,9 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1408306125" xil_pn:in_ck="7555697735689750550" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6883958979000944505" xil_pn:start_ts="1408306124">
+    <transform xil_pn:end_ts="1408309169" xil_pn:in_ck="7555697735689750550" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6883958979000944505" xil_pn:start_ts="1408309168">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="KeyboardTB_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
