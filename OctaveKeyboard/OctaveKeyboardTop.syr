@@ -4,7 +4,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -417,14 +417,14 @@ Optimizing FSM <KeyControl/FSM_0> on signal <curr_state[1:5]> with user encoding
  intro1dr | 01100
  intro1e  | 01101
  intro1er | 01110
- intro1f  | 01111
- intro1fr | 10000
- endg     | 10001
- endgr    | 10010
- enda     | 10011
- endg2    | 10100
- endf     | 10101
- endfr    | 10110
+ intro1g  | 01111
+ intro1gr | 10000
+ enda     | 10001
+ endar    | 10010
+ endb     | 10011
+ enda2    | 10100
+ endg     | 10101
+ endgr    | 10110
  ende     | 10111
  endd     | 11000
  intro2c  | 11001
@@ -452,9 +452,6 @@ WARNING:Xst:1293 - FF/Latch <PulseWM/count_13> has a constant value of 0 in bloc
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 3.
-FlipFlop KeyControl/curr_state_FSM_FFd1 has been replicated 1 time(s)
-FlipFlop KeyControl/curr_state_FSM_FFd2 has been replicated 1 time(s)
-FlipFlop KeyControl/curr_state_FSM_FFd4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -462,8 +459,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 66
- Flip-Flops                                            : 66
+# Registers                                            : 63
+ Flip-Flops                                            : 63
 
 =========================================================================
 
@@ -486,22 +483,23 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 747
+# BELS                             : 725
 #      GND                         : 9
 #      INV                         : 21
 #      LUT1                        : 141
-#      LUT2                        : 1
+#      LUT2                        : 2
 #      LUT3                        : 44
-#      LUT4                        : 38
-#      LUT5                        : 72
-#      LUT6                        : 88
+#      LUT4                        : 22
+#      LUT5                        : 73
+#      LUT6                        : 80
 #      MUXCY                       : 162
 #      VCC                         : 9
 #      XORCY                       : 162
-# FlipFlops/Latches                : 213
-#      FD                          : 132
+# FlipFlops/Latches                : 210
+#      FD                          : 113
 #      FDE                         : 45
-#      FDRE                        : 1
+#      FDR                         : 13
+#      FDRE                        : 4
 #      LD                          : 35
 # Clock Buffers                    : 3
 #      BUFG                        : 2
@@ -517,16 +515,16 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             213  out of  18224     1%  
- Number of Slice LUTs:                  405  out of   9112     4%  
-    Number used as Logic:               405  out of   9112     4%  
+ Number of Slice Registers:             210  out of  18224     1%  
+ Number of Slice LUTs:                  383  out of   9112     4%  
+    Number used as Logic:               383  out of   9112     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    410
-   Number with an unused Flip Flop:     197  out of    410    48%  
-   Number with an unused LUT:             5  out of    410     1%  
-   Number of fully used LUT-FF pairs:   208  out of    410    50%  
-   Number of unique control sets:        22
+ Number of LUT Flip Flop pairs used:    385
+   Number with an unused Flip Flop:     175  out of    385    45%  
+   Number with an unused LUT:             2  out of    385     0%  
+   Number of fully used LUT-FF pairs:   208  out of    385    54%  
+   Number of unique control sets:        23
 
 IO Utilization: 
  Number of IOs:                          29
@@ -557,7 +555,7 @@ Clock Information:
 Clock Signal                                                                                  | Clock buffer(FF name)          | Load  |
 ----------------------------------------------------------------------------------------------+--------------------------------+-------+
 clk                                                                                           | BUFGP                          | 1     |
-clk_en                                                                                        | BUFG                           | 189   |
+clk_en                                                                                        | BUFG                           | 186   |
 KeyControl/curr_state[4]_PWR_7_o_Mux_89_o(KeyControl/curr_state__n0512<9>1:O)                 | NONE(*)(KeyControl/count_out_3)| 3     |
 KeyControl/curr_state[4]_GND_11_o_Mux_97_o(KeyControl/Mmux_curr_state[4]_GND_11_o_Mux_97_o1:O)| BUFG(*)(KeyControl/reps_0)     | 32    |
 ----------------------------------------------------------------------------------------------+--------------------------------+-------+
@@ -574,9 +572,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.791ns (Maximum Frequency: 208.725MHz)
-   Minimum input arrival time before clock: 4.943ns
-   Maximum output required time after clock: 6.531ns
+   Minimum period: 5.405ns (Maximum Frequency: 185.023MHz)
+   Minimum input arrival time before clock: 4.927ns
+   Maximum output required time after clock: 6.548ns
    Maximum combinational path delay: 6.574ns
 
 Timing Details:
@@ -607,27 +605,27 @@ Delay:               2.216ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_en'
-  Clock period: 4.791ns (frequency: 208.725MHz)
-  Total number of paths / destination ports: 3092 / 250
+  Clock period: 5.405ns (frequency: 185.023MHz)
+  Total number of paths / destination ports: 3036 / 266
 -------------------------------------------------------------------------
-Delay:               4.791ns (Levels of Logic = 3)
-  Source:            kidsCounter/count_1 (FF)
+Delay:               5.405ns (Levels of Logic = 3)
+  Source:            kidsCounter/clkcount_10 (FF)
   Destination:       kidsCounter/count_3 (FF)
   Source Clock:      clk_en rising
   Destination Clock: clk_en rising
 
-  Data Path: kidsCounter/count_1 to kidsCounter/count_3
+  Data Path: kidsCounter/clkcount_10 to kidsCounter/count_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               5   0.525   0.841  kidsCounter/count_1 (kidsCounter/count_1)
-     LUT2:I1->O            1   0.254   0.682  kidsCounter/count[3]_count_to[3]_equal_2_o4_SW0 (N0)
-     LUT6:I5->O            1   0.254   0.682  kidsCounter/count[3]_count_to[3]_equal_2_o4 (kidsCounter/count[3]_count_to[3]_equal_2_o)
-     LUT5:I4->O            5   0.254   0.840  kidsCounter/_n00231 (kidsCounter/tc_tick_rstpot)
-     FDRE:R                    0.459          kidsCounter/count_3
+     FD:C->Q               2   0.525   1.181  kidsCounter/clkcount_10 (kidsCounter/clkcount_10)
+     LUT6:I0->O           26   0.254   1.648  kidsCounter/GND_47_o_clkcount[31]_equal_1_o<31>2 (kidsCounter/GND_47_o_clkcount[31]_equal_1_o<31>1)
+     LUT3:I0->O            4   0.235   1.234  kidsCounter/GND_47_o_clkcount[31]_equal_1_o<31>5_rstpot (kidsCounter/GND_47_o_clkcount[31]_equal_1_o<31>5_rstpot)
+     LUT5:I0->O            1   0.254   0.000  kidsCounter/count_3_dpot (kidsCounter/count_3_dpot)
+     FDRE:D                    0.074          kidsCounter/count_3
     ----------------------------------------
-    Total                      4.791ns (1.746ns logic, 3.045ns route)
-                                       (36.4% logic, 63.6% route)
+    Total                      5.405ns (1.342ns logic, 4.063ns route)
+                                       (24.8% logic, 75.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'KeyControl/curr_state[4]_GND_11_o_Mux_97_o'
@@ -660,9 +658,9 @@ Delay:               4.434ns (Levels of Logic = 8)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_en'
-  Total number of paths / destination ports: 47 / 40
+  Total number of paths / destination ports: 40 / 37
 -------------------------------------------------------------------------
-Offset:              4.943ns (Levels of Logic = 3)
+Offset:              4.927ns (Levels of Logic = 3)
   Source:            song_enable (PAD)
   Destination:       KeyControl/curr_state_FSM_FFd4 (FF)
   Destination Clock: clk_en rising
@@ -671,19 +669,19 @@ Offset:              4.943ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            42   1.328   2.142  song_enable_IBUF (song_enable_IBUF)
+     IBUF:I->O            41   1.328   2.126  song_enable_IBUF (song_enable_IBUF)
      LUT6:I0->O            1   0.254   0.910  KeyControl/curr_state_FSM_FFd4-In1 (KeyControl/curr_state_FSM_FFd4-In1)
-     LUT6:I3->O            2   0.235   0.000  KeyControl/curr_state_FSM_FFd4-In5 (KeyControl/curr_state_FSM_FFd4-In)
+     LUT6:I3->O            1   0.235   0.000  KeyControl/curr_state_FSM_FFd4-In5 (KeyControl/curr_state_FSM_FFd4-In)
      FD:D                      0.074          KeyControl/curr_state_FSM_FFd4
     ----------------------------------------
-    Total                      4.943ns (1.891ns logic, 3.052ns route)
-                                       (38.3% logic, 61.7% route)
+    Total                      4.927ns (1.891ns logic, 3.036ns route)
+                                       (38.4% logic, 61.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'KeyControl/curr_state[4]_GND_11_o_Mux_97_o'
   Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
-Offset:              3.514ns (Levels of Logic = 2)
+Offset:              3.498ns (Levels of Logic = 2)
   Source:            song_enable (PAD)
   Destination:       KeyControl/reps_0 (LATCH)
   Destination Clock: KeyControl/curr_state[4]_GND_11_o_Mux_97_o falling
@@ -692,18 +690,18 @@ Offset:              3.514ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            42   1.328   1.915  song_enable_IBUF (song_enable_IBUF)
+     IBUF:I->O            41   1.328   1.899  song_enable_IBUF (song_enable_IBUF)
      LUT3:I0->O            1   0.235   0.000  KeyControl/Mmux_reps[31]_GND_6_o_MUX_300_o11 (KeyControl/reps[31]_GND_6_o_MUX_300_o)
      LD:D                      0.036          KeyControl/reps_0
     ----------------------------------------
-    Total                      3.514ns (1.599ns logic, 1.915ns route)
-                                       (45.5% logic, 54.5% route)
+    Total                      3.498ns (1.599ns logic, 1.899ns route)
+                                       (45.7% logic, 54.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
   Total number of paths / destination ports: 79 / 17
 -------------------------------------------------------------------------
-Offset:              6.531ns (Levels of Logic = 2)
+Offset:              6.548ns (Levels of Logic = 2)
   Source:            KeyControl/curr_state_FSM_FFd5 (FF)
   Destination:       led_out<5> (PAD)
   Source Clock:      clk_en rising
@@ -712,12 +710,12 @@ Offset:              6.531ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              43   0.525   2.159  KeyControl/curr_state_FSM_FFd5 (KeyControl/curr_state_FSM_FFd5)
+     FD:C->Q              44   0.525   2.176  KeyControl/curr_state_FSM_FFd5 (KeyControl/curr_state_FSM_FFd5)
      LUT6:I0->O            1   0.254   0.681  KeyControl/Mmux_led_out61 (led_out_5_OBUF)
      OBUF:I->O                 2.912          led_out_5_OBUF (led_out<5>)
     ----------------------------------------
-    Total                      6.531ns (3.691ns logic, 2.840ns route)
-                                       (56.5% logic, 43.5% route)
+    Total                      6.548ns (3.691ns logic, 2.857ns route)
+                                       (56.4% logic, 43.6% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -725,15 +723,15 @@ Timing constraint: Default path analysis
 -------------------------------------------------------------------------
 Delay:               6.574ns (Levels of Logic = 3)
   Source:            led_disable (PAD)
-  Destination:       led_out<3> (PAD)
+  Destination:       led_out<4> (PAD)
 
-  Data Path: led_disable to led_out<3>
+  Data Path: led_disable to led_out<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             8   1.328   1.399  led_disable_IBUF (led_disable_IBUF)
-     LUT6:I0->O            1   0.254   0.681  KeyControl/Mmux_led_out41 (led_out_3_OBUF)
-     OBUF:I->O                 2.912          led_out_3_OBUF (led_out<3>)
+     LUT6:I0->O            1   0.254   0.681  KeyControl/Mmux_led_out51 (led_out_4_OBUF)
+     OBUF:I->O                 2.912          led_out_4_OBUF (led_out<4>)
     ----------------------------------------
     Total                      6.574ns (4.494ns logic, 2.080ns route)
                                        (68.4% logic, 31.6% route)
@@ -756,7 +754,7 @@ Clock to Setup on destination clock KeyControl/curr_state[4]_PWR_7_o_Mux_89_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_en         |         |         |    2.882|         |
+clk_en         |         |         |    2.949|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -772,20 +770,20 @@ Clock to Setup on destination clock clk_en
                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
-KeyControl/curr_state[4]_GND_11_o_Mux_97_o|         |   11.107|         |         |
+KeyControl/curr_state[4]_GND_11_o_Mux_97_o|         |   10.988|         |         |
 KeyControl/curr_state[4]_PWR_7_o_Mux_89_o |         |    4.792|         |         |
-clk_en                                    |    4.791|         |         |         |
+clk_en                                    |    5.405|         |         |         |
 ------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.41 secs
+Total CPU time to Xst completion: 9.20 secs
  
 --> 
 
-Total memory usage is 276628 kilobytes
+Total memory usage is 278356 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   80 (   0 filtered)
