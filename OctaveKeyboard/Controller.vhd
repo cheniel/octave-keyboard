@@ -19,9 +19,6 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
@@ -48,7 +45,9 @@ architecture Behavioral of Controller is
 							);
 	signal curr_state, next_state : statetype := idle;
 	signal output : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
-	signal reps : integer := 0;
+	signal reps : unsigned(2 downto 0) := "000";
+	signal introSelector : STD_LOGIC := '0';
+	signal repeat_tick : STD_LOGIC := '0';
 begin
 
 	StateUpdate: process(clk)
@@ -58,13 +57,14 @@ begin
 		end if;
 	end process StateUpdate;
 
-	CombLogic: process(curr_state, next_state, key_in, led_disable, output, beat_tick, song_enable, reps)
+	CombLogic: process(curr_state, next_state, key_in, led_disable, output, beat_tick, song_enable, introSelector)
 	begin
 		-- defaults
 		next_state <= curr_state;
 		output <= (others => '0');
 		key_out <= output;
 		count_out <= "0000";
+		repeat_tick <= '0';
 		
 		if (led_disable = '1') then
 			led_out <= (others => '0');
@@ -302,27 +302,17 @@ begin
 				count_out <= "1000";
 				
 				if (beat_tick = '1') then
+					repeat_tick <= '1';
 					
-					if (reps < 1) then
+					if (introSelector = '0') then
 						next_state <= intro1c;
-						reps <= reps + 1;
-						
-					elsif (reps < 3) then
+					else 
 						next_state <= intro2c;
-						reps <= reps + 1;
-						
-					else
-						next_state <= intro1c;
-						reps <= 0;
-						
 					end if;
 					
 				elsif (song_enable = '0') then
-					next_state <= idle;
-					reps <= 0;
-					
-				else
-					reps <= 0;
+					next_state <= idle;					
+
 				end if;
 
 			when intro2c =>
@@ -394,13 +384,24 @@ begin
 					next_state <= enda;
 				end if;			
 			
-			
 			when others =>
 				next_state <= idle;
 			
 		end case;
 
 	end process CombLogic;
+
+	RepeatCounter: process(repeat_tick, reps)
+	begin
+		if rising_edge(repeat_tick) then
+			if (reps = 2) then
+				introSelector <= not introSelector;
+				reps <= "000";
+			else
+				reps <= reps + 1;
+			end if;
+		end if;
+	end process RepeatCounter;
 
 end Behavioral;
 
