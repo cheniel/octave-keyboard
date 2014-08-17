@@ -299,11 +299,14 @@ begin
 			when endd =>
 				output <= "01000000";
 				count_out <= "1000";
-				if (song_enable = '0') then
-					next_state <= idle;
-					reps <= 0;
-
-				elsif(beat_tick = '1') then
+				
+--				if (song_enable = '0') then
+--					next_state <= idle;
+--					reps <= 0;
+--
+--				els
+				
+				if (beat_tick = '1') then
 					
 					if (reps < 1) then
 						next_state <= intro1c;
