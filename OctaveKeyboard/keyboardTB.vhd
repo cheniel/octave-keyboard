@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   15:01:47 08/14/2014
+-- Create Date:   15:16:28 08/17/2014
 -- Design Name:   
--- Module Name:   C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/KeyBoardTB.vhd
+-- Module Name:   C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/KeyboardTB.vhd
 -- Project Name:  OctaveKeyboard
 -- Target Device:  
 -- Tool versions:  
@@ -32,10 +32,10 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY KeyBoardTB IS
-END KeyBoardTB;
+ENTITY KeyboardTB IS
+END KeyboardTB;
  
-ARCHITECTURE behavior OF KeyBoardTB IS 
+ARCHITECTURE behavior OF KeyboardTB IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
@@ -44,8 +44,11 @@ ARCHITECTURE behavior OF KeyBoardTB IS
          keys : IN  std_logic_vector(7 downto 0);
          clk : IN  std_logic;
          led_disable : IN  std_logic;
+         song_enable : IN  std_logic;
          tone : OUT  std_logic;
-         key_out : OUT  std_logic_vector(7 downto 0)
+         shutdown : OUT  std_logic;
+         key_out : OUT  std_logic_vector(7 downto 0);
+         led_out : OUT  std_logic_vector(7 downto 0)
         );
     END COMPONENT;
     
@@ -54,13 +57,16 @@ ARCHITECTURE behavior OF KeyBoardTB IS
    signal keys : std_logic_vector(7 downto 0) := (others => '0');
    signal clk : std_logic := '0';
    signal led_disable : std_logic := '0';
+   signal song_enable : std_logic := '0';
 
  	--Outputs
    signal tone : std_logic;
+   signal shutdown : std_logic;
    signal key_out : std_logic_vector(7 downto 0);
+   signal led_out : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 5 ns;
  
 BEGIN
  
@@ -69,8 +75,11 @@ BEGIN
           keys => keys,
           clk => clk,
           led_disable => led_disable,
+          song_enable => song_enable,
           tone => tone,
-          key_out => key_out
+          shutdown => shutdown,
+          key_out => key_out,
+          led_out => led_out
         );
 
    -- Clock process definitions
@@ -87,11 +96,12 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
+      wait for 100 ns;	
+
       wait for clk_period*10;
-		keys <= "10000000";
-		
+		song_enable <= '1';
 		wait for clk_period*10;
-		keys <= "00010000";
+      -- insert stimulus here 
 
       wait;
    end process;

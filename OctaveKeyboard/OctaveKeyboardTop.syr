@@ -4,7 +4,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -138,38 +138,7 @@ Elaborating entity <OctaveKeyboardTop> (architecture <Behavioral>) with generics
 WARNING:HDLCompiler:89 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 103: <debounce> remains a black-box since it has no binding entity.
 
 Elaborating entity <Controller> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 78: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 152: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 162: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 172: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 182: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 192: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 202: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 212: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 222: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 232: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 242: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 252: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 262: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 272: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 282: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 292: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 302: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 308: reps should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 312: reps should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 314: reps should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 316: reps should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 318: reps should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 320: reps should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 322: reps should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 331: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 341: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 351: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 361: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 371: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 381: song_enable should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 391: song_enable should be on the sensitivity list of the process
-INFO:HDLCompiler:679 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 398. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 394. Case statement is complete. others clause is never selected
 
 Elaborating entity <FreqLUT> (architecture <Behavioral>) with generics from library <work>.
 
@@ -203,15 +172,15 @@ Synthesizing Unit <Controller>.
     Found finite state machine <FSM_0> for signal <curr_state>.
     -----------------------------------------------------------------------
     | States             | 32                                             |
-    | Transitions        | 99                                             |
-    | Inputs             | 15                                             |
+    | Transitions        | 97                                             |
+    | Inputs             | 12                                             |
     | Outputs            | 17                                             |
     | Clock              | clk (rising_edge)                              |
     | Power Up State     | idle                                           |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit adder for signal <reps[31]_GND_6_o_add_56_OUT> created at line 322.
+    Found 32-bit adder for signal <reps[31]_GND_6_o_add_52_OUT> created at line 314.
 WARNING:Xst:737 - Found 1-bit latch for signal <count_out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <count_out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <count_out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -248,12 +217,13 @@ WARNING:Xst:737 - Found 1-bit latch for signal <reps<3>>. Latches may be generat
 WARNING:Xst:737 - Found 1-bit latch for signal <reps<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <reps<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <reps<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator greater for signal <reps[31]_GND_6_o_LessThan_50_o> created at line 308
+    Found 32-bit comparator greater for signal <GND_6_o_reps[31]_LessThan_50_o> created at line 308
+    Found 32-bit comparator greater for signal <GND_6_o_reps[31]_LessThan_52_o> created at line 312
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  36 Latch(s).
-	inferred   1 Comparator(s).
-	inferred  66 Multiplexer(s).
+	inferred   2 Comparator(s).
+	inferred  36 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <Controller> synthesized.
 
@@ -325,13 +295,14 @@ Macro Statistics
  4-bit register                                        : 1
 # Latches                                              : 36
  1-bit latch                                           : 36
-# Comparators                                          : 3
+# Comparators                                          : 4
  10-bit comparator greater                             : 1
- 32-bit comparator greater                             : 1
+ 32-bit comparator greater                             : 2
  4-bit comparator equal                                : 1
-# Multiplexers                                         : 74
- 1-bit 2-to-1 multiplexer                              : 65
+# Multiplexers                                         : 44
+ 1-bit 2-to-1 multiplexer                              : 33
  13-bit 2-to-1 multiplexer                             : 7
+ 32-bit 2-to-1 multiplexer                             : 2
  4-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
@@ -383,13 +354,14 @@ Macro Statistics
  13-bit up accumulator                                 : 1
 # Registers                                            : 4
  Flip-Flops                                            : 4
-# Comparators                                          : 3
+# Comparators                                          : 4
  10-bit comparator greater                             : 1
- 32-bit comparator greater                             : 1
+ 32-bit comparator greater                             : 2
  4-bit comparator equal                                : 1
-# Multiplexers                                         : 73
- 1-bit 2-to-1 multiplexer                              : 65
+# Multiplexers                                         : 43
+ 1-bit 2-to-1 multiplexer                              : 33
  13-bit 2-to-1 multiplexer                             : 7
+ 32-bit 2-to-1 multiplexer                             : 2
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
@@ -453,9 +425,7 @@ WARNING:Xst:1293 - FF/Latch <PulseWM/count_13> has a constant value of 0 in bloc
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 3.
-FlipFlop KeyControl/curr_state_FSM_FFd1 has been replicated 1 time(s)
-FlipFlop KeyControl/curr_state_FSM_FFd2 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 4.
 FlipFlop KeyControl/curr_state_FSM_FFd3 has been replicated 1 time(s)
 FlipFlop KeyControl/curr_state_FSM_FFd4 has been replicated 1 time(s)
 FlipFlop KeyControl/curr_state_FSM_FFd5 has been replicated 1 time(s)
@@ -466,8 +436,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 68
- Flip-Flops                                            : 68
+# Registers                                            : 66
+ Flip-Flops                                            : 66
 
 =========================================================================
 
@@ -490,20 +460,20 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 742
+# BELS                             : 763
 #      GND                         : 9
 #      INV                         : 21
 #      LUT1                        : 141
-#      LUT2                        : 1
-#      LUT3                        : 43
-#      LUT4                        : 35
-#      LUT5                        : 74
-#      LUT6                        : 85
-#      MUXCY                       : 162
+#      LUT2                        : 6
+#      LUT3                        : 12
+#      LUT4                        : 67
+#      LUT5                        : 88
+#      LUT6                        : 78
+#      MUXCY                       : 170
 #      VCC                         : 9
 #      XORCY                       : 162
-# FlipFlops/Latches                : 215
-#      FD                          : 131
+# FlipFlops/Latches                : 213
+#      FD                          : 129
 #      FDE                         : 49
 #      LD                          : 35
 # Clock Buffers                    : 3
@@ -520,15 +490,15 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             215  out of  18224     1%  
- Number of Slice LUTs:                  400  out of   9112     4%  
-    Number used as Logic:               400  out of   9112     4%  
+ Number of Slice Registers:             213  out of  18224     1%  
+ Number of Slice LUTs:                  413  out of   9112     4%  
+    Number used as Logic:               413  out of   9112     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    407
-   Number with an unused Flip Flop:     192  out of    407    47%  
-   Number with an unused LUT:             7  out of    407     1%  
-   Number of fully used LUT-FF pairs:   208  out of    407    51%  
+ Number of LUT Flip Flop pairs used:    418
+   Number with an unused Flip Flop:     205  out of    418    49%  
+   Number with an unused LUT:             5  out of    418     1%  
+   Number of fully used LUT-FF pairs:   208  out of    418    49%  
    Number of unique control sets:        22
 
 IO Utilization: 
@@ -560,9 +530,9 @@ Clock Information:
 Clock Signal                                                                                  | Clock buffer(FF name)          | Load  |
 ----------------------------------------------------------------------------------------------+--------------------------------+-------+
 clk                                                                                           | BUFGP                          | 1     |
-clk_en                                                                                        | BUFG                           | 191   |
-KeyControl/curr_state[4]_PWR_7_o_Mux_89_o(KeyControl/curr_state__n0512<9>1:O)                 | NONE(*)(KeyControl/count_out_3)| 3     |
-KeyControl/curr_state[4]_GND_11_o_Mux_97_o(KeyControl/Mmux_curr_state[4]_GND_11_o_Mux_97_o1:O)| BUFG(*)(KeyControl/reps_0)     | 32    |
+clk_en                                                                                        | BUFG                           | 189   |
+KeyControl/curr_state[4]_PWR_7_o_Mux_81_o(KeyControl/curr_state__n0466<9>1:O)                 | NONE(*)(KeyControl/count_out_3)| 3     |
+KeyControl/curr_state[4]_GND_11_o_Mux_89_o(KeyControl/Mmux_curr_state[4]_GND_11_o_Mux_89_o1:O)| BUFG(*)(KeyControl/reps_31)    | 32    |
 ----------------------------------------------------------------------------------------------+--------------------------------+-------+
 (*) These 2 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -577,9 +547,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.434ns (Maximum Frequency: 225.507MHz)
+   Minimum period: 4.580ns (Maximum Frequency: 218.340MHz)
    Minimum input arrival time before clock: 4.927ns
-   Maximum output required time after clock: 6.514ns
+   Maximum output required time after clock: 6.498ns
    Maximum combinational path delay: 6.574ns
 
 Timing Details:
@@ -611,7 +581,7 @@ Delay:               2.216ns (Levels of Logic = 1)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_en'
   Clock period: 4.271ns (frequency: 234.123MHz)
-  Total number of paths / destination ports: 3042 / 254
+  Total number of paths / destination ports: 3002 / 252
 -------------------------------------------------------------------------
 Delay:               4.271ns (Levels of Logic = 5)
   Source:            sec_inst (RAM)
@@ -636,37 +606,37 @@ Delay:               4.271ns (Levels of Logic = 5)
                                        (64.5% logic, 35.5% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'KeyControl/curr_state[4]_GND_11_o_Mux_97_o'
-  Clock period: 4.434ns (frequency: 225.507MHz)
-  Total number of paths / destination ports: 1520 / 32
+Timing constraint: Default period analysis for Clock 'KeyControl/curr_state[4]_GND_11_o_Mux_89_o'
+  Clock period: 4.580ns (frequency: 218.340MHz)
+  Total number of paths / destination ports: 4528 / 32
 -------------------------------------------------------------------------
-Delay:               4.434ns (Levels of Logic = 8)
-  Source:            KeyControl/reps_2 (LATCH)
-  Destination:       KeyControl/reps_0 (LATCH)
-  Source Clock:      KeyControl/curr_state[4]_GND_11_o_Mux_97_o falling
-  Destination Clock: KeyControl/curr_state[4]_GND_11_o_Mux_97_o falling
+Delay:               4.580ns (Levels of Logic = 8)
+  Source:            KeyControl/reps_5 (LATCH)
+  Destination:       KeyControl/reps_31 (LATCH)
+  Source Clock:      KeyControl/curr_state[4]_GND_11_o_Mux_89_o falling
+  Destination Clock: KeyControl/curr_state[4]_GND_11_o_Mux_89_o falling
 
-  Data Path: KeyControl/reps_2 to KeyControl/reps_0
+  Data Path: KeyControl/reps_5 to KeyControl/reps_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               3   0.581   1.196  KeyControl/reps_2 (KeyControl/reps_2)
-     LUT5:I0->O            1   0.254   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_lut<0> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<0> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<1> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<2> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<3> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<4> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<4>)
-     MUXCY:CI->O          35   0.235   1.570  KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<5> (KeyControl/Mcompar_reps[31]_GND_6_o_LessThan_50_o_cy<5>)
-     LUT3:I2->O            1   0.254   0.000  KeyControl/Mmux_reps[31]_GND_6_o_MUX_300_o11 (KeyControl/reps[31]_GND_6_o_MUX_300_o)
-     LD:D                      0.036          KeyControl/reps_0
+     LD:G->Q               5   0.581   1.271  KeyControl/reps_5 (KeyControl/reps_5)
+     LUT5:I0->O            1   0.254   0.000  KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_lut<1> (KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<1> (KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<2> (KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<3> (KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<4> (KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<5> (KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<5>)
+     MUXCY:CI->O          33   0.235   1.645  KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<6> (KeyControl/Mcompar_GND_6_o_reps[31]_LessThan_50_o_cy<6>)
+     LUT4:I2->O            1   0.250   0.000  KeyControl/Mmux_reps[31]_GND_6_o_MUX_110_o1331 (KeyControl/reps[31]_GND_6_o_MUX_110_o)
+     LD:D                      0.036          KeyControl/reps_31
     ----------------------------------------
-    Total                      4.434ns (1.668ns logic, 2.766ns route)
-                                       (37.6% logic, 62.4% route)
+    Total                      4.580ns (1.664ns logic, 2.916ns route)
+                                       (36.3% logic, 63.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_en'
-  Total number of paths / destination ports: 48 / 42
+  Total number of paths / destination ports: 46 / 40
 -------------------------------------------------------------------------
 Offset:              4.927ns (Levels of Logic = 3)
   Source:            song_enable (PAD)
@@ -686,21 +656,21 @@ Offset:              4.927ns (Levels of Logic = 3)
                                        (38.4% logic, 61.6% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'KeyControl/curr_state[4]_GND_11_o_Mux_97_o'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'KeyControl/curr_state[4]_GND_11_o_Mux_89_o'
   Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
 Offset:              3.498ns (Levels of Logic = 2)
   Source:            song_enable (PAD)
-  Destination:       KeyControl/reps_0 (LATCH)
-  Destination Clock: KeyControl/curr_state[4]_GND_11_o_Mux_97_o falling
+  Destination:       KeyControl/reps_31 (LATCH)
+  Destination Clock: KeyControl/curr_state[4]_GND_11_o_Mux_89_o falling
 
-  Data Path: song_enable to KeyControl/reps_0
+  Data Path: song_enable to KeyControl/reps_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            41   1.328   1.899  song_enable_IBUF (song_enable_IBUF)
-     LUT3:I0->O            1   0.235   0.000  KeyControl/Mmux_reps[31]_GND_6_o_MUX_300_o11 (KeyControl/reps[31]_GND_6_o_MUX_300_o)
-     LD:D                      0.036          KeyControl/reps_0
+     LUT4:I1->O            1   0.235   0.000  KeyControl/Mmux_reps[31]_GND_6_o_MUX_110_o1331 (KeyControl/reps[31]_GND_6_o_MUX_110_o)
+     LD:D                      0.036          KeyControl/reps_31
     ----------------------------------------
     Total                      3.498ns (1.599ns logic, 1.899ns route)
                                        (45.7% logic, 54.3% route)
@@ -709,7 +679,7 @@ Offset:              3.498ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
   Total number of paths / destination ports: 79 / 17
 -------------------------------------------------------------------------
-Offset:              6.514ns (Levels of Logic = 2)
+Offset:              6.498ns (Levels of Logic = 2)
   Source:            KeyControl/curr_state_FSM_FFd5 (FF)
   Destination:       led_out<5> (PAD)
   Source Clock:      clk_en rising
@@ -718,12 +688,12 @@ Offset:              6.514ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              42   0.525   2.142  KeyControl/curr_state_FSM_FFd5 (KeyControl/curr_state_FSM_FFd5)
+     FD:C->Q              41   0.525   2.126  KeyControl/curr_state_FSM_FFd5 (KeyControl/curr_state_FSM_FFd5)
      LUT6:I0->O            1   0.254   0.681  KeyControl/Mmux_led_out61 (led_out_5_OBUF)
      OBUF:I->O                 2.912          led_out_5_OBUF (led_out<5>)
     ----------------------------------------
-    Total                      6.514ns (3.691ns logic, 2.823ns route)
-                                       (56.7% logic, 43.3% route)
+    Total                      6.498ns (3.691ns logic, 2.807ns route)
+                                       (56.8% logic, 43.2% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -749,15 +719,15 @@ Delay:               6.574ns (Levels of Logic = 3)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock KeyControl/curr_state[4]_GND_11_o_Mux_97_o
+Clock to Setup on destination clock KeyControl/curr_state[4]_GND_11_o_Mux_89_o
 ------------------------------------------+---------+---------+---------+---------+
                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
-KeyControl/curr_state[4]_GND_11_o_Mux_97_o|         |         |    4.434|         |
+KeyControl/curr_state[4]_GND_11_o_Mux_89_o|         |         |    4.580|         |
 ------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock KeyControl/curr_state[4]_PWR_7_o_Mux_89_o
+Clock to Setup on destination clock KeyControl/curr_state[4]_PWR_7_o_Mux_81_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -778,22 +748,22 @@ Clock to Setup on destination clock clk_en
                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------+---------+---------+---------+---------+
-KeyControl/curr_state[4]_GND_11_o_Mux_97_o|         |   11.092|         |         |
-KeyControl/curr_state[4]_PWR_7_o_Mux_89_o |         |    4.188|         |         |
+KeyControl/curr_state[4]_GND_11_o_Mux_89_o|         |    5.928|         |         |
+KeyControl/curr_state[4]_PWR_7_o_Mux_81_o |         |    4.188|         |         |
 clk_en                                    |    4.271|         |         |         |
 ------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.55 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.86 secs
  
 --> 
 
-Total memory usage is 276180 kilobytes
+Total memory usage is 277140 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   80 (   0 filtered)
+Number of warnings :   49 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

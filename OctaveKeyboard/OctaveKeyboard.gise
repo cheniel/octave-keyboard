@@ -23,8 +23,8 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="KeyBoardTB_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="KeyBoardTB_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="KeyBoardTB_isim_beh.wdb"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="KeyboardTB_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="KeyboardTB_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="OctaveKeyboardTop.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="OctaveKeyboardTop.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="OctaveKeyboardTop.lso"/>
@@ -88,72 +88,59 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1408042998" xil_pn:in_ck="-7623640194548890269" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1408042998">
+    <transform xil_pn:end_ts="1408303271" xil_pn:in_ck="-5111468303735795790" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1408303271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Controller.vhd"/>
       <outfile xil_pn:name="DDS.vhd"/>
       <outfile xil_pn:name="FreqLUT.vhd"/>
-      <outfile xil_pn:name="KeyBoardTB.vhd"/>
+      <outfile xil_pn:name="KeyboardTB.vhd"/>
       <outfile xil_pn:name="OctaveKeyboardTop.vhd"/>
       <outfile xil_pn:name="PWM.vhd"/>
+      <outfile xil_pn:name="PlayCount.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1407978851" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-9044832904953873877" xil_pn:start_ts="1407978851">
+    <transform xil_pn:end_ts="1408303027" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="2205809194540846909" xil_pn:start_ts="1408303027">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1407978851" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2777350427178111145" xil_pn:start_ts="1407978851">
+    <transform xil_pn:end_ts="1408303027" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-7382288657055744581" xil_pn:start_ts="1408303027">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1408042905" xil_pn:in_ck="-2675535960378659706" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="7639269817094701493" xil_pn:start_ts="1408042905">
+    <transform xil_pn:end_ts="1408302941" xil_pn:in_ck="-2675535960378659706" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="7639269817094701493" xil_pn:start_ts="1408302941">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="ipcore_dir/SinLUT.ngc"/>
       <outfile xil_pn:name="ipcore_dir/SinLUT.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1408042998" xil_pn:in_ck="514509353822496225" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1408042998">
+    <transform xil_pn:end_ts="1408303271" xil_pn:in_ck="-2379298410522691696" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1408303271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Controller.vhd"/>
       <outfile xil_pn:name="DDS.vhd"/>
       <outfile xil_pn:name="FreqLUT.vhd"/>
-      <outfile xil_pn:name="KeyBoardTB.vhd"/>
+      <outfile xil_pn:name="KeyboardTB.vhd"/>
       <outfile xil_pn:name="OctaveKeyboardTop.vhd"/>
       <outfile xil_pn:name="PWM.vhd"/>
+      <outfile xil_pn:name="PlayCount.vhd"/>
       <outfile xil_pn:name="ipcore_dir/SinLUT.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1408043009" xil_pn:in_ck="514509353822496225" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1854044489924279974" xil_pn:start_ts="1408042998">
+    <transform xil_pn:end_ts="1408303282" xil_pn:in_ck="-2379298410522691696" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4163922703810090598" xil_pn:start_ts="1408303271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="KeyBoardTB_beh.prj"/>
+      <outfile xil_pn:name="KeyboardTB_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1408043009" xil_pn:in_ck="5963693574630210550" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3268454148812938169" xil_pn:start_ts="1408043009">
+    <transform xil_pn:end_ts="1408303282" xil_pn:in_ck="7555697735689750550" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6883958979000944505" xil_pn:start_ts="1408303282">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="KeyboardTB_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1407978920" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1407978920">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -185,11 +172,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1408301690" xil_pn:in_ck="5505444121408729209" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-5117152479913907826" xil_pn:start_ts="1408301679">
+    <transform xil_pn:end_ts="1408302640" xil_pn:in_ck="5505444121408729209" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-5117152479913907826" xil_pn:start_ts="1408302627">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="OctaveKeyboardTop.lso"/>
       <outfile xil_pn:name="OctaveKeyboardTop.ngc"/>
@@ -207,18 +196,22 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1408301697" xil_pn:in_ck="6587502011699757708" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2681150154583735872" xil_pn:start_ts="1408301690">
+    <transform xil_pn:end_ts="1408302647" xil_pn:in_ck="6587502011699757708" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2681150154583735872" xil_pn:start_ts="1408302640">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="OctaveKeyboardTop.bld"/>
       <outfile xil_pn:name="OctaveKeyboardTop.ngd"/>
       <outfile xil_pn:name="OctaveKeyboardTop_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1408301710" xil_pn:in_ck="-3196166893141264114" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-3180699873896808002" xil_pn:start_ts="1408301697">
+    <transform xil_pn:end_ts="1408302658" xil_pn:in_ck="-3196166893141264114" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-3180699873896808002" xil_pn:start_ts="1408302647">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="OctaveKeyboardTop.pcf"/>
       <outfile xil_pn:name="OctaveKeyboardTop_map.map"/>
       <outfile xil_pn:name="OctaveKeyboardTop_map.mrp"/>
@@ -229,9 +222,10 @@
       <outfile xil_pn:name="OctaveKeyboardTop_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1408301728" xil_pn:in_ck="-1359301203038953689" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1408301710">
+    <transform xil_pn:end_ts="1408302675" xil_pn:in_ck="-1359301203038953689" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1408302658">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="OctaveKeyboardTop.ncd"/>
       <outfile xil_pn:name="OctaveKeyboardTop.pad"/>
       <outfile xil_pn:name="OctaveKeyboardTop.par"/>
@@ -243,10 +237,11 @@
       <outfile xil_pn:name="OctaveKeyboardTop_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1408301744" xil_pn:in_ck="-5127583913201094711" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1408301728">
+    <transform xil_pn:end_ts="1408302690" xil_pn:in_ck="-5127583913201094711" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1408302675">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="OctaveKeyboardTop.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="octavekeyboardtop.bgn"/>
@@ -256,9 +251,10 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1408301728" xil_pn:in_ck="-3196166893141264246" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1408301720">
+    <transform xil_pn:end_ts="1408302675" xil_pn:in_ck="-3196166893141264246" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1408302668">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="OctaveKeyboardTop.twr"/>
       <outfile xil_pn:name="OctaveKeyboardTop.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

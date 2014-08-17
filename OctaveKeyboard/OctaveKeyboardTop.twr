@@ -35,13 +35,13 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
  Minimum period is   2.666ns.
 --------------------------------------------------------------------------------
 
-Paths for end point clk_en (SLICE_X18Y33.A6), 1 path
+Paths for end point clk_en (SLICE_X18Y33.D6), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     8.949ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     8.945ns (requirement - (data path - clock path skew + uncertainty))
   Source:               clk_en (FF)
   Destination:          clk_en (FF)
   Requirement:          10.000ns
-  Data Path Delay:      1.016ns (Levels of Logic = 1)
+  Data Path Delay:      1.020ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
@@ -57,28 +57,28 @@ Slack (setup path):     8.949ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y33.AQ      Tcko                  0.525   clk_en
+    SLICE_X18Y33.DQ      Tcko                  0.525   clk_en
                                                        clk_en
-    SLICE_X18Y33.A6      net (fanout=2)        0.152   clk_en
+    SLICE_X18Y33.D6      net (fanout=2)        0.156   clk_en
     SLICE_X18Y33.CLK     Tas                   0.339   clk_en
                                                        clk_en_INV_3_o1_INV_0
                                                        clk_en
     -------------------------------------------------  ---------------------------
-    Total                                      1.016ns (0.864ns logic, 0.152ns route)
-                                                       (85.0% logic, 15.0% route)
+    Total                                      1.020ns (0.864ns logic, 0.156ns route)
+                                                       (84.7% logic, 15.3% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point clk_en (SLICE_X18Y33.A6), 1 path
+Paths for end point clk_en (SLICE_X18Y33.D6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.454ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.458ns (requirement - (clock path skew + uncertainty - data path))
   Source:               clk_en (FF)
   Destination:          clk_en (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.454ns (Levels of Logic = 1)
+  Data Path Delay:      0.458ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
@@ -88,15 +88,15 @@ Slack (hold path):      0.454ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y33.AQ      Tcko                  0.234   clk_en
+    SLICE_X18Y33.DQ      Tcko                  0.234   clk_en
                                                        clk_en
-    SLICE_X18Y33.A6      net (fanout=2)        0.023   clk_en
+    SLICE_X18Y33.D6      net (fanout=2)        0.027   clk_en
     SLICE_X18Y33.CLK     Tah         (-Th)    -0.197   clk_en
                                                        clk_en_INV_3_o1_INV_0
                                                        clk_en
     -------------------------------------------------  ---------------------------
-    Total                                      0.454ns (0.431ns logic, 0.023ns route)
-                                                       (94.9% logic, 5.1% route)
+    Total                                      0.458ns (0.431ns logic, 0.027ns route)
+                                                       (94.1% logic, 5.9% route)
 
 --------------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.051|         |         |         |
+clk            |    1.055|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -150,7 +150,7 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Sun Aug 17 14:55:25 2014 
+Analysis completed Sun Aug 17 15:11:14 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:

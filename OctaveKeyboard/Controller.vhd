@@ -58,7 +58,7 @@ begin
 		end if;
 	end process StateUpdate;
 
-	CombLogic: process(curr_state, next_state, key_in, led_disable, output, beat_tick)
+	CombLogic: process(curr_state, next_state, key_in, led_disable, output, beat_tick, song_enable, reps)
 	begin
 		-- defaults
 		next_state <= curr_state;
@@ -67,6 +67,7 @@ begin
 		
 		if (led_disable = '1') then
 			led_out <= (others => '0');
+			
 		else
 			led_out <= output;
 		end if;
@@ -76,7 +77,6 @@ begin
 			when idle =>			
 				
 				if song_enable = '1' then
-					-- reps <= 0;
 					next_state <= intro1c;
 				elsif key_in(7) = '1' then
 					next_state <= low_c;
@@ -314,7 +314,7 @@ begin
 						reps <= reps + 1;
 						
 					else
-						next_state <= intro 1c;
+						next_state <= intro1c;
 						reps <= 0;
 						
 					end if;
