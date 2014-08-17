@@ -305,23 +305,19 @@ begin
 
 				elsif(beat_tick = '1') then
 					
-					if (reps > 3) then
-						next_state <= intro1c;
-						reps <= 1;
-
-					elsif (reps = 0 or reps = 1) then
+					if (reps < 1) then
 						next_state <= intro1c;
 						reps <= reps + 1;
-
-					elsif (reps = 2) then
+						
+					elsif (reps < 3) then
 						next_state <= intro2c;
 						reps <= reps + 1;
-
-					elsif (reps = 3) then
-						next_state <= intro2c;
-						reps <= reps + 1;
-
-					end if; 
+						
+					else
+						next_state <= intro 1c;
+						reps <= 0;
+						
+					end if;
 
 				end if;
 
