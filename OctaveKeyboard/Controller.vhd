@@ -42,8 +42,8 @@ end Controller;
 
 architecture Behavioral of Controller is
 	type statetype is (idle, low_c, d, e, f, g, a, b, high_c,
-							intro1c, intro1cr, intro1d, intro1dr, intro1e, intro1er, intro1f, intro1fr,
-							endg, endgr, enda, endg2, endf, endfr, ende, endd,
+							intro1c, intro1cr, intro1d, intro1dr, intro1e, intro1er, intro1g, intro1fg,
+							enda, endar, endb, enda2, endg, endgr, ende, endd,
 							intro2c, intro2a, intro2ar, intro2b, intro2br, intro2f, intro2fr
 							);
 	signal curr_state, next_state : statetype := idle;
@@ -206,8 +206,8 @@ begin
 				end if;
 
 
-			when intro1f =>
-				output <= "00010000";
+			when intro1g =>
+				output <= "00001000";
 				count_out <= "0001";
 				if (song_enable = '0') then
 					next_state <= idle;
@@ -216,9 +216,49 @@ begin
 				end if;
 
 
-			when intro1fr =>
+			when intro1gr =>
 				output <= "00000000";
 				count_out <= "0001";
+				if (song_enable = '0') then
+					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= enda;
+				end if;
+
+
+			when enda =>
+				output <= "00000100";
+				count_out <= "0001";
+				if (song_enable = '0') then
+					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= endar;
+				end if;
+
+
+			when endar =>
+				output <= "00000000";
+				count_out <= "0001";
+				if (song_enable = '0') then
+					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= endb;
+				end if;
+
+
+			when endb =>
+				output <= "00000010";
+				count_out <= "0001";
+				if (song_enable = '0') then
+					next_state <= idle;
+				elsif(beat_tick = '1') then
+					next_state <= enda2;
+				end if;
+
+
+			when enda2 =>
+				output <= "00000100";
+				count_out <= "0010";
 				if (song_enable = '0') then
 					next_state <= idle;
 				elsif(beat_tick = '1') then
@@ -237,46 +277,6 @@ begin
 
 
 			when endgr =>
-				output <= "00000000";
-				count_out <= "0001";
-				if (song_enable = '0') then
-					next_state <= idle;
-				elsif(beat_tick = '1') then
-					next_state <= enda;
-				end if;
-
-
-			when enda =>
-				output <= "00000100";
-				count_out <= "0001";
-				if (song_enable = '0') then
-					next_state <= idle;
-				elsif(beat_tick = '1') then
-					next_state <= endg2;
-				end if;
-
-
-			when endg2 =>
-				output <= "00001000";
-				count_out <= "0010";
-				if (song_enable = '0') then
-					next_state <= idle;
-				elsif(beat_tick = '1') then
-					next_state <= endf;
-				end if;
-
-
-			when endf =>
-				output <= "00010000";
-				count_out <= "0001";
-				if (song_enable = '0') then
-					next_state <= idle;
-				elsif(beat_tick = '1') then
-					next_state <= endfr;
-				end if;
-
-
-			when endfr =>
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
