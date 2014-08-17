@@ -66,7 +66,7 @@ ARCHITECTURE behavior OF KeyboardTB IS
    signal led_out : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 5 ns;
+   constant clk_period : time := 2 ns;
  
 BEGIN
  
@@ -96,8 +96,6 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
       wait for clk_period*10;
 		song_enable <= '1';
 		wait for clk_period*10;
