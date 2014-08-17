@@ -4,7 +4,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -490,15 +490,15 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 743
+# BELS                             : 742
 #      GND                         : 9
 #      INV                         : 21
 #      LUT1                        : 141
-#      LUT2                        : 2
+#      LUT2                        : 1
 #      LUT3                        : 43
-#      LUT4                        : 34
+#      LUT4                        : 35
 #      LUT5                        : 74
-#      LUT6                        : 86
+#      LUT6                        : 85
 #      MUXCY                       : 162
 #      VCC                         : 9
 #      XORCY                       : 162
@@ -521,14 +521,14 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             215  out of  18224     1%  
- Number of Slice LUTs:                  401  out of   9112     4%  
-    Number used as Logic:               401  out of   9112     4%  
+ Number of Slice LUTs:                  400  out of   9112     4%  
+    Number used as Logic:               400  out of   9112     4%  
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:    407
    Number with an unused Flip Flop:     192  out of    407    47%  
-   Number with an unused LUT:             6  out of    407     1%  
-   Number of fully used LUT-FF pairs:   209  out of    407    51%  
+   Number with an unused LUT:             7  out of    407     1%  
+   Number of fully used LUT-FF pairs:   208  out of    407    51%  
    Number of unique control sets:        22
 
 IO Utilization: 
@@ -579,7 +579,7 @@ Speed Grade: -2
 
    Minimum period: 4.434ns (Maximum Frequency: 225.507MHz)
    Minimum input arrival time before clock: 4.927ns
-   Maximum output required time after clock: 6.498ns
+   Maximum output required time after clock: 6.514ns
    Maximum combinational path delay: 6.574ns
 
 Timing Details:
@@ -611,7 +611,7 @@ Delay:               2.216ns (Levels of Logic = 1)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_en'
   Clock period: 4.271ns (frequency: 234.123MHz)
-  Total number of paths / destination ports: 3044 / 254
+  Total number of paths / destination ports: 3042 / 254
 -------------------------------------------------------------------------
 Delay:               4.271ns (Levels of Logic = 5)
   Source:            sec_inst (RAM)
@@ -709,7 +709,7 @@ Offset:              3.498ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
   Total number of paths / destination ports: 79 / 17
 -------------------------------------------------------------------------
-Offset:              6.498ns (Levels of Logic = 2)
+Offset:              6.514ns (Levels of Logic = 2)
   Source:            KeyControl/curr_state_FSM_FFd5 (FF)
   Destination:       led_out<5> (PAD)
   Source Clock:      clk_en rising
@@ -718,12 +718,12 @@ Offset:              6.498ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              41   0.525   2.126  KeyControl/curr_state_FSM_FFd5 (KeyControl/curr_state_FSM_FFd5)
+     FD:C->Q              42   0.525   2.142  KeyControl/curr_state_FSM_FFd5 (KeyControl/curr_state_FSM_FFd5)
      LUT6:I0->O            1   0.254   0.681  KeyControl/Mmux_led_out61 (led_out_5_OBUF)
      OBUF:I->O                 2.912          led_out_5_OBUF (led_out<5>)
     ----------------------------------------
-    Total                      6.498ns (3.691ns logic, 2.807ns route)
-                                       (56.8% logic, 43.2% route)
+    Total                      6.514ns (3.691ns logic, 2.823ns route)
+                                       (56.7% logic, 43.3% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -786,12 +786,12 @@ clk_en                                    |    4.271|         |         |       
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.23 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.55 secs
  
 --> 
 
-Total memory usage is 276628 kilobytes
+Total memory usage is 276180 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   80 (   0 filtered)
