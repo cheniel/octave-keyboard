@@ -42,7 +42,7 @@ end Controller;
 
 architecture Behavioral of Controller is
 	type statetype is (idle, low_c, d, e, f, g, a, b, high_c,
-							intro1c, intro1cr, intro1d, intro1dr, intro1e, intro1er, intro1g, intro1gr,
+							intro1c, intro1cr, intro1d, intro1dr, intro1e, intro1er, intro1g, intro1fg,
 							enda, endar, endb, enda2, endg, endgr, ende, endd,
 							intro2c, intro2a, intro2ar, intro2b, intro2br, intro2g, intro2gr
 							);
@@ -202,7 +202,7 @@ begin
 				if (song_enable = '0') then
 					next_state <= idle;
 				elsif(beat_tick = '1') then
-					next_state <= intro1g;
+					next_state <= intro1f;
 				end if;
 
 
@@ -212,7 +212,7 @@ begin
 				if (song_enable = '0') then
 					next_state <= idle;
 				elsif(beat_tick = '1') then
-					next_state <= intro1gr;
+					next_state <= intro1fr;
 				end if;
 
 
@@ -391,7 +391,7 @@ begin
 				if (song_enable = '0') then
 					next_state <= idle;
 				elsif(beat_tick = '1') then
-					next_state <= endg;
+					next_state <= enda;
 				end if;			
 			
 			
