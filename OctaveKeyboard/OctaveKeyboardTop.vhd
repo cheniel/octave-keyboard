@@ -49,6 +49,9 @@ architecture Behavioral of OctaveKeyboardTop is
 	signal clk_en				: std_logic := '0';
 	signal slowclk				: std_logic;
 
+	signal led_disable_sync : std_logic := '0';
+	signal song_enable_sync : std_logic := '0';
+
 	-- mapping signals
 	signal step : std_logic_vector(ACCUMSIZE-1 downto 0) := (others => '0');
 	signal controllerKeys : std_logic_vector(7 downto 0) := (others => '0');
@@ -114,6 +117,14 @@ architecture Behavioral of OctaveKeyboardTop is
 	
 begin
 
+	SynchronizeSwitches: process(clk) 
+	begin
+		if rising_edge(clk) then
+			led_disable_sync <= led_disable;
+			song_enable_sync <= song_enable;
+		end if;
+	end process SynchronizeSwitches;
+
 	slowclk_buf: BUFG
       port map (I => clk_en,
                 O => slowclk );
@@ -172,8 +183,8 @@ begin
 	KeyControl: Controller
 		PORT MAP ( clk 			=> slowclk,
 					  key_in 		=> keyDB,
-					  led_disable 	=> led_disable,
-					  song_enable 	=> song_enable,
+					  led_disable 	=> led_disable_sync,
+					  song_enable 	=> song_enable_sync,
 					  beat_tick 	=> countdone,
 					  count_out		=> count,
 					  key_out 		=> controllerKeys,
