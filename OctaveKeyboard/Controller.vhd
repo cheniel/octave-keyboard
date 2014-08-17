@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -64,6 +64,7 @@ begin
 		next_state <= curr_state;
 		output <= (others => '0');
 		key_out <= output;
+		count_out <= "0000";
 		
 		if (led_disable = '1') then
 			led_out <= (others => '0');
@@ -300,11 +301,7 @@ begin
 				output <= "01000000";
 				count_out <= "1000";
 				
-				if (song_enable = '0') then
-					next_state <= idle;
-					reps <= 0;
-
-				elsif (beat_tick = '1') then
+				if (beat_tick = '1') then
 					
 					if (reps < 1) then
 						next_state <= intro1c;
@@ -319,7 +316,13 @@ begin
 						reps <= 0;
 						
 					end if;
-
+					
+				elsif (song_enable = '0') then
+					next_state <= idle;
+					reps <= 0;
+					
+				else
+					reps <= 0;
 				end if;
 
 			when intro2c =>
