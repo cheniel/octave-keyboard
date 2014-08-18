@@ -32,20 +32,21 @@ entity Controller is
 				led_disable : in  STD_LOGIC;
 				song_enable : in 	STD_LOGIC;
 				beat_tick 	: in 	STD_LOGIC;
+				beat_en		: out STD_LOGIC;
 				count_out	: out STD_LOGIC_VECTOR(3 downto 0);
            	key_out 		: out  STD_LOGIC_VECTOR(7 downto 0);
 				led_out		: out STD_LOGIC_VECTOR(7 downto 0));
 end Controller;
 
 architecture Behavioral of Controller is
-	type statetype is (idle, low_c, d, e, f, g, a, b, high_c,
+	type statetype is (idle, low_c, d, e, f, g, a, b, high_c, autoidle,
 							intro1c, intro1cr, intro1d, intro1dr, intro1e, intro1er, intro1g, intro1gr,
 							enda, endar, endb, enda2, endg, endgr, ende, endd,
 							intro2c, intro2a, intro2ar, intro2b, intro2br, intro2g, intro2gr
 							);
 	signal curr_state, next_state : statetype := idle;
 	signal output : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
-	signal reps : unsigned(2 downto 0) := "000";
+	signal reps : STD_LOGIC := '1';
 	signal introSelector : STD_LOGIC := '0';
 	signal repeat_tick : STD_LOGIC := '0';
 begin
@@ -65,10 +66,10 @@ begin
 		key_out <= output;
 		count_out <= "0001";
 		repeat_tick <= '0';
+		beat_en <= '0';
 		
 		if (led_disable = '1') then
 			led_out <= (others => '0');
-			
 		else
 			led_out <= output;
 		end if;
@@ -78,7 +79,7 @@ begin
 			when idle =>			
 				
 				if song_enable = '1' then
-					next_state <= intro1c;
+					next_state <= autoidle;
 				elsif key_in(7) = '1' then
 					next_state <= low_c;
 				elsif key_in(6) = '1' then
@@ -146,8 +147,16 @@ begin
 				if key_in(0) = '0' then
 					next_state <= idle;
 				end if;	
+				
+			when autoidle =>
+				beat_en <= '1';
+				output <= (others => '0');
+				if (beat_tick = '1') then
+					next_state <= intro1c;
+				end if;
 			
 			when intro1c =>
+				beat_en <= '1';
 				output <= "10000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -158,6 +167,7 @@ begin
 
 
 			when intro1cr =>
+				beat_en <= '1';
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -168,6 +178,7 @@ begin
 
 
 			when intro1d =>
+				beat_en <= '1';
 				output <= "01000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -178,6 +189,7 @@ begin
 
 
 			when intro1dr =>
+				beat_en <= '1';
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -188,6 +200,7 @@ begin
 
 
 			when intro1e =>
+				beat_en <= '1';
 				output <= "00100000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -198,6 +211,7 @@ begin
 
 
 			when intro1er =>
+				beat_en <= '1';
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -208,6 +222,7 @@ begin
 
 
 			when intro1g =>
+				beat_en <= '1';
 				output <= "00001000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -218,6 +233,7 @@ begin
 
 
 			when intro1gr =>
+				beat_en <= '1';
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -228,6 +244,7 @@ begin
 
 
 			when enda =>
+				beat_en <= '1';
 				output <= "00000100";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -238,6 +255,7 @@ begin
 
 
 			when endar =>
+				beat_en <= '1';
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -248,6 +266,7 @@ begin
 
 
 			when endb =>
+				beat_en <= '1';
 				output <= "00000010";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -258,6 +277,7 @@ begin
 
 
 			when enda2 =>
+				beat_en <= '1';
 				output <= "00000100";
 				count_out <= "0010";
 				if (song_enable = '0') then
@@ -268,6 +288,7 @@ begin
 
 
 			when endg =>
+				beat_en <= '1';
 				output <= "00001000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -278,6 +299,7 @@ begin
 
 
 			when endgr =>
+				beat_en <= '1';
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -288,6 +310,7 @@ begin
 
 
 			when ende =>
+				beat_en <= '1';
 				output <= "00100000";
 				count_out <= "1001";
 				if (song_enable = '0') then
@@ -298,6 +321,7 @@ begin
 
 
 			when endd =>
+				beat_en <= '1';
 				output <= "01000000";
 				count_out <= "1000";
 				
@@ -316,6 +340,7 @@ begin
 				end if;
 
 			when intro2c =>
+				beat_en <= '1';
 				output <= "00000001";
 				count_out <= "0010";
 				if (song_enable = '0') then
@@ -326,6 +351,7 @@ begin
 
 
 			when intro2a =>
+				beat_en <= '1';
 				output <= "00000100";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -336,6 +362,7 @@ begin
 
 
 			when intro2ar =>
+				beat_en <= '1';
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -346,6 +373,7 @@ begin
 
 
 			when intro2b =>
+				beat_en <= '1';
 				output <= "00000010";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -356,6 +384,7 @@ begin
 
 
 			when intro2br => 
+				beat_en <= '1';
 				output <= "00000000"; 
 				count_out <= "0001"; 
 				if (song_enable = '0') then 
@@ -366,6 +395,7 @@ begin
 
 
 			when intro2g =>
+				beat_en <= '1';
 				output <= "00001000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -376,6 +406,7 @@ begin
 
 
 			when intro2gr =>
+				beat_en <= '1';
 				output <= "00000000";
 				count_out <= "0001";
 				if (song_enable = '0') then
@@ -391,14 +422,16 @@ begin
 
 	end process CombLogic;
 
-	RepeatCounter: process(repeat_tick, reps)
+	RepeatCounter: process(clk, repeat_tick, reps, introselector)
 	begin
-		if rising_edge(repeat_tick) then
-			if (reps = 1) then
-				introSelector <= not introSelector;
-				reps <= "000";
-			else
-				reps <= reps + 1;
+		if (rising_edge(clk)) then
+			if (repeat_tick = '1') then
+				if (reps = '1') then
+					introSelector <= not introSelector;
+					reps <= '0';
+				else
+					reps <= not reps;
+				end if;
 			end if;
 		end if;
 	end process RepeatCounter;

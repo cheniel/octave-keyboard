@@ -28,6 +28,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity PlayCount is
     Port ( clk : in  STD_LOGIC;
+			  count_en : in STD_LOGIC;
            count_to : in  STD_LOGIC_VECTOR (3 downto 0);
            tc_tick : out  STD_LOGIC);
 end PlayCount;
@@ -43,19 +44,23 @@ begin
 
 		if (rising_edge(clk)) then
 		
-			tc_tick <= '0';
-			
-			if (clkcount = QRTR_CLK_DIV - 1) then
-				if (count = unsigned(count_to)) then
-					tc_tick <= '1';
-					count <= "0001";
-				else
-					count <= count + 1;
-				end if;
+			if (count_en = '1') then 
+				tc_tick <= '0';
 				
-				clkcount <= 0;
+				if (clkcount = QRTR_CLK_DIV - 1) then
+					if (count = unsigned(count_to)) then
+						tc_tick <= '1';
+						count <= "0001";
+					else
+						count <= count + 1;
+					end if;
+					
+					clkcount <= 0;
+				else
+					clkcount <= clkcount + 1;
+				end if;
 			else
-				clkcount <= clkcount + 1;
+				tc_tick <= '0';
 			end if;
 		end if;
 	end process Qrtr_Sec_Count;			

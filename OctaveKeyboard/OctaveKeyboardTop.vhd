@@ -58,6 +58,7 @@ architecture Behavioral of OctaveKeyboardTop is
 	signal phase : std_logic_vector(INDEXSIZE-1 downto 0) := (others => '0');
 	signal lutfreq : std_logic_vector(15 downto 0) := (others => '0');
 	signal reg_en : std_logic := '0';
+	signal tempo_en : std_logic := '0';
 
 	signal keyDB : std_logic_vector(7 downto 0) := (others => '0');
 
@@ -70,6 +71,7 @@ architecture Behavioral of OctaveKeyboardTop is
 				 led_disable 	: in  STD_LOGIC;
 				 song_enable 	: in 	STD_LOGIC;
 				 beat_tick 		: in 	STD_LOGIC;
+				 beat_en			: out STD_LOGIC;
 				 count_out		: out STD_LOGIC_VECTOR(3 downto 0);
 				 key_out 		: out  STD_LOGIC_VECTOR (7 downto 0);
 				 led_out			: out STD_LOGIC_VECTOR (7 downto 0));
@@ -111,6 +113,7 @@ architecture Behavioral of OctaveKeyboardTop is
 	
 	COMPONENT PlayCount is
 		PORT ( 	clk : in  STD_LOGIC;
+					count_en : in STD_LOGIC;
 					count_to : in  STD_LOGIC_VECTOR (3 downto 0);
 					tc_tick : out  STD_LOGIC);
 	END COMPONENT;
@@ -186,6 +189,7 @@ begin
 					  led_disable 	=> led_disable_sync,
 					  song_enable 	=> song_enable_sync,
 					  beat_tick 	=> countdone,
+					  beat_en		=> tempo_en,
 					  count_out		=> count,
 					  key_out 		=> controllerKeys,
 					  led_out		=> led_out);
@@ -216,6 +220,7 @@ begin
 
 	kidsCounter : PlayCount
 		PORT MAP	( clk => slowclk,
+					  count_en => tempo_en,
 					  count_to => count,
 					  tc_tick => countDone);
 
