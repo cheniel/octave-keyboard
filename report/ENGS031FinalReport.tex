@@ -5,10 +5,12 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{graphicx}
-
+\usepackage{wrapfig}
 \usepackage{minted}
+\usepackage{multicol}
 
-
+%% TODO %%
+% add LEDs to basic FPGA diagram
 
 \title{Octave Keyboard}
 \author{Daniel Chen and Vivian Hu}
@@ -24,20 +26,17 @@
 
 % abstract
 % Give a concise summary of the goals and results from your project.
-This report
+The goal of this project was to create a simple one­ octave keyboard mapped to buttons with the additional capability to autoplay ``Kids'' by MGMT when a switch is turned on. When the buttons corresponding to notes are pressed, the appropriate notes are played through the speaker, and LEDs which correspond to the keys light up. The LEDs can be disabled using a switch. 
+
+This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmouth College for the Digital Electronics (ENGS031/COSC056) course. This report goes over the implementation, design, and usage of the final product, which implements all of these features.
 
 \tableofcontents
 
 
 \newpage
-\section{Introduction and Problem Statement} % State the problem to be solved.
-This report goes
+\section{Introduction: The Problem} % State the problem to be solved.
 
-This keyboard is a simple one­ octave keyboard with the capability to autoplay ``Kids'' by MGMT when a switch is turned on. When the keys are pressed, the appropriate notes are played through the speaker, and LEDs which correspond to the keys that are lit up. The LEDs can be disabled using a switch.
-
-
-
-
+  The problem that this project solves is the creation of a one-octave keyboard, and the ability to produce certain sounds through circuit logic. An additional issue is representing the song that will be autoplayed.
 
 \section{Design Solution}
 
@@ -45,16 +44,32 @@ This keyboard is a simple one­ octave keyboard with the capability to autoplay 
   
     % Specifications: Describe what your circuit does. This section will be similar to the project proposal. List any inputs such as buttons, keypads, sensors, etc., and any outputs such as displays, LEDs, actuators, etc. Include a block diagram of your circuit as well as a diagram of the control panel, showing the locations of buttons, displays, lights, etc., relative to each other. 
 
+    This section goes over the inputs, outputs, and functionality of the circuit. 
 
-    \begin{description}
+    \begin{multicols}{2}
+      The inputs to this circuit are:
+      \begin{itemize}
+        \item 8 Buttons that map to the notes to play (bottom right of image to the right).
+        \item An LED disable switch which disables LED output.
+        \item An AutoPlay switch which enables the playing of ``Kids'' by MGMT.
+      \end{itemize}
 
-      \item[The Constructor] \hfill \\
+      The outputs to the circuit are:
+      \begin{itemize}
+        \item 8 LEDs which correspond to the notes being played.
+        \item A speaker which outputs the notes appropriate to the song or specified by the keys.
+      \end{itemize}
 
-      \item[getAllowableCombinations()] \hfill \\
+    \columnbreak
 
-      \item[main()] \hfill \\
+      \includegraphics[width=2.5in]{img/fpgadiagram.jpg}
 
-    \end{description}
+    \end{multicols}
+
+    The picutre shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be output (a copy of the LED output) which is the Phase Accumulator receives. The data from the Phase Accumulator transfers to the Sine LUT, which goes to the Pulse Width Modulator...
+
+    \includegraphics[width=6in]{img/basicblock.jpg}
+
 
   \subsection{Operating Instructions}
 
@@ -67,14 +82,6 @@ This keyboard is a simple one­ octave keyboard with the capability to autoplay 
   \subsection{Construction and Debugging}
 
     % Construction and debugging: Describe how you built and debugged your circuit. Which components did you build first? How did you test them? What problems did you have?
-
-    \begin{minted}{vhdl}
-process
-begin
-  CLK <= '1'; wait for 10 NS;
-  CLK <= '0'; wait for 10 NS;
-end process;
-    \end{minted}
 
 \section{Evaluation of Design}
   
@@ -90,12 +97,30 @@ end process;
   
   % In addition, you should use this section to explain the contributions of each partner to the project. (This is required.) For example, if each project partner was responsible for designing a different block of the system, state that here. If one partner had more responsibility for design, another for debugging, etc., describe that in this section. If different partners were responsible for different parts of the report, note that here.
 
+  We would like to thank Eric Hansen and Dave Picard for their support and mentorship throughout not only this project but also the course. We would also like to thank the other students of Digital Electronics as well as the TAs.
+
+  \subsection{Vivian's Contributions}
+    \begin{itemize}
+      \item Design of
+      \item The second item
+      \item The third etc 
+    \end{itemize}
+
+  \subsection{Daniel's Contributions}
+    \begin{itemize}
+      \item The first item
+      \item The second item
+      \item Git creation/management
+    \end{itemize}
+
 \section{References}
 
   % References: Cite any references (books, application notes) used in your design (e.g., for some clever circuit design). It is not necessary to acknowledge parts specifications (data sheets), unless you are quoting.
 
-\section{Appendices}
 
+\newpage
+\section{Appendices}
+  \listoffigures
   % Appendices: All the diagrams, etc, you collected go here.
 
   \subsection{System level diagrams}
@@ -103,6 +128,12 @@ end process;
     \subsubsection{Front Panel}
       
       % Front panel: An annotated digital photo of your project (Nexys2 board + add-ons) is helpful to show how you use the buttons, switches, LEDs, etc, and also where PMods plug in, etc.  
+
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=2in]{img/fpgadiagram.jpg}
+        \caption{FPGA Diagram}
+      \end{figure}
 
     \subsubsection{Block Diagram}
       % A functional block diagram which gives an overview of the hardware functional modules. By looking at this diagram, anyone else who has had the course should be able to understand what your project does. It is not necessary to use a drawing program to create your block diagram. A piece of graph paper and a ruler work just fine.
@@ -113,6 +144,12 @@ end process;
       %   (2) The top level of logic in your FPGA. It’s simple to base your drawing on the RTL schematic generated by the Xilinx tool. If necessary, annotate it by hand so the reader can easily see what each block does.
       %   (3) Work down “recursively” into each block. Make sure your drawings are labeled in such a way that their place in the hierarchy is clear.
     
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=6in]{img/basicblock.jpg}
+        \caption{Block Diagram}
+      \end{figure}
+
     \subsubsection{Schematic Diagram}
       % A schematic diagram with signal names and pin numbers for any off-board circuitry that you designed and built (i.e., on the FX2 board). The purpose of this diagram is to show how your project is wired up and to help in debugging if it doesn’t work. Make sure you include detailed schematic diagrams for any special circuits (e.g. LED arrays). Each package should be given a unique identifier, known as the reference designator: Un for integrated circuits (where n = 1, 2, ...), Rn for resistors, Cn for capacitors, Qn for transistors, Sn for switches, Pn and Jn for plugs and jacks, respectively, Dn for diodes. LEDn is sometimes used for LEDs or arrays of LEDs (like 7- segment displays). If you have other parts, ask me.% 
 
@@ -131,6 +168,14 @@ end process;
 
     \subsubsection{VHDL Code}
       % for each module
+
+  \begin{minted}{vhdl}
+process
+begin
+  CLK <= '1'; wait for 10 NS;
+  CLK <= '0'; wait for 10 NS;
+end process;
+  \end{minted}
 
     \subsubsection{Resource utilization}
       % for FPGA
