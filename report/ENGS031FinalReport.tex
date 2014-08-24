@@ -13,6 +13,8 @@
 \usepackage{etoolbox}
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 
+\usepackage{listings}
+
 %% TODO %%
 % add LEDs to basic FPGA diagram
 % comment code
@@ -388,6 +390,53 @@ end Behavioral;
 
     \subsubsection{Resource utilization}
       % for FPGA
+
+   		\begin{lstlisting}
+Advanced HDL Synthesis Report
+---------------------------
+Macro Statistics
+# Counters                                             : 3
+ 14-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 13-bit up accumulator                                 : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+# Comparators                                          : 2
+ 10-bit comparator greater                             : 1
+ 4-bit comparator equal                                : 1
+# Multiplexers                                         : 10
+ 1-bit 2-to-1 multiplexer                              : 2
+ 13-bit 2-to-1 multiplexer                             : 7
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+   		\end{lstlisting}
+
+   		\begin{lstlisting}
+Device utilization summary:
+---------------------------
+Slice Logic Utilization: 
+ Number of Slice Registers:             189  out of  18224     1%  
+ Number of Slice LUTs:                  335  out of   9112     3%  
+    Number used as Logic:               335  out of   9112     3%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    346
+   Number with an unused Flip Flop:     157  out of    346    45%  
+   Number with an unused LUT:            11  out of    346     3%  
+   Number of fully used LUT-FF pairs:   178  out of    346    51%  
+   Number of unique control sets:        20
+
+IO Utilization: 
+ Number of IOs:                          29
+ Number of bonded IOBs:                  29  out of    232    12%  
+    IOB Flip Flops/Latches:               2
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+   		\end{lstlisting}
+
 
   \subsection{Memory Map}
     % Memory map: If you are using a memory chip or block memory in the FPGA as a complex look-up table or for data storage, show how the address and data bit patterns are partitioned among the logical variables involved (e.g., for storing sound clips, address bits 12-13 are which sound, and address bits 0- 11 are samples within a sound).
