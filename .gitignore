@@ -63,6 +63,7 @@ Thumbs.db
 *.mtc
 *.mtc1
 *.out
+*.pyg
 *.synctex.gz
 *.fdb_latexmk
 #added
