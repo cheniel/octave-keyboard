@@ -12,17 +12,13 @@
 %% TODO %%
 % add LEDs to basic FPGA diagram
 
-\title{Octave Keyboard}
+\title{Octave Keyboard with AutoPlay}
 \author{Daniel Chen and Vivian Hu}
 \date{August 26, 2014}
 
 \begin{document}
 
 \maketitle
-% \begin{figure}[ht!]
-%   \centering
-%   \includegraphics[width=2in, height=1.3in]{img/keyboard.jpg}
-% \end{figure}
 
 % abstract
 % Give a concise summary of the goals and results from your project.
@@ -44,8 +40,6 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
   
     % Specifications: Describe what your circuit does. This section will be similar to the project proposal. List any inputs such as buttons, keypads, sensors, etc., and any outputs such as displays, LEDs, actuators, etc. Include a block diagram of your circuit as well as a diagram of the control panel, showing the locations of buttons, displays, lights, etc., relative to each other. 
 
-    This section goes over the inputs, outputs, and functionality of the circuit. 
-
     \begin{multicols}{2}
       The inputs to this circuit are:
       \begin{itemize}
@@ -66,14 +60,45 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     \end{multicols}
 
-    The picutre shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be output (a copy of the LED output) which is the Phase Accumulator receives. The data from the Phase Accumulator transfers to the Sine LUT, which goes to the Pulse Width Modulator...
+    The picture shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be output (a copy of the LED output) which is the Phase Accumulator receives. The data from the Phase Accumulator transfers to the Sine LUT, which goes to the Pulse Width Modulator... 
 
-    \includegraphics[width=6in]{img/basicblock.jpg}
+    For more information on how the circuit works, see section 2.3 ``Theory of Operation.''
+
+    \includegraphics[width=5.5in]{img/basicblock.jpg}
 
 
   \subsection{Operating Instructions}
 
     % Operating instructions: Provide any information needed to set up and run your circuit. This is the User’s Manual part of your report.
+
+    \begin{description}
+      \item[Set up Circuit] \hfill \\
+        To set up the one-octave keyboard circuit, you will need:
+        \begin{itemize}
+          \item Design of
+          \item The second item
+          \item The third etc 
+        \end{itemize}
+
+        Here are the steps to get the circuit running:
+        \begin{enumerate}
+          \item (If no bit file) Open the project in Xilinx, generate the programming file.
+          \item Plug in FPGA (Spartan 6) into computer.
+          \item Open Digilent Adept, select bit file to program the FPGA.
+        \end{enumerate}
+
+      \item[Playing notes] \hfill \\
+        To play notes, press the buttons on the FPGA corresponding to the notes that you want to play. There are two rows of four buttons. The top four buttons represent low c, d, e and f, while the bottom four buttons are g, a, b and high c.
+
+        Only one note can be played at a time (first note pressed takes priority), and user-inputted notes only play when the auto-play switch is off.
+
+      \item[Auto-play ``Kids'' by MGMT] \hfill \\
+        To play ``Kids'' by MGMT, simply flip the AutoPlay switch on. You cannot create additional notes at this time using the buttons.
+
+      \item[Disable LEDs] \hfill \\
+        To disable the LEDs that light up corresponding to the notes that are pressed, simply turn on the LED disable switch.
+        
+    \end{description}
 
   \subsection{Theory of Operation}
   
@@ -83,13 +108,19 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     % Construction and debugging: Describe how you built and debugged your circuit. Which components did you build first? How did you test them? What problems did you have?
 
+
+
 \section{Evaluation of Design}
   
   % Justification and evaluation of your design: Why is your solution better or worse than some reasonable alternatives? What might you do differently if you had it to do over again?
 
+
+
 \section{Conclusions and Recommendations}
 
   % Conclusions: Summarize the goals and accomplishments of your project. Give a comparison of your original proposal (and final specifications) and the degree to which you achieved your proposed objectives. What recommendations do you have for future groups considering such a project? What words of general advice would you give to future groups?
+
+  The original goal of our project was to simply make a one-octave keyboard that plays all the notes in C major. LEDs would light up
 
 \section{Acknowledgments}
 
@@ -97,19 +128,23 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
   
   % In addition, you should use this section to explain the contributions of each partner to the project. (This is required.) For example, if each project partner was responsible for designing a different block of the system, state that here. If one partner had more responsibility for design, another for debugging, etc., describe that in this section. If different partners were responsible for different parts of the report, note that here.
 
-  We would like to thank Eric Hansen and Dave Picard for their support and mentorship throughout not only this project but also the course. We would also like to thank the other students of Digital Electronics as well as the TAs.
+  We would like to thank Eric Hansen and Dave Picard for their support and mentorship throughout not only this project but also the course. We would also like to thank the other students of Digital Electronics as well as the TAs. We'd also like to thank MGMT for an awesome song that conveniently contains itself to a single octave.
+
+  5.1 and 5.2 list the contributions for each partner. Although both partners had their hands in most aspects of the project, each component generally had one partner who was more involved in its creation.
 
   \subsection{Vivian's Contributions}
     \begin{itemize}
-      \item Design of
+      \item Circuit Design
       \item The second item
       \item The third etc 
     \end{itemize}
 
   \subsection{Daniel's Contributions}
     \begin{itemize}
-      \item The first item
-      \item The second item
+      \item Majority of the controller, including auto-play
+      \item Design of song, state diagram
+      \item Top level
+      \item LaTeX for report
       \item Git creation/management
     \end{itemize}
 
@@ -132,7 +167,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
       \begin{figure}[H]
         \centering
         \includegraphics[width=2in]{img/fpgadiagram.jpg}
-        \caption{FPGA Diagram}
+        \caption{Simple FPGA Diagram}
       \end{figure}
 
     \subsubsection{Block Diagram}
@@ -158,8 +193,14 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
       % Suppose you are troubleshooting your project. By studying the symptoms and your logic diagram, you deduce that there may be a wiring error at a particular part, e.g., a keypad encoder. On the logic diagram, that chip is labeled U8. You find U8 on the package map and it shows you precisely where to look on your circuit board to find the suspicious part. An easy way to create a package map is to annotate a digital photo of the board.
 
-    \subsubsection{Parts list}
+    \subsubsection{External Components}
       % Parts list: List all external components, including Pmods and parts that you wired up on the FX2 board. You don’t need a parts list if everything is confined to the Nexys board. Use sensible groupings (IC’s, discrete components, switches, connectors, etc.), and keep this list compact but complete. Omit trivial details like wire and wirewrap sockets.
+
+      \begin{itemize}
+        \item Design of
+        \item The second item
+        \item The third etc 
+      \end{itemize}
 
   \subsection{Programmed Logic}
 
@@ -182,6 +223,8 @@ end process;
 
   \subsection{Memory Map}
     % Memory map: If you are using a memory chip or block memory in the FPGA as a complex look-up table or for data storage, show how the address and data bit patterns are partitioned among the logical variables involved (e.g., for storing sound clips, address bits 12-13 are which sound, and address bits 0- 11 are samples within a sound).
+
+
 
   \subsection{Timing Diagram}
     % A timing diagram, e.g., generated from a behavioral simulation, showing all important signals. It is not necessary to duplicate timing diagrams which may be found in a data sheet or user’s manual (e.g., for memory chips).
