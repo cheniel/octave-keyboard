@@ -1,0 +1,5 @@
+  process
+  begin
+    CLK <= '1'; wait for 10 NS;
+    CLK <= '0'; wait for 10 NS;
+  end process;
