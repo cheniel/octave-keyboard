@@ -9,6 +9,10 @@
 \usepackage{minted}
 \usepackage{multicol}
 
+% remove "References" title above bibiliography
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
 %% TODO %%
 % add LEDs to basic FPGA diagram
 % comment code
@@ -76,15 +80,25 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
       \item[Set up Circuit] \hfill \\
         To set up the one-octave keyboard circuit, you will need:
         \begin{itemize}
-          \item Design of
-          \item The second item
-          \item The third etc 
+          \item Xilinx ISE Design Suite 14.4
+          \item Digilent Adept
+          \item The source code or the programming file
+          \item 1 x Digilent NEXYS 3 Spartan 6 FPGA
+          \item 2 x 4 button Digilent Button Module
+          \item 1 x Digilent PmodBB
+          \item 1 x Digilent PmodAMP2
+          \item 1 x Speaker
         \end{itemize}
 
         Here are the steps to get the circuit running:
         \begin{enumerate}
           \item (If no bit file) Open the project in Xilinx, generate the programming file.
-          \item Plug in FPGA (Spartan 6) into computer.
+          \item Plug in FPGA (NEXYS 3 Spartan 6) into computer.
+          \item Insert Digilent Button Modules in the top of JA1 and the top of JB1 on the NEXYS 3.
+          \item Insert the Digilent PmodBB into JD1.
+          \item Insert the PmodAMP2 into the top of J4 on the PmodBB. 
+          \item Connect the speaker to J2 on PmodAMP2.
+          \item Set up the RC circuit on the PmodBB.
           \item Open Digilent Adept, select bit file to program the FPGA.
         \end{enumerate}
 
@@ -121,7 +135,11 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
   % Conclusions: Summarize the goals and accomplishments of your project. Give a comparison of your original proposal (and final specifications) and the degree to which you achieved your proposed objectives. What recommendations do you have for future groups considering such a project? What words of general advice would you give to future groups?
 
-  The original goal of our project was to simply make a one-octave keyboard that plays all the notes in C major. LEDs would light up
+  The original goal of our project was to simply make a one-octave keyboard that plays all the notes in C major. LEDs would light up when notes were played, unless an ``LED disable'' switch was turned on.
+
+  At the end, we were not only able to accomplish our original goal of the simple keyboard but also to add an additional autoplay feature that played ``Kids'' by MGMT.
+
+  For future groups looking to create this project, we would recommend that they really take the time to understand the operation of the circuit before jumping into the project. Another important consideration is to remember to synchronize the inputs and debounce the buttons throughout the project's creation.
 
 \section{Acknowledgments}
 
@@ -131,7 +149,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
   We would like to thank Eric Hansen and Dave Picard for their support and mentorship throughout not only this project but also the course. We would also like to thank the other students of Digital Electronics as well as the TAs. We'd also like to thank MGMT for an awesome song that conveniently contains itself to a single octave.
 
-  5.1 and 5.2 list the contributions for each partner. Although both partners had their hands in most aspects of the project, each component generally had one partner who was more involved in its creation.
+  5.1 and 5.2 list the contributions for each partner. Although both partners had their hands in most aspects of the project, some components generally had one partner who was more involved in its creation.
 
   \subsection{Vivian's Contributions}
     \begin{itemize}
@@ -143,7 +161,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
   \subsection{Daniel's Contributions}
     \begin{itemize}
       \item Majority of the controller, including auto-play
-      \item Design of song, state diagram
+      \item Design, creation and debugging of song auto-play, state diagram
       \item Top level
       \item LaTeX for report
       \item Git creation/management
@@ -153,6 +171,37 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
   % References: Cite any references (books, application notes) used in your design (e.g., for some clever circuit design). It is not necessary to acknowledge parts specifications (data sheets), unless you are quoting.
 
+  \begin{thebibliography}{9}
+
+  \bibitem{DDScordesses}
+  	Cordesses, Lionel.
+  	``Direct Digital Synthesis: A Tool for Periodic Wave Generation.''
+  	\emph{IEEE Signal Processing Magazine.}
+  	IEEE,
+  	July 2004. 
+  	Web.  	
+
+  \bibitem{ENGS128Lab}
+  	Hansen, Eric.
+  	\emph{Lab Assignment 1.}
+  	N.p.:
+  	ENGS128 - Advanced Digital System Design, Spring 2011.
+  	PDF.
+
+  \bibitem{IntelDDS}
+  	\emph{Introduction to Direct Digital Synthesis.}
+  	San Jose: Intel Corporation,
+  	June 1991.
+  	PDF.
+
+  \bibitem{MicrochipPWM}
+  	Palacheria, Amar.
+  	\emph{Using PWM to Generate Analog Output.}
+  	N.p.: Microchip Technology Inc.,
+  	1997.
+  	PDF.
+
+  \end{thebibliography}
 
 \newpage
 \section{Appendices}
