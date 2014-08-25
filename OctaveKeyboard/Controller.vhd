@@ -21,7 +21,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity Controller is --yea
+entity Controller is 
     Port (     clk         : in  STD_LOGIC;
                key_in      : in  STD_LOGIC_VECTOR(7 downto 0);
                led_disable : in  STD_LOGIC;
@@ -53,7 +53,8 @@ begin
         end if;
     end process StateUpdate;
 
-    CombLogic: process(curr_state, next_state, key_in, led_disable, output, beat_tick, song_enable, introSelector)
+    CombLogic: process(curr_state, next_state, key_in, led_disable, output, 
+                       beat_tick, song_enable, introSelector)
     begin
         -- defaults
         next_state <= curr_state;

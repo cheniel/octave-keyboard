@@ -321,30 +321,54 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
 	    \subsubsection{VHDL Code}
 
+        \begin{figure}[H]
+            \caption{OctaveKeyboardTop.vhd}
+        \end{figure}
+        \begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
+            \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/OctaveKeyboardTop.vhd}
+        \end{mdframed}
+        
+        \newpage
 	    	\begin{figure}[H]
-		        \caption{VHDL for Controller}
+		        \caption{Controller.vhd}
 		    \end{figure}
-			\begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
-			    \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/Controller.vhd}
-			\end{mdframed}
-
+  			\begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
+  			    \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/Controller.vhd}
+  			\end{mdframed}
+        
+        \newpage
 	      \begin{figure}[H]
-	        \caption{VHDL for DDS}
+	        \caption{DDS.vhd}
 	      \end{figure}
-
+        \begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
+            \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/DDS.vhd}
+        \end{mdframed}
+        
+        \newpage
 	      \begin{figure}[H]
-	        \caption{VHDL for PWM}
+	        \caption{PWM.vhd}
 	      \end{figure}
-
+        \begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
+            \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/PWM.vhd}
+        \end{mdframed}
+        
+        \newpage
 	      \begin{figure}[H]
-	        \caption{VHDL for PlayCount}
-
+	        \caption{PlayCount.vhd}
 	      \end{figure}
-
+        \begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
+            \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/PlayCount.vhd}
+        \end{mdframed}
+        
+        \newpage
 	      \begin{figure}[H]
-	        \caption{VHDL for FreqLUT}
+	        \caption{FreqLUT.vhd}
 	      \end{figure}
+        \begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
+            \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/FreqLUT.vhd}
+        \end{mdframed}
 
+      \newpage
 	    \subsubsection{Resource utilization}
 			\begin{figure}[H]  
 				\caption{Advanced HDL Synthesis Report}
@@ -394,10 +418,14 @@ Specific Feature Utilization:
 	   			\end{lstlisting}
 	   		\end{figure}
 
+      \newpage
 	   	\subsubsection{UCF}
+        \begin{figure}[H]
+          \caption{UCF file}
+          \lstinputlisting{../OctaveKeyboard/Nexys3_Master.ucf}
+        \end{figure}
 
-
-
+    \newpage
   	\subsection{Memory Map}
     	% Memory map: If you are using a memory chip or block memory in the FPGA as a complex look-up table or for data storage, show how the address and data bit patterns are partitioned among the logical variables involved (e.g., for storing sound clips, address bits 12-13 are which sound, and address bits 0- 11 are samples within a sound).
 
