@@ -12,6 +12,6 @@ This keyboard is a simple one­ octave keyboard with the capability to autoplay 
 - Flip play switch to have keyboard play "Kids" by MGMT.
 
 ### Block Diagram
-<img src="https://github.com/cheniel/octave-keyboard/raw/master/design/basicblock.jpg">
+<img src="https://github.com/cheniel/octave-keyboard/raw/master/report/img/KeyboardBlock.jpg">
 
 
