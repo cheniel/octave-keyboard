@@ -182,7 +182,7 @@ begin
 
     KeyControl: Controller
         PORT MAP (  clk         => slowclk,
-                    key_in         => keyDB,
+                    key_in         => keys, -- change to keys if simulating
                     led_disable => led_disable_sync,
                     song_enable => song_enable_sync,
                     beat_tick     => countdone,

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Y:/Documents/ENGS031/finalproject/OctaveKeyboard/keyboardTB_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="axi_utils_pkg_v1_0" />
+            <top_module name="axi_utils_v1_0_comps" />
+            <top_module name="bip_usecase_utils_pkg_v2_0" />
+            <top_module name="bip_utils_pkg_v2_0" />
+            <top_module name="dds_compiler_v5_0_sim_comps" />
+            <top_module name="global_util_pkg_v1_0" />
+            <top_module name="keyboardtb" />
+            <top_module name="math_real" />
+            <top_module name="numeric_std" />
+            <top_module name="pkg_dds_compiler_v5_0" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_signed" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="xbip_pipe_v2_0_comp" />
+            <top_module name="xbip_pipe_v2_0_xst_comp" />
+            <top_module name="xcc_utils_v2_0" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="21" />
+   <wvobject fp_name="/keyboardtb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/keys" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">keys[7:0]</obj_property>
+      <obj_property name="ObjectShortName">keys[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/led_disable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">led_disable</obj_property>
+      <obj_property name="ObjectShortName">led_disable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/song_enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">song_enable</obj_property>
+      <obj_property name="ObjectShortName">song_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/tone" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tone</obj_property>
+      <obj_property name="ObjectShortName">tone</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/shutdown" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">shutdown</obj_property>
+      <obj_property name="ObjectShortName">shutdown</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/led_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">led_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/KeyControl/key_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">key_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">key_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/KeyControl/count_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">count_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">count_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/KeyControl/key_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">key_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">key_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/KeyControl/led_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">led_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/KeyControl/curr_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">curr_state</obj_property>
+      <obj_property name="ObjectShortName">curr_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/KeyControl/next_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">next_state</obj_property>
+      <obj_property name="ObjectShortName">next_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/KeyFrequencies/increment" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">increment[12:0]</obj_property>
+      <obj_property name="ObjectShortName">increment[12:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/PhaseAccum/curr_phase" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">curr_phase[12:0]</obj_property>
+      <obj_property name="ObjectShortName">curr_phase[12:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/PhaseAccum/phase" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">phase[7:0]</obj_property>
+      <obj_property name="ObjectShortName">phase[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/PhaseAccum/clk10" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk10</obj_property>
+      <obj_property name="ObjectShortName">clk10</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/PulseWM/count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">count[13:0]</obj_property>
+      <obj_property name="ObjectShortName">count[13:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/SinFreqs/m_axis_data_tdata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">m_axis_data_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyboardtb/uut/kidsCounter/count_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">count_en</obj_property>
+      <obj_property name="ObjectShortName">count_en</obj_property>
+   </wvobject>
+</wave_config>

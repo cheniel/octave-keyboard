@@ -28,10 +28,6 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
- 
 ENTITY keyboardTB IS
 END keyboardTB;
  
@@ -95,11 +91,34 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-      wait for clk_period*10;
+      wait for clk_period*5;
+		
+		led_disable <= '0';
+		song_enable <= '0';
 
-		keys <= "10000000";
-      -- insert stimulus here 
-
+      keys <= "10000000";
+      wait for 250us;
+		keys <= "10001000";
+		wait for 50us;
+		keys <= "00010000";
+		wait for 200us;
+		keys <= "00100010";
+		wait for 300us;
+		led_disable <= '1';
+		wait for 200us;
+		keys <= "00000010";
+		wait for 200us;
+		keys <= "00000100";
+		wait for 200us;
+		keys <= "00001000";
+		wait for 200us;
+		keys <= "00011111";
+		led_disable <= '0';
+		wait for 50us;
+		keys <= "00000000";
+		wait for 200us;
+		keys <= "10111000";
+		song_enable <= '1';
       wait;
    end process;
 
