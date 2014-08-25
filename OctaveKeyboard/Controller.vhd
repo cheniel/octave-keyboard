@@ -8,14 +8,8 @@
 -- Project Name: Octave Keyboard
 -- Target Devices: Spartan 6
 -- Tool versions: 
--- Description: Basic controller which converts to monotone.
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Description: Basic controller which converts to key input to monotone. Also 
+--              contains state machine for "Kids" by MGMT.
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -46,6 +40,7 @@ architecture Behavioral of Controller is
     signal repeat_tick : STD_LOGIC := '0';
 begin
 
+    -- updates state to next state.
     StateUpdate: process(clk)
     begin
         if rising_edge(clk) then
@@ -53,9 +48,11 @@ begin
         end if;
     end process StateUpdate;
 
+    -- determines next state
     CombLogic: process(curr_state, next_state, key_in, led_disable, output, 
                        beat_tick, song_enable, introSelector)
     begin
+        
         -- defaults
         next_state <= curr_state;
         output <= (others => '0');
@@ -64,6 +61,7 @@ begin
         repeat_tick <= '0';
         beat_en <= '0';
         
+        -- makes led_out all 0 if led_disable is switched on
         if (led_disable = '1') then
             led_out <= (others => '0');
         else
@@ -72,6 +70,10 @@ begin
 
         case curr_state is
         
+            -- idle state
+            -- goes to autoplay if song enable
+            -- goes to note states if buttons are pressed, prioritized in order
+            -- of lowest to highest notes.
             when idle =>            
                 
                 if song_enable = '1' then
@@ -95,6 +97,10 @@ begin
                 else
                     next_state <= idle;
                 end if;
+
+            -- USER INPUT NOTE STATES
+            -- output is changed to match the note
+            -- goes back to idle when corresponding key is pressed
 
             when low_c =>
                 output <= "10000000";
@@ -144,6 +150,15 @@ begin
                     next_state <= idle;
                 end if;    
                 
+            -- AUTOPLAY STATES
+            -- beat_en turns on RepeatCounter
+            -- output corresponds to current not to be pressed
+            -- count_out is the number of quarter seconds a note should be held
+            -- the state moves to the next one once the counter reaches it's 
+            -- limit (meaning the note has been held long enough)
+            -- or when the song_enable switch is toggled off (next state becomes
+            -- idle).
+
             when autoidle =>
                 beat_en <= '1';
                 output <= (others => '0');
@@ -322,8 +337,15 @@ begin
                 count_out <= "1000";
                 
                 if (beat_tick = '1') then
-                    repeat_tick <= '1';
+                    repeat_tick <= '1'; -- increase reps
                     
+                    -- choose intro depending on what has previously been played
+                    -- The song goes:
+                    --      intro1c to endd
+                    --      intro1c to endd
+                    --      intro2c to endd
+                    --      intro2c to endd
+                    -- and repeat until song_enable is switched off.
                     if (introSelector = '0') then
                         next_state <= intro1c;
                     else 
@@ -418,6 +440,10 @@ begin
 
     end process CombLogic;
 
+    -- counter which is keeps track of the autoplay song state
+    -- modifies introSelector based on reps
+    -- introSelector is then used to determine whether to go to intro1 or
+    -- intro2 at the end of the end states.
     RepeatCounter: process(clk, repeat_tick, reps, introselector)
     begin
         if (rising_edge(clk)) then

@@ -1,21 +1,14 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: ENGS031 14X
+-- Engineer: Vivian Hu, Daniel Chen
 -- 
 -- Create Date:    10:13:11 08/13/2014 
--- Design Name: 
+-- Design Name: Pulse Width Modulator
 -- Module Name:    PWM - Behavioral 
--- Project Name: 
--- Target Devices: 
+-- Project Name: Octave Keyboard
+-- Target Devices: Nexys3
 -- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Description: Pulse width modulator.
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

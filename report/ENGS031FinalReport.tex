@@ -23,7 +23,7 @@
 
 \renewcommand{\contentsname}{}
 
-\title{Octave Keyboard with AutoPlay}
+\title{Octave Keyboard with Autoplay}
 \author{Daniel Chen and Vivian Hu}
 \date{August 26, 2014}
 
@@ -49,12 +49,14 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
   The problem that this project solves is the creation of a one-octave keyboard, and the ability to produce certain sounds through circuit logic. An additional issue is representing the song that will be autoplayed.
 
+\vspace{-1em}
 \section{Design Solution}
 
   \subsection{Specifications}
   
     % Specifications: Describe what your circuit does. This section will be similar to the project proposal. List any inputs such as buttons, keypads, sensors, etc., and any outputs such as displays, LEDs, actuators, etc. Include a block diagram of your circuit as well as a diagram of the control panel, showing the locations of buttons, displays, lights, etc., relative to each other. 
 
+    \vspace{-.8em}
     \begin{multicols}{2}
       The inputs to this circuit are:
       \begin{itemize}
@@ -75,11 +77,12 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     \end{multicols}
 
-    The picture shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be generated (a copy of the LED output) which is used to obtain the appropriate increment value for each key. The phase accumulator increments with this value, and the register output value is then used as an index into the SineLUT. The wave samples obtained from the SineLUT are passed to the pulse width modulator (PWM) to produce square wave pulses at the desired frequency. The RC filter then smooths out the wave pulses to produce the note we pressed!
+    \vspace{-1em}
+    The picture shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be generated (a copy of the LED output) which is used to obtain the appropriate increment value for each key. The phase accumulator increments with this value, and the register output value is then used as an index into the SineLUT. The wave samples obtained from the SineLUT are passed to the pulse width modulator (PWM) to produce square wave pulses at the desired frequency. The RC filter then smooths out the wave pulses to produce the note we pressed! 
 
     For more information on how the circuit works, see section 2.3 ``Theory of Operation.''
 
-    \vspace{-1.15em}
+    \vspace{-.1em}
     \includegraphics[width=5.5in]{img/basicblock.jpg}
 
   \doublespacing
@@ -168,7 +171,15 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
   
   % Justification and evaluation of your design: Why is your solution better or worse than some reasonable alternatives? What might you do differently if you had it to do over again?
 
-  
+  Our solution is a simple standard solution to a keyboard. Although we finished everything we set out to do, there are definitely things that could have been improved upon or added.
+
+  We far from maxed out the resources of the Nexys3. This leaves space for many things. We could have used a smaller frequency resolution to increase the note accuracy, added much more notes (potentially by using a switch for octaves), allowed sharps and flats, or allowed recording and playback.
+
+  General features that we speculated on but ended up not pursuing included adding a metronome and additional songs.
+
+  Additionally, the hardware is not the best for the project. Having the keys split into two rows is non-standard and makes the project unusable for most practical purposes.
+
+  If we were to start over on this project, we would do a better job testing each component before implementing them as part of the larger project. We ended up having to do a lot of debugging on issues that could have been picked out earlier by a more ``unit tested'' approach.
 
 \section{Conclusions and Recommendations}
 
@@ -282,7 +293,13 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
       \end{figure}
 
     \subsubsection{Schematic Diagram}
-      % A schematic diagram with signal names and pin numbers for any off-board circuitry that you designed and built (i.e., on the FX2 board). The purpose of this diagram is to show how your project is wired up and to help in debugging if it doesn’t work. Make sure you include detailed schematic diagrams for any special circuits (e.g. LED arrays). Each package should be given a unique identifier, known as the reference designator: Un for integrated circuits (where n = 1, 2, ...), Rn for resistors, Cn for capacitors, Qn for transistors, Sn for switches, Pn and Jn for plugs and jacks, respectively, Dn for diodes. LEDn is sometimes used for LEDs or arrays of LEDs (like 7- segment displays). If you have other parts, ask me.% 
+      % A schematic diagram with signal names and pin numbers for any off-board circuitry that you designed and built (i.e., on the FX2 board). The purpose of this diagram is to show how your project is wired up and to help in debugging if it doesn’t work. Make sure you include detailed schematic diagrams for any special circuits (e.g. LED arrays). Each package should be given a unique identifier, known as the reference designator: Un for integrated circuits (where n = 1, 2, ...), Rn for resistors, Cn for capacitors, Qn for transistors, Sn for switches, Pn and Jn for plugs and jacks, respectively, Dn for diodes. LEDn is sometimes used for LEDs or arrays of LEDs (like 7- segment displays). If you have other parts, ask me.
+
+      \begin{figure}[H]
+        \centering
+        % \includegraphics[width=6.5in]{img/schematic.jpg}
+        \caption{Schematic Diagram for the RC Filter}
+      \end{figure}
 
     \newpage
     \subsubsection{Package Map}
@@ -334,8 +351,6 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 			      \caption{State Diagram Defaults}
 			    \end{figure}
 		    \end{multicols}
-
-
 	    
 	      \begin{figure}[H]
 	        \centering
