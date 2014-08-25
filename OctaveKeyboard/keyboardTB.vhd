@@ -54,7 +54,7 @@ ARCHITECTURE behavior OF keyboardTB IS
    signal led_disable : std_logic := '0';
    signal song_enable : std_logic := '0';
 
- 	--Outputs
+     --Outputs
    signal tone : std_logic;
    signal shutdown : std_logic;
    signal led_out : std_logic_vector(7 downto 0);
@@ -64,7 +64,7 @@ ARCHITECTURE behavior OF keyboardTB IS
  
 BEGIN
  
-	-- Instantiate the Unit Under Test (UUT)
+    -- Instantiate the Unit Under Test (UUT)
    uut: OctaveKeyboardTop PORT MAP (
           clk => clk,
           keys => keys,
@@ -78,47 +78,47 @@ BEGIN
    -- Clock process definitions
    clk_process :process
    begin
-		clk <= '0';
-		wait for clk_period/2;
-		clk <= '1';
-		wait for clk_period/2;
+        clk <= '0';
+        wait for clk_period/2;
+        clk <= '1';
+        wait for clk_period/2;
    end process;
  
 
    -- Stimulus process
    stim_proc: process
-   begin		
+   begin        
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
+      wait for 100 ns;    
 
       wait for clk_period*5;
-		
-		led_disable <= '0';
-		song_enable <= '0';
+        
+        led_disable <= '0';
+        song_enable <= '0';
 
       keys <= "10000000";
       wait for 250us;
-		keys <= "10001000";
-		wait for 50us;
-		keys <= "00010000";
-		wait for 200us;
-		keys <= "00100010";
-		wait for 300us;
-		led_disable <= '1';
-		wait for 200us;
-		keys <= "00000010";
-		wait for 200us;
-		keys <= "00000100";
-		wait for 200us;
-		keys <= "00001000";
-		wait for 200us;
-		keys <= "00011111";
-		led_disable <= '0';
-		wait for 50us;
-		keys <= "00000000";
-		wait for 200us;
-		keys <= "10111000";
-		song_enable <= '1';
+      keys <= "10001000";
+      wait for 50us;
+      keys <= "00010000";
+      wait for 200us;
+      keys <= "00100010";
+      wait for 300us;
+      led_disable <= '1';
+      wait for 200us;
+      keys <= "00000010";
+      wait for 200us;
+      keys <= "00000100";
+      wait for 200us;
+      keys <= "00001000";
+      wait for 200us;
+      keys <= "00011111";
+      led_disable <= '0';
+      wait for 50us;
+      keys <= "00000000";
+      wait for 200us;
+      keys <= "10111000";
+      song_enable <= '1';
       wait;
    end process;
 
