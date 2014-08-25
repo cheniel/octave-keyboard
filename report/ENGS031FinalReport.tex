@@ -147,7 +147,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     % Construction and debugging: Describe how you built and debugged your circuit. Which components did you build first? How did you test them? What problems did you have?
 
-    To build the circuit, we began by building and testing the DDS and PWM. The
+    To build the circuit, we began by building and testing the VHDL modules for the PWM. We designed the counter and the comparator and simulated the generation of wave ``samples'' with a seperate counter in the place of our DDS module. In our testbench, we were able to observe the square wave pulses getting wider as the ``sample'' increased as expected. From there, we implemented the phase accumulator. Testing was simply a matter of assigning an arbitrary number to the increment signal and confirming the values were adding up correctly. The next step was designing a lookup table with phase increment information for each note frequency and mapping it via the top module to the phase accumulator. We did run into a slight problem here with integer arithmetic. 
 
 \section{Evaluation of Design}
   
