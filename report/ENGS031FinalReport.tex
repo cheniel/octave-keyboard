@@ -140,6 +140,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
   For future groups looking to create this project, we would recommend that they really take the time to understand the operation of the circuit before jumping into the project. Another important consideration is to remember to synchronize the inputs and debounce the buttons throughout the project's creation.
 
+\newpage
 \section{Acknowledgments}
 
   % Acknowledgments: Technical reports and papers often have an acknowledgments section that thanks people other than the authors for their contributions. Use this section (if you wish) to acknowledge various sources (e.g. course staff, students, faculty, or others) for design ideas and other assistance.
@@ -168,6 +169,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
       \item Git creation/management
     \end{itemize}
 
+\newpage
 \section{References}
 
   % References: Cite any references (books, application notes) used in your design (e.g., for some clever circuit design). It is not necessary to acknowledge parts specifications (data sheets), unless you are quoting.
@@ -413,11 +415,9 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 	      \end{figure}
 
 	    \subsubsection{Resource utilization}
-	      % for FPGA
-
-	   		\begin{lstlisting}
-Advanced HDL Synthesis Report
----------------------------
+			\begin{figure}[H]  
+				\caption{Advanced HDL Synthesis Report}
+	   			\begin{lstlisting}
 Macro Statistics
 # Counters                                             : 3
  14-bit up counter                                     : 1
@@ -435,11 +435,12 @@ Macro Statistics
  13-bit 2-to-1 multiplexer                             : 7
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
-	   		\end{lstlisting}
+	   			\end{lstlisting}
+	   		\end{figure}
 
-	   		\begin{lstlisting}
-Device utilization summary:
----------------------------
+	   		\begin{figure}[H]  
+	   			\caption{Device Utilization Summary}
+	   			\begin{lstlisting}
 Slice Logic Utilization: 
  Number of Slice Registers:             189  out of  18224     1%  
  Number of Slice LUTs:                  335  out of   9112     3%  
@@ -459,7 +460,8 @@ IO Utilization:
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
-	   		\end{lstlisting}
+	   			\end{lstlisting}
+	   		\end{figure}
 
 
   \subsection{Memory Map}
