@@ -75,7 +75,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     \end{multicols}
 
-    The picture shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be output (a copy of the LED output) which is the Phase Accumulator receives. The data from the Phase Accumulator transfers to the Sine LUT, which goes to the Pulse Width Modulator... 
+    The picture shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be generated (a copy of the LED output) which is used to obtain the appropriate increment value for each key. The phase accumulator increments with this value, and the register output value is then used as an index into the SineLUT. The wave samples obtained from the SineLUT are passed to the pulse width modulator (PWM) to produce square wave pulses at the desired frequency. The RC filter then smooths out the wave pulses to produce the note we pressed!
 
     For more information on how the circuit works, see section 2.3 ``Theory of Operation.''
 
