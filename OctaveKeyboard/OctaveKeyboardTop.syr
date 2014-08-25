@@ -1,4 +1,4 @@
-Release 14.4 - xst P.49d (nt)
+Release 14.4 - xst P.49d (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
@@ -108,25 +108,25 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\ipcore_dir\SinLUT.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\ipcore_dir\SinLUT.vhd" into library work
 Parsing entity <SinLUT>.
 Parsing architecture <SinLUT_a> of entity <sinlut>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PWM.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PWM.vhd" into library work
 Parsing entity <PWM>.
 Parsing architecture <Behavioral> of entity <pwm>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PlayCount.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PlayCount.vhd" into library work
 Parsing entity <PlayCount>.
 Parsing architecture <Behavioral> of entity <playcount>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\FreqLUT.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\FreqLUT.vhd" into library work
 Parsing entity <FreqLUT>.
 Parsing architecture <Behavioral> of entity <freqlut>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\DDS.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\DDS.vhd" into library work
 Parsing entity <DDS>.
 Parsing architecture <Behavioral> of entity <dds>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" into library work
 Parsing entity <Controller>.
 Parsing architecture <Behavioral> of entity <controller>.
-Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" into library work
+Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" into library work
 Parsing entity <OctaveKeyboardTop>.
 Parsing architecture <Behavioral> of entity <octavekeyboardtop>.
 
@@ -135,10 +135,10 @@ Parsing architecture <Behavioral> of entity <octavekeyboardtop>.
 =========================================================================
 
 Elaborating entity <OctaveKeyboardTop> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:89 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 95: <debounce> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 95: <debounce> remains a black-box since it has no binding entity.
 
 Elaborating entity <Controller> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 436. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 436. Case statement is complete. others clause is never selected
 
 Elaborating entity <FreqLUT> (architecture <Behavioral>) with generics from library <work>.
 
@@ -155,11 +155,11 @@ Elaborating entity <PlayCount> (architecture <Behavioral>) from library <work>.
 =========================================================================
 
 Synthesizing Unit <OctaveKeyboardTop>.
-    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd".
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd".
         ACCUMSIZE = 13
         INDEXSIZE = 8
         LUTOUT = 10
-INFO:Xst:3210 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" line 203: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 203: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <song_enable_sync>.
     Found 1-bit register for signal <clk_en>.
     Found 1-bit register for signal <led_disable_sync>.
@@ -168,7 +168,7 @@ INFO:Xst:3210 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Octave
 Unit <OctaveKeyboardTop> synthesized.
 
 Synthesizing Unit <Controller>.
-    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd".
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd".
     Found 1-bit register for signal <introSelector>.
     Found 1-bit register for signal <reps>.
     Found 6-bit register for signal <curr_state>.
@@ -190,16 +190,17 @@ Synthesizing Unit <Controller>.
 Unit <Controller> synthesized.
 
 Synthesizing Unit <FreqLUT>.
-    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\FreqLUT.vhd".
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\FreqLUT.vhd".
         ACCUMSIZE = 13
         CLKFREQ = 10000
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 13-bit register for signal <increment>.
     Summary:
-	inferred   7 Multiplexer(s).
+	inferred  13 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
 Unit <FreqLUT> synthesized.
 
 Synthesizing Unit <DDS>.
-    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\DDS.vhd".
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\DDS.vhd".
         ACCUMSIZE = 13
         INDEXSIZE = 8
         CLKFREQ = 100000000
@@ -211,7 +212,7 @@ Synthesizing Unit <DDS>.
 Unit <DDS> synthesized.
 
 Synthesizing Unit <PWM>.
-    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PWM.vhd".
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PWM.vhd".
         LUTOUT = 10
         CLKFREQ = 100000000
     Found 1-bit register for signal <pulse>.
@@ -226,7 +227,7 @@ Synthesizing Unit <PWM>.
 Unit <PWM> synthesized.
 
 Synthesizing Unit <PlayCount>.
-    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PlayCount.vhd".
+    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PlayCount.vhd".
     Found 4-bit register for signal <count>.
     Found 32-bit register for signal <clkcount>.
     Found 1-bit register for signal <tc_tick>.
@@ -249,18 +250,18 @@ Macro Statistics
  14-bit adder                                          : 1
  32-bit adder                                          : 1
  4-bit adder                                           : 1
-# Registers                                            : 12
+# Registers                                            : 13
  1-bit register                                        : 8
- 13-bit register                                       : 1
+ 13-bit register                                       : 2
  14-bit register                                       : 1
  32-bit register                                       : 1
  4-bit register                                        : 1
 # Comparators                                          : 2
  10-bit comparator greater                             : 1
  4-bit comparator equal                                : 1
-# Multiplexers                                         : 11
+# Multiplexers                                         : 10
  1-bit 2-to-1 multiplexer                              : 2
- 13-bit 2-to-1 multiplexer                             : 7
+ 13-bit 2-to-1 multiplexer                             : 6
  4-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
@@ -307,14 +308,14 @@ Macro Statistics
  4-bit up counter                                      : 1
 # Accumulators                                         : 1
  13-bit up accumulator                                 : 1
-# Registers                                            : 8
- Flip-Flops                                            : 8
+# Registers                                            : 21
+ Flip-Flops                                            : 21
 # Comparators                                          : 2
  10-bit comparator greater                             : 1
  4-bit comparator equal                                : 1
-# Multiplexers                                         : 10
+# Multiplexers                                         : 9
  1-bit 2-to-1 multiplexer                              : 2
- 13-bit 2-to-1 multiplexer                             : 7
+ 13-bit 2-to-1 multiplexer                             : 6
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
@@ -362,12 +363,18 @@ Optimizing FSM <KeyControl/FSM_0> on signal <curr_state[1:6]> with user encoding
  intro2g  | 011111
  intro2gr | 100000
 ----------------------
+WARNING:Xst:1710 - FF/Latch <increment_9> (without init value) has a constant value of 0 in block <FreqLUT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <increment_10> (without init value) has a constant value of 0 in block <FreqLUT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <increment_11> (without init value) has a constant value of 0 in block <FreqLUT>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <increment_12> (without init value) has a constant value of 0 in block <FreqLUT>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <OctaveKeyboardTop> ...
 
 Optimizing unit <Controller> ...
 
 Optimizing unit <PlayCount> ...
+
+Optimizing unit <FreqLUT> ...
 WARNING:Xst:1293 - FF/Latch <PulseWM/count_13> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_31> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <kidsCounter/clkcount_30> has a constant value of 0 in block <OctaveKeyboardTop>. This FF/Latch will be trimmed during the optimization process.
@@ -384,8 +391,8 @@ Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual rati
 FlipFlop KeyControl/curr_state_FSM_FFd2 has been replicated 2 time(s)
 FlipFlop KeyControl/curr_state_FSM_FFd3 has been replicated 2 time(s)
 FlipFlop KeyControl/curr_state_FSM_FFd4 has been replicated 2 time(s)
-FlipFlop KeyControl/curr_state_FSM_FFd5 has been replicated 2 time(s)
-FlipFlop KeyControl/curr_state_FSM_FFd6 has been replicated 2 time(s)
+FlipFlop KeyControl/curr_state_FSM_FFd5 has been replicated 1 time(s)
+FlipFlop KeyControl/curr_state_FSM_FFd6 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -393,8 +400,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 78
- Flip-Flops                                            : 78
+# Registers                                            : 85
+ Flip-Flops                                            : 85
 
 =========================================================================
 
@@ -417,22 +424,23 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 601
+# BELS                             : 611
 #      GND                         : 9
 #      INV                         : 20
 #      LUT1                        : 110
-#      LUT2                        : 4
+#      LUT2                        : 13
 #      LUT3                        : 14
 #      LUT4                        : 57
-#      LUT5                        : 33
-#      LUT6                        : 89
+#      LUT5                        : 43
+#      LUT6                        : 80
 #      MUXCY                       : 125
 #      MUXF7                       : 1
 #      VCC                         : 9
 #      XORCY                       : 130
-# FlipFlops/Latches                : 190
-#      FD                          : 141
+# FlipFlops/Latches                : 197
+#      FD                          : 139
 #      FDE                         : 49
+#      FDR                         : 9
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
@@ -447,16 +455,16 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             188  out of  18224     1%  
- Number of Slice LUTs:                  327  out of   9112     3%  
-    Number used as Logic:               327  out of   9112     3%  
+ Number of Slice Registers:             195  out of  18224     1%  
+ Number of Slice LUTs:                  337  out of   9112     3%  
+    Number used as Logic:               337  out of   9112     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    339
-   Number with an unused Flip Flop:     151  out of    339    44%  
-   Number with an unused LUT:            12  out of    339     3%  
-   Number of fully used LUT-FF pairs:   176  out of    339    51%  
-   Number of unique control sets:        20
+ Number of LUT Flip Flop pairs used:    346
+   Number with an unused Flip Flop:     151  out of    346    43%  
+   Number with an unused LUT:             9  out of    346     2%  
+   Number of fully used LUT-FF pairs:   186  out of    346    53%  
+   Number of unique control sets:        21
 
 IO Utilization: 
  Number of IOs:                          21
@@ -488,7 +496,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 3     |
-clk_en                             | BUFG                   | 199   |
+clk_en                             | BUFG                   | 206   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -501,7 +509,7 @@ Speed Grade: -2
 
    Minimum period: 4.866ns (Maximum Frequency: 205.508MHz)
    Minimum input arrival time before clock: 3.930ns
-   Maximum output required time after clock: 6.389ns
+   Maximum output required time after clock: 6.422ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -533,7 +541,7 @@ Delay:               2.216ns (Levels of Logic = 1)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_en'
   Clock period: 4.866ns (frequency: 205.508MHz)
-  Total number of paths / destination ports: 3669 / 262
+  Total number of paths / destination ports: 3382 / 278
 -------------------------------------------------------------------------
 Delay:               4.866ns (Levels of Logic = 3)
   Source:            kidsCounter/clkcount_8 (FF)
@@ -619,7 +627,7 @@ Offset:              5.771ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
   Total number of paths / destination ports: 41 / 9
 -------------------------------------------------------------------------
-Offset:              6.389ns (Levels of Logic = 2)
+Offset:              6.422ns (Levels of Logic = 2)
   Source:            KeyControl/curr_state_FSM_FFd6 (FF)
   Destination:       led_out<5> (PAD)
   Source Clock:      clk_en rising
@@ -628,12 +636,12 @@ Offset:              6.389ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              36   0.525   2.017  KeyControl/curr_state_FSM_FFd6 (KeyControl/curr_state_FSM_FFd6)
+     FD:C->Q              38   0.525   2.050  KeyControl/curr_state_FSM_FFd6 (KeyControl/curr_state_FSM_FFd6)
      LUT6:I1->O            1   0.254   0.681  KeyControl/Mmux_led_out11 (led_out_0_OBUF)
      OBUF:I->O                 2.912          led_out_0_OBUF (led_out<0>)
     ----------------------------------------
-    Total                      6.389ns (3.691ns logic, 2.698ns route)
-                                       (57.8% logic, 42.2% route)
+    Total                      6.422ns (3.691ns logic, 2.731ns route)
+                                       (57.5% logic, 42.5% route)
 
 =========================================================================
 
@@ -660,14 +668,14 @@ clk_en         |    4.866|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.71 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.17 secs
  
 --> 
 
-Total memory usage is 196224 kilobytes
+Total memory usage is 276756 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 
