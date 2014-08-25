@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -135,10 +135,10 @@ Parsing architecture <Behavioral> of entity <octavekeyboardtop>.
 =========================================================================
 
 Elaborating entity <OctaveKeyboardTop> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:89 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 103: <debounce> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 102: <debounce> remains a black-box since it has no binding entity.
 
 Elaborating entity <Controller> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 413. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 414. Case statement is complete. others clause is never selected
 
 Elaborating entity <FreqLUT> (architecture <Behavioral>) with generics from library <work>.
 
@@ -159,7 +159,7 @@ Synthesizing Unit <OctaveKeyboardTop>.
         ACCUMSIZE = 13
         INDEXSIZE = 8
         LUTOUT = 10
-INFO:Xst:3210 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" line 213: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" line 211: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <song_enable_sync>.
     Found 1-bit register for signal <clk_en>.
     Found 1-bit register for signal <led_disable_sync>.
@@ -204,7 +204,7 @@ Synthesizing Unit <DDS>.
         INDEXSIZE = 8
         CLKFREQ = 100000000
     Found 13-bit register for signal <curr_phase>.
-    Found 13-bit adder for signal <curr_phase[12]_step[12]_add_0_OUT> created at line 43.
+    Found 13-bit adder for signal <curr_phase[12]_step[12]_add_0_OUT> created at line 42.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  13 D-type flip-flop(s).
@@ -218,7 +218,7 @@ Synthesizing Unit <PWM>.
     Found 1-bit register for signal <slowclk>.
     Found 14-bit register for signal <count>.
     Found 14-bit adder for signal <count[13]_GND_9_o_add_0_OUT> created at line 1241.
-    Found 10-bit comparator greater for signal <count[9]_offset[9]_LessThan_2_o> created at line 54
+    Found 10-bit comparator greater for signal <count[9]_offset[9]_LessThan_2_o> created at line 50
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  16 D-type flip-flop(s).
@@ -231,8 +231,8 @@ Synthesizing Unit <PlayCount>.
     Found 32-bit register for signal <clkcount>.
     Found 1-bit register for signal <tc_tick>.
     Found 4-bit adder for signal <count[3]_GND_11_o_add_2_OUT> created at line 1241.
-    Found 32-bit adder for signal <clkcount[31]_GND_11_o_add_4_OUT> created at line 60.
-    Found 4-bit comparator equal for signal <count[3]_count_to[3]_equal_2_o> created at line 51
+    Found 32-bit adder for signal <clkcount[31]_GND_11_o_add_4_OUT> created at line 54.
+    Found 4-bit comparator equal for signal <count[3]_count_to[3]_equal_2_o> created at line 45
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  37 D-type flip-flop(s).
@@ -382,7 +382,7 @@ Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block OctaveKeyboardTop, actual ratio is 3.
 FlipFlop KeyControl/curr_state_FSM_FFd2 has been replicated 2 time(s)
-FlipFlop KeyControl/curr_state_FSM_FFd3 has been replicated 3 time(s)
+FlipFlop KeyControl/curr_state_FSM_FFd3 has been replicated 2 time(s)
 FlipFlop KeyControl/curr_state_FSM_FFd4 has been replicated 2 time(s)
 FlipFlop KeyControl/curr_state_FSM_FFd5 has been replicated 2 time(s)
 FlipFlop KeyControl/curr_state_FSM_FFd6 has been replicated 2 time(s)
@@ -393,8 +393,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 79
- Flip-Flops                                            : 79
+# Registers                                            : 78
+ Flip-Flops                                            : 78
 
 =========================================================================
 
@@ -417,28 +417,28 @@ Top Level Output File Name         : OctaveKeyboardTop.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 609
+# BELS                             : 601
 #      GND                         : 9
 #      INV                         : 20
 #      LUT1                        : 110
 #      LUT2                        : 4
 #      LUT3                        : 14
 #      LUT4                        : 57
-#      LUT5                        : 41
+#      LUT5                        : 33
 #      LUT6                        : 89
 #      MUXCY                       : 125
 #      MUXF7                       : 1
 #      VCC                         : 9
 #      XORCY                       : 130
-# FlipFlops/Latches                : 191
-#      FD                          : 142
+# FlipFlops/Latches                : 190
+#      FD                          : 141
 #      FDE                         : 49
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 28
+# IO Buffers                       : 20
 #      IBUF                        : 10
-#      OBUF                        : 18
+#      OBUF                        : 10
 
 Device utilization summary:
 ---------------------------
@@ -447,20 +447,20 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             189  out of  18224     1%  
- Number of Slice LUTs:                  335  out of   9112     3%  
-    Number used as Logic:               335  out of   9112     3%  
+ Number of Slice Registers:             188  out of  18224     1%  
+ Number of Slice LUTs:                  327  out of   9112     3%  
+    Number used as Logic:               327  out of   9112     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    346
-   Number with an unused Flip Flop:     157  out of    346    45%  
-   Number with an unused LUT:            11  out of    346     3%  
-   Number of fully used LUT-FF pairs:   178  out of    346    51%  
+ Number of LUT Flip Flop pairs used:    339
+   Number with an unused Flip Flop:     151  out of    339    44%  
+   Number with an unused LUT:            12  out of    339     3%  
+   Number of fully used LUT-FF pairs:   176  out of    339    51%  
    Number of unique control sets:        20
 
 IO Utilization: 
- Number of IOs:                          29
- Number of bonded IOBs:                  29  out of    232    12%  
+ Number of IOs:                          21
+ Number of bonded IOBs:                  21  out of    232     9%  
     IOB Flip Flops/Latches:               2
 
 Specific Feature Utilization:
@@ -488,7 +488,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 3     |
-clk_en                             | BUFG                   | 200   |
+clk_en                             | BUFG                   | 199   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -501,7 +501,7 @@ Speed Grade: -2
 
    Minimum period: 4.866ns (Maximum Frequency: 205.508MHz)
    Minimum input arrival time before clock: 3.930ns
-   Maximum output required time after clock: 6.473ns
+   Maximum output required time after clock: 6.389ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -533,7 +533,7 @@ Delay:               2.216ns (Levels of Logic = 1)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_en'
   Clock period: 4.866ns (frequency: 205.508MHz)
-  Total number of paths / destination ports: 3706 / 263
+  Total number of paths / destination ports: 3669 / 262
 -------------------------------------------------------------------------
 Delay:               4.866ns (Levels of Logic = 3)
   Source:            kidsCounter/clkcount_8 (FF)
@@ -596,26 +596,6 @@ Offset:              3.930ns (Levels of Logic = 4)
                                        (48.5% logic, 51.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
-  Total number of paths / destination ports: 81 / 17
--------------------------------------------------------------------------
-Offset:              6.473ns (Levels of Logic = 2)
-  Source:            KeyControl/curr_state_FSM_FFd4 (FF)
-  Destination:       key_out<7> (PAD)
-  Source Clock:      clk_en rising
-
-  Data Path: KeyControl/curr_state_FSM_FFd4 to key_out<7>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q              41   0.525   2.101  KeyControl/curr_state_FSM_FFd4 (KeyControl/curr_state_FSM_FFd4)
-     LUT5:I0->O            1   0.254   0.681  KeyControl/curr_state__n0233<1>1 (key_out_1_OBUF)
-     OBUF:I->O                 2.912          key_out_1_OBUF (key_out<1>)
-    ----------------------------------------
-    Total                      6.473ns (3.691ns logic, 2.782ns route)
-                                       (57.0% logic, 43.0% route)
-
-=========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
@@ -636,6 +616,26 @@ Offset:              5.771ns (Levels of Logic = 2)
                                        (64.0% logic, 36.0% route)
 
 =========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
+  Total number of paths / destination ports: 41 / 9
+-------------------------------------------------------------------------
+Offset:              6.389ns (Levels of Logic = 2)
+  Source:            KeyControl/curr_state_FSM_FFd6 (FF)
+  Destination:       led_out<5> (PAD)
+  Source Clock:      clk_en rising
+
+  Data Path: KeyControl/curr_state_FSM_FFd6 to led_out<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              36   0.525   2.017  KeyControl/curr_state_FSM_FFd6 (KeyControl/curr_state_FSM_FFd6)
+     LUT6:I1->O            1   0.254   0.681  KeyControl/Mmux_led_out11 (led_out_0_OBUF)
+     OBUF:I->O                 2.912          led_out_0_OBUF (led_out<0>)
+    ----------------------------------------
+    Total                      6.389ns (3.691ns logic, 2.698ns route)
+                                       (57.8% logic, 42.2% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
@@ -653,15 +653,15 @@ Clock to Setup on destination clock clk_en
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.224|         |         |         |
+clk            |    4.107|         |         |         |
 clk_en         |    4.866|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.00 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.27 secs
  
 --> 
 

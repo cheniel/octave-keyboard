@@ -376,6 +376,14 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
             \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/FreqLUT.vhd}
         \end{mdframed}
 
+        \newpage
+        \begin{figure}[H]
+          \caption{keyboardTB.vhd}
+        \end{figure}
+        \begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
+            \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/keyboardTB.vhd}
+        \end{mdframed}
+
       \newpage
 	    \subsubsection{Resource utilization}
 			\begin{figure}[H]  
@@ -446,9 +454,36 @@ Specific Feature Utilization:
 		% What is the minimum clock period / maximum clock speed? (This is not the delay associated with OFFSET IN or OFFSET OUT.)!
 		% Where in your design does the critical path occur? Identify the signal, component, etc.!
 
-    The critical path is:
+    The critical path is between clkcount_8 and clkcount_23 in kidsCounter. The delay is 4.866ns. Here is the excerpt from the synthesis report:
 
-    Based on this information, the maximum clock speed for this circuit is
+    \begin{lstlisting}
+Timing constraint: Default period analysis for Clock 'clk_en'
+  Clock period: 4.866ns (frequency: 205.508MHz)
+  Total number of paths / destination ports: 3669 / 262
+-------------------------------------------------------------------------
+Delay:               4.866ns (Levels of Logic = 3)
+  Source:            kidsCounter/clkcount_8 (FF)
+  Destination:       kidsCounter/clkcount_23 (FF)
+  Source Clock:      clk_en rising
+  Destination Clock: clk_en rising
+
+Data Path: kidsCounter/clkcount_8 to kidsCounter/clkcount_23
+                                Gate     Net
+Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+----------------------------------------  ------------
+ FD:C->Q               3   0.525   1.221  kidsCounter/clkcount_8 (kidsCounter/clkcount_8)
+ LUT6:I0->O            7   0.254   1.186  
+    kidsCounter/GND_11_o_clkcount[31]_equal_1_o<31>4 
+    (kidsCounter/GND_11_o_clkcount[31]_equal_1_o<31>3)
+ LUT5:I1->O           13   0.254   1.098  kidsCounter/_n00281 (kidsCounter/_n0028)
+ LUT4:I3->O            1   0.254   0.000  kidsCounter/clkcount_23_rstpot (kidsCounter/clkcount_23_rstpot)
+ FD:D                      0.074          kidsCounter/clkcount_23
+----------------------------------------
+Total                      4.866ns (1.361ns logic, 3.505ns route)
+                                   (28.0% logic, 72.0% route)
+    \end{lstlisting}
+
+    Based on this information, the maximum clock speed for this circuit is 205.508MHz, meaning the clock period must be at least 4.866ns.
 
 		% ADDITIONAL SUBSECTIONS?
 		% 6. Copies of data sheets for any special components you used that aren’t already on the class website.
