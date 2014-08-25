@@ -480,6 +480,9 @@ Specific Feature Utilization:
 	   			\end{lstlisting}
 	   		\end{figure}
 
+	   	\subsubsection{UCF}
+
+
 
   \subsection{Memory Map}
     % Memory map: If you are using a memory chip or block memory in the FPGA as a complex look-up table or for data storage, show how the address and data bit patterns are partitioned among the logical variables involved (e.g., for storing sound clips, address bits 12-13 are which sound, and address bits 0- 11 are samples within a sound).
@@ -489,9 +492,19 @@ Specific Feature Utilization:
   \subsection{Timing Diagram}
     % A timing diagram, e.g., generated from a behavioral simulation, showing all important signals. It is not necessary to duplicate timing diagrams which may be found in a data sheet or user’s manual (e.g., for memory chips).
 
+    % From the synthesis report (or place and route report)!
+	% What is the minimum clock period / maximum clock speed? (This is not the delay associated with OFFSET IN or OFFSET OUT.)!
+	% Where in your design does the critical path occur? Identify the signal, component, etc.!
+
 
   % ADDITIONAL SUBSECTIONS?
   % 6. Copies of data sheets for any special components you used that aren’t already on the class website.
+  \subsection{Data Sheets}
+
+  	The proceeding pages contain data sheets for parts used in this project that are not already on the class website. They include:
+
+  	
+
   % 7. Computer programs (e.g., Matlab codes used to generate lookup tables, etc).
   % 8. Other documentation. Include anything else that might be needed to understand or reproduce your design.
 
