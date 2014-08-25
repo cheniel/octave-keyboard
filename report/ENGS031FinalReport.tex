@@ -257,14 +257,19 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
       	%   (3) Work down “recursively” into each block. Make sure your drawings are labeled in such a way that their place in the hierarchy is clear.
 
     \subsubsection{Schematic Diagram}
-      	% A schematic diagram with signal names and pin numbers for any off-board circuitry that you designed and built (i.e., on the FX2 board). The purpose of this diagram is to show how your project is wired up and to help in debugging if it doesn’t work. Make sure you include detailed schematic diagrams for any special circuits (e.g. LED arrays). Each package should be given a unique identifier, known as the reference designator: Un for integrated circuits (where n = 1, 2, ...), Rn for resistors, Cn for capacitors, Qn for transistors, Sn for switches, Pn and Jn for plugs and jacks, respectively, Dn for diodes. LEDn is sometimes used for LEDs or arrays of LEDs (like 7- segment displays). If you have other parts, ask me.% 
+      % A schematic diagram with signal names and pin numbers for any off-board circuitry that you designed and built (i.e., on the FX2 board). The purpose of this diagram is to show how your project is wired up and to help in debugging if it doesn’t work. Make sure you include detailed schematic diagrams for any special circuits (e.g. LED arrays). Each package should be given a unique identifier, known as the reference designator: Un for integrated circuits (where n = 1, 2, ...), Rn for resistors, Cn for capacitors, Qn for transistors, Sn for switches, Pn and Jn for plugs and jacks, respectively, Dn for diodes. LEDn is sometimes used for LEDs or arrays of LEDs (like 7- segment displays). If you have other parts, ask me.% 
 
+    \newpage
     \subsubsection{Package Map}
-      	% A package map showing where each component is located on your board. This only applies to off-board circuits that you built. The package map should resemble an "aerial photograph" showing clearly all connectors (labeled Jn or Pn), sockets, ICs (Un), switches (Sn), displays, etc. The package map is used as an intermediate stage between the logic diagram and your circuit.
+      % A package map showing where each component is located on your board. This only applies to off-board circuits that you built. The package map should resemble an "aerial photograph" showing clearly all connectors (labeled Jn or Pn), sockets, ICs (Un), switches (Sn), displays, etc. The package map is used as an intermediate stage between the logic diagram and your circuit.
 
     	% Suppose you are troubleshooting your project. By studying the symptoms and your logic diagram, you deduce that there may be a wiring error at a particular part, e.g., a keypad encoder. On the logic diagram, that chip is labeled U8. You find U8 on the package map and it shows you precisely where to look on your circuit board to find the suspicious part. An easy way to create a package map is to annotate a digital photo of the board.
 
-
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=6.5in]{img/packagemap.jpg}
+        \caption{Package Map}
+      \end{figure}
 
     \subsubsection{External Components}
     	% Parts list: List all external components, including Pmods and parts that you wired up on the FX2 board. You don’t need a parts list if everything is confined to the Nexys board. Use sensible groupings (IC’s, discrete components, switches, connectors, etc.), and keep this list compact but complete. Omit trivial details like wire and wirewrap sockets.
@@ -438,10 +443,13 @@ Specific Feature Utilization:
 		% What is the minimum clock period / maximum clock speed? (This is not the delay associated with OFFSET IN or OFFSET OUT.)!
 		% Where in your design does the critical path occur? Identify the signal, component, etc.!
 
+    The critical path is:
+
+    Based on this information, the maximum clock speed for this circuit is
 
 		% ADDITIONAL SUBSECTIONS?
 		% 6. Copies of data sheets for any special components you used that aren’t already on the class website.
-  	\subsection{Data Sheets}
+	\subsection{Data Sheets}
 
   	The proceeding pages contain data sheets for parts used in this project that are not already on the class website. They include data sheets for these parts:
 
