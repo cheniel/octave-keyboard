@@ -134,7 +134,11 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     To obtain wave samples, this value is then used as an index into a SineLUT supplied by the Xilinx Core Generator. Rather than having to generate all the samples of a waveform everytime, the values of a $2^M$ (where M is the bit size of our phase) sample wave are simply stored in block memory (BRAM) for easy access. The SineLUT generates a 10-bit sample for conversion by the PWM.
 
-    
+    The PWM maps the amplitude of the signal to a square wave pulse by comparing the sample value (which needs to be first converted from two's complement to unsigned offset binary) to a counter value. When the count is less than the sample, the comparator output is a `1'; otherwise the output is a `0'. In order to send the clk10 enable to the phase accumulator at a 10kHz frequency, the PWM counter also generates a terminal count signal every 5,000 clock cycles. 
+
+    The signal then passes through an off-board low-pass RC filter that reduces higher frequency signal noise before passing the tone through to the speaker.
+
+    Our circuit also features the additional functionality of automatically playing a pre-programed song when given the song\textunderscore enable signal. Most of this work is done by the controller state-machine (ie which note or sequence to go to next). However, in order to get the song to play at an appropriate speed, we implemented an additional BeatCounter that counts at a rate of about 240 beats per minute. When the signal to autoplay the song is given, the controller sends a count\textunderscore en signal and a number count\textunderscore to to the beat counter letting it know how long to ``hold'' the note before sending the terminal tc\textunderscore tick back to the controller to move on to the next note/state.
 
   \subsection{Construction and Debugging}
 
