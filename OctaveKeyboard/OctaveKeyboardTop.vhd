@@ -18,9 +18,9 @@ library UNISIM;
 use UNISIM.VComponents.all;
 
 entity OctaveKeyboardTop is
-    Generic (   ACCUMSIZE    : integer := 13;    -- phase accumulator bitsize
-                INDEXSIZE    : integer := 8;        -- SineLUT index bitsize
-                LUTOUT       : integer := 10);    -- SineLUT out bitsize
+    Generic (   ACCUMSIZE    : integer := 13;   -- phase accumulator bitsize
+                INDEXSIZE    : integer := 8;    -- SinLUT index bitsize
+                LUTOUT       : integer := 10);  -- SinLUT out bitsize
                     
     Port (  clk          : in   STD_LOGIC;
             keys         : in   STD_LOGIC_VECTOR (7 downto 0);

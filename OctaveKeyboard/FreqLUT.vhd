@@ -2,9 +2,9 @@
 -- Company: ENGS031 14X
 -- Engineer: Daniel Chen and Vivian Hu
 -- 
--- Create Date:    15:30:42 08/11/2014 
+-- Create Date: 15:30:42 08/11/2014 
 -- Design Name: Frequency LUT
--- Module Name:    FreqLUT - Behavioral 
+-- Module Name: FreqLUT - Behavioral 
 -- Project Name: Octave Keyboard
 -- Target Devices: Nexys3
 -- Tool versions: 
@@ -16,8 +16,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity FreqLUT is
-     Generic (  ACCUMSIZE : integer := 13;
-                CLKFREQ   : integer := 10000);
+    Generic (  ACCUMSIZE : integer := 13;
+               CLKFREQ   : integer := 10000);
                     
     Port ( clk : in  STD_LOGIC;
            key_in : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -26,6 +26,8 @@ end FreqLUT;
 
 architecture Behavioral of FreqLUT is
     constant PHASECONSTANT : integer := 2**ACCUMSIZE;
+
+    -- key frequencies (Hz)
     constant LOWC : integer := 262;
     constant D : integer := 294;
     constant E : integer := 330;
