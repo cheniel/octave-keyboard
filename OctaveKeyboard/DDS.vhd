@@ -9,13 +9,6 @@
 -- Target Devices: Spartan 6
 -- Tool versions: 
 -- Description: Direct Digital Synthesis
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

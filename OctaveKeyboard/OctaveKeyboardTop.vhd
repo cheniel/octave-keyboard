@@ -3,19 +3,12 @@
 -- Engineer: Vivian Hu, Daniel Chen
 -- 
 -- Create Date: 19:58:26 08/12/2014 
--- Design Name: 
+-- Design Name: Top level for Octave Keyboard
 -- Module Name: OctaveKeyboardTop - Behavioral 
 -- Project Name: OctaveKeyboard 
--- Target Devices: 
+-- Target Devices: Nexys3
 -- Tool versions: 
 -- Description: Top level VHDL module for keyboard
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -114,7 +107,6 @@ architecture Behavioral of OctaveKeyboardTop is
     -- END component declarations
 
 begin
-
     -- synchronizer for auto-play-song switch input
     SynchronizeSwitches: process(clk) 
     begin
@@ -133,13 +125,13 @@ begin
     end process clkDivider;
 
     -- map signals
-    shutdown <= '1';            -- tie shutdown signal high for speaker pmod
+    shutdown <= '1';     -- tie shutdown signal high for speaker pmod
 
     slowclk_buf: BUFG
         Port map ( I => clk_en,
                    O => slowclk );
 
-    
+    -- debouncers for note buttons
     debouncer0: debounce
         Port map (  clk => slowclk,    
                     switch => keys(0),
@@ -182,44 +174,44 @@ begin
 
     KeyControl: Controller
         PORT MAP (  clk         => slowclk,
-                    key_in         => keys, -- change to keys if simulating
-                    led_disable => led_disable_sync,
+                    key_in         => keyDB, -- change to keys if simulating
+                    led_disable => led_disable_sync, 
                     song_enable => song_enable_sync,
-                    beat_tick     => countdone,
-                    beat_en        => tempo_en,
-                    count_out    => count,
-                    key_out     => controllerKeys,
-                    led_out        => led_out);
+                    beat_tick     => countdone, -- passed to PlayCount
+                    beat_en        => tempo_en, -- passed to PlayCount
+                    count_out    => count, -- passed to PlayCount
+                    key_out     => controllerKeys, -- passed to FreqLUT
+                    led_out        => led_out); -- straight to LEDs
 
     KeyFrequencies: FreqLUT
         PORT MAP (  clk         => slowclk,
-                    key_in         => controllerKeys,
-                    increment     => step);
+                    key_in         => controllerKeys, -- from controller
+                    increment     => step); -- passed to DDS
                       
     PhaseAccum: DDS
         PORT MAP (  clk         => slowclk,
                     clk10        => reg_en,
-                    step        => step,
-                    phase        => phase);
+                    step        => step, -- from freqLUT
+                    phase        => phase); -- to SinLUT
                       
     PulseWM: PWM
         PORT MAP (  clk            => slowclk,
-                    sample        => lutfreq(9 downto 0),
-                    slowclk        => reg_en,
-                    pulse        => tone);
+                    sample        => lutfreq(9 downto 0), -- from sinLUT
+                    slowclk        => reg_en, 
+                    pulse        => tone); -- to speaker
                     
     SinFreqs: SinLUT
         PORT MAP (  aclk                  => slowclk,
                     s_axis_phase_tvalid => '1',
-                    s_axis_phase_tdata     => phase,
+                    s_axis_phase_tdata     => phase, -- from phase accumulator
                     m_axis_data_tvalid     => open,
-                    m_axis_data_tdata     => lutfreq);
+                    m_axis_data_tdata     => lutfreq); -- to PWM
 
     kidsCounter: PlayCount
         PORT MAP    ( clk => slowclk,
-                      count_en => tempo_en,
-                      count_to => count,
-                      tc_tick => countDone);
+                      count_en => tempo_en, -- from controller
+                      count_to => count,    -- from controller
+                      tc_tick => countDone); -- from controller
 
 end Behavioral;
 

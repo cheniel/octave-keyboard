@@ -1,29 +1,16 @@
 --------------------------------------------------------------------------------
--- Company: 
--- Engineer:
+-- Company: ENGS031 14X
+-- Engineer: Daniel Chen and Vivian Hu
 --
 -- Create Date:   14:17:41 08/25/2014
--- Design Name:   
+-- Design Name:   Octave-Keyboard Testbench
 -- Module Name:   C:/Users/F000JW7/Desktop/octave-keyboard/OctaveKeyboard/keyboardTB.vhd
 -- Project Name:  OctaveKeyboard
--- Target Device:  
+-- Target Device:  Nexys3
 -- Tool versions:  
--- Description:   
+-- Description:   Testbench for Nexys3
 -- 
 -- VHDL Test Bench Created by ISE for module: OctaveKeyboardTop
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -33,8 +20,7 @@ END keyboardTB;
  
 ARCHITECTURE behavior OF keyboardTB IS 
  
-    -- Component Declaration for the Unit Under Test (UUT)
- 
+    -- Component Declaration for the Unit Under Test (UUT) 
     COMPONENT OctaveKeyboardTop
     PORT(
          clk : IN  std_logic;
@@ -47,7 +33,6 @@ ARCHITECTURE behavior OF keyboardTB IS
         );
     END COMPONENT;
     
-
    --Inputs
    signal clk : std_logic := '0';
    signal keys : std_logic_vector(7 downto 0) := (others => '0');
@@ -63,7 +48,6 @@ ARCHITECTURE behavior OF keyboardTB IS
    constant clk_period : time := 10 ns;
  
 BEGIN
- 
     -- Instantiate the Unit Under Test (UUT)
    uut: OctaveKeyboardTop PORT MAP (
           clk => clk,
@@ -92,10 +76,12 @@ BEGIN
       wait for 100 ns;    
 
       wait for clk_period*5;
-        
-        led_disable <= '0';
-        song_enable <= '0';
+      
+      -- start with both switches off  
+      led_disable <= '0';
+      song_enable <= '0';
 
+      -- try some keys
       keys <= "10000000";
       wait for 250us;
       keys <= "10001000";
@@ -104,7 +90,7 @@ BEGIN
       wait for 200us;
       keys <= "00100010";
       wait for 300us;
-      led_disable <= '1';
+      led_disable <= '1'; -- check that disabling leds work
       wait for 200us;
       keys <= "00000010";
       wait for 200us;
@@ -113,13 +99,15 @@ BEGIN
       keys <= "00001000";
       wait for 200us;
       keys <= "00011111";
-      led_disable <= '0';
+      led_disable <= '0'; -- see that enabling them again works
       wait for 50us;
       keys <= "00000000";
       wait for 200us;
       keys <= "10111000";
-      song_enable <= '1';
+      
+      -- just see that state changes correctly 
+      -- (autoplay takes too long to simulate, as each beat is 1/4 second)
+      song_enable <= '1'; 
       wait;
    end process;
-
 END;
