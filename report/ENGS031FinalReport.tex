@@ -7,12 +7,15 @@
 \usepackage{wrapfig}
 \usepackage{minted}
 \usepackage{multicol}
+\usepackage{mdframed}
 
 % remove "References" title above bibiliography
 \usepackage{etoolbox}
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 
 \usepackage{listings}
+
+\renewcommand{\contentsname}{}
 
 \title{Octave Keyboard with AutoPlay}
 \author{Daniel Chen and Vivian Hu}
@@ -24,12 +27,14 @@
 
 % abstract
 % Give a concise summary of the goals and results from your project.
+\vspace{-1.5em}
+
 The goal of this project was to create a simple one­ octave keyboard mapped to buttons with the additional capability to autoplay ``Kids'' by MGMT when a switch is turned on. When the buttons corresponding to notes are pressed, the appropriate notes are played through the speaker, and LEDs which correspond to the keys light up. The LEDs can be disabled using a switch. 
 
 This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmouth College for the Digital Electronics (ENGS031/COSC056) course. This report goes over the implementation, design, and usage of the final product, which implements all of these features.
 
+\vspace{-2.5em}
 \tableofcontents
-
 
 \newpage
 \section{Introduction: The Problem} % State the problem to be solved.
@@ -127,7 +132,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     The phase accumulator is essentially an incrementer composed of an adder and a register which increases by the increment value every clock cycle. However, although the system is running at a frequency of about 50MHz in order to reduce noise, in actuality the phase accumulator is updating at a frequency of around 10kHz, at the clk10 signal given by the PWMCounter. As a result, clk10 here serves as an enable. The phase produced by the accumulator is then passed as an input address to the SineLUT. However, because our SineLUT only takes an 8-bit phase, only the 8 most significant bits are used.
 
-    To obtain wave samples, this value is then used as an index into a SineLUT supplied by the Xilinx Core Generator. Rather than having to generate all the samples of a waveform everytime, the values of a 2^M (where M is the bit size of our phase) sample wave are simply stored in block memory (BRAM) for easy access. The SineLUT generates a 10-bit sample for conversion by the PWM.
+    To obtain wave samples, this value is then used as an index into a SineLUT supplied by the Xilinx Core Generator. Rather than having to generate all the samples of a waveform everytime, the values of a $2^M$ (where M is the bit size of our phase) sample wave are simply stored in block memory (BRAM) for easy access. The SineLUT generates a 10-bit sample for conversion by the PWM.
 
     
 
@@ -221,47 +226,60 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
 \newpage
 \section{Appendix}
-  \listoffigures
-  % Appendices: All the diagrams, etc, you collected go here.
+  	\listoffigures
+  	\listoftables
+  	% Appendices: All the diagrams, etc, you collected go here.
 
-  \newpage
-  \subsection{System level diagrams}
+  	\newpage
+  	\subsection{System level diagrams}
 
     \subsubsection{Front Panel}
       
-      % Front panel: An annotated digital photo of your project (Nexys2 board + add-ons) is helpful to show how you use the buttons, switches, LEDs, etc, and also where PMods plug in, etc.  
+    	% Front panel: An annotated digital photo of your project (Nexys2 board + add-ons) is helpful to show how you use the buttons, switches, LEDs, etc, and also where PMods plug in, etc.  
 
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=6.5in]{img/annotated.jpg}
-        \caption{Annotated Digital Photo of Project}
-      \end{figure}
+	    \begin{figure}[H]
+	    	\centering
+	    	\includegraphics[width=6.5in]{img/annotated.jpg}
+	    	\caption{Annotated Digital Photo of Project}
+	    \end{figure}
 
     \subsubsection{Block Diagram}
-      % A functional block diagram which gives an overview of the hardware functional modules. By looking at this diagram, anyone else who has had the course should be able to understand what your project does. It is not necessary to use a drawing program to create your block diagram. A piece of graph paper and a ruler work just fine.
+	    % A functional block diagram which gives an overview of the hardware functional modules. By looking at this diagram, anyone else who has had the course should be able to understand what your project does. It is not necessary to use a drawing program to create your block diagram. A piece of graph paper and a ruler work just fine.
 
-      % Each block, each input / output port in a block, and each net connecting blocks should be labeled with a descriptive name. Input ports for a drawing are always at the left edge of the drawing, and output ports are at the right edge. Additionally, ports that connect to/from Pmods or the FX2 breadboard must be labeled with a connector and pin number, e.g., JA-2 for pin 2 of the JA Pmod connector.
-      % Here is a suggested hierarchy for your block diagrams:
-      %   (1) The top level that shows the main functional blocks, including switches, displays, etc. At this level, the logic in your FPGA can be one big “black box” with ports labeled to match the port declarations in the top level of your logic design (whether VHDL or schematic).
-      %   (2) The top level of logic in your FPGA. It’s simple to base your drawing on the RTL schematic generated by the Xilinx tool. If necessary, annotate it by hand so the reader can easily see what each block does.
-      %   (3) Work down “recursively” into each block. Make sure your drawings are labeled in such a way that their place in the hierarchy is clear.
+	    % Each block, each input / output port in a block, and each net connecting blocks should be labeled with a descriptive name. Input ports for a drawing are always at the left edge of the drawing, and output ports are at the right edge. Additionally, ports that connect to/from Pmods or the FX2 breadboard must be labeled with a connector and pin number, e.g., JA-2 for pin 2 of the JA Pmod connector.
+	    % Here is a suggested hierarchy for your block diagrams:
+	    %   (1) The top level that shows the main functional blocks, including switches, displays, etc. At this level, the logic in your FPGA can be one big “black box” with ports labeled to match the port declarations in the top level of your logic design (whether VHDL or schematic).
+	    %   (2) The top level of logic in your FPGA. It’s simple to base your drawing on the RTL schematic generated by the Xilinx tool. If necessary, annotate it by hand so the reader can easily see what each block does.
+      	%   (3) Work down “recursively” into each block. Make sure your drawings are labeled in such a way that their place in the hierarchy is clear.
 
     \subsubsection{Schematic Diagram}
-      % A schematic diagram with signal names and pin numbers for any off-board circuitry that you designed and built (i.e., on the FX2 board). The purpose of this diagram is to show how your project is wired up and to help in debugging if it doesn’t work. Make sure you include detailed schematic diagrams for any special circuits (e.g. LED arrays). Each package should be given a unique identifier, known as the reference designator: Un for integrated circuits (where n = 1, 2, ...), Rn for resistors, Cn for capacitors, Qn for transistors, Sn for switches, Pn and Jn for plugs and jacks, respectively, Dn for diodes. LEDn is sometimes used for LEDs or arrays of LEDs (like 7- segment displays). If you have other parts, ask me.% 
+      	% A schematic diagram with signal names and pin numbers for any off-board circuitry that you designed and built (i.e., on the FX2 board). The purpose of this diagram is to show how your project is wired up and to help in debugging if it doesn’t work. Make sure you include detailed schematic diagrams for any special circuits (e.g. LED arrays). Each package should be given a unique identifier, known as the reference designator: Un for integrated circuits (where n = 1, 2, ...), Rn for resistors, Cn for capacitors, Qn for transistors, Sn for switches, Pn and Jn for plugs and jacks, respectively, Dn for diodes. LEDn is sometimes used for LEDs or arrays of LEDs (like 7- segment displays). If you have other parts, ask me.% 
 
     \subsubsection{Package Map}
-      % A package map showing where each component is located on your board. This only applies to off-board circuits that you built. The package map should resemble an "aerial photograph" showing clearly all connectors (labeled Jn or Pn), sockets, ICs (Un), switches (Sn), displays, etc. The package map is used as an intermediate stage between the logic diagram and your circuit.
+      	% A package map showing where each component is located on your board. This only applies to off-board circuits that you built. The package map should resemble an "aerial photograph" showing clearly all connectors (labeled Jn or Pn), sockets, ICs (Un), switches (Sn), displays, etc. The package map is used as an intermediate stage between the logic diagram and your circuit.
 
-      % Suppose you are troubleshooting your project. By studying the symptoms and your logic diagram, you deduce that there may be a wiring error at a particular part, e.g., a keypad encoder. On the logic diagram, that chip is labeled U8. You find U8 on the package map and it shows you precisely where to look on your circuit board to find the suspicious part. An easy way to create a package map is to annotate a digital photo of the board.
+    	% Suppose you are troubleshooting your project. By studying the symptoms and your logic diagram, you deduce that there may be a wiring error at a particular part, e.g., a keypad encoder. On the logic diagram, that chip is labeled U8. You find U8 on the package map and it shows you precisely where to look on your circuit board to find the suspicious part. An easy way to create a package map is to annotate a digital photo of the board.
+
+
 
     \subsubsection{External Components}
-      % Parts list: List all external components, including Pmods and parts that you wired up on the FX2 board. You don’t need a parts list if everything is confined to the Nexys board. Use sensible groupings (IC’s, discrete components, switches, connectors, etc.), and keep this list compact but complete. Omit trivial details like wire and wirewrap sockets.
+    	% Parts list: List all external components, including Pmods and parts that you wired up on the FX2 board. You don’t need a parts list if everything is confined to the Nexys board. Use sensible groupings (IC’s, discrete components, switches, connectors, etc.), and keep this list compact but complete. Omit trivial details like wire and wirewrap sockets.
 
-      \begin{itemize}
-        \item Design of
-        \item The second item
-        \item The third etc 
-      \end{itemize}
+		\begin{table}[H]
+	  	\caption{Parts List}
+	    \centering
+	    \begin{tabular}{c c c c}
+	    \hline\hline
+	    Reference & Quantity & Description \\ [0.5ex] % inserts table %heading
+	    \hline
+	    Nexys3 & 1 & Digilent Nexys3 board \\
+	    PmodBTN & 2 & Digilent PmodBTN Push Button. 4 buttons \\
+	    PmodAMP2 & 1 & Digilent Amplifier for monophonic output \\
+	    PmodBB & 1 & Digilent Bread board \\
+	    Speaker & 1 & Any generic speaker with standard input \\
+	    \hline
+	    \end{tabular}
+	    \end{table}
 
     \newpage
 	\subsection{Programmed Logic}
@@ -276,7 +294,6 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 	    		The program starts at the idle state in the ``User Play State Diagram.'' If the song enable switch is turned on, the state jumps to autoidle in the ``Autoplay State Diagram.'' Otherwise, the state changes depending on the user's input.
 
 		    \columnbreak
-
 			    \begin{figure}[H]
 			      \centering
 			      \includegraphics[width=2in]{img/StateDiagramDefaults}
@@ -299,132 +316,29 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 	      \end{figure}
 
 	    \subsubsection{VHDL Code}
-	      % for each module
-	      Header comments removed.
 
-	      \begin{figure}[H]
-	        \caption{VHDL for Controller}
-	        \begin{minted}{vhdl}
-	  process
-	  begin
-	    CLK <= '1'; wait for 10 NS;
-	    CLK <= '0'; wait for 10 NS;
-	  end process;
-	        \end{minted}
-	      \end{figure}
+	    	\begin{figure}[H]
+		        \caption{VHDL for Controller}
+		    \end{figure}
+			\begin{mdframed}[linecolor=black, topline=true, bottomline=true, leftline=false, rightline=false]
+			    \inputminted[linenos=true]{vhdl}{../OctaveKeyboard/Controller.vhd}
+			\end{mdframed}
 
 	      \begin{figure}[H]
 	        \caption{VHDL for DDS}
-	        \begin{minted}{vhdl}
-	library IEEE;
-	use IEEE.STD_LOGIC_1164.ALL;
-	use IEEE.NUMERIC_STD.ALL;
-
-	entity DDS is
-	   Generic (  ACCUMSIZE : integer := 13;
-	          INDEXSIZE : integer := 8;
-	          CLKFREQ     : integer := 100000000);
-	          
-	    Port (  clk     : in  STD_LOGIC;
-	        step    : in  STD_LOGIC_VECTOR(ACCUMSIZE-1 downto 0);
-	        clk10   : in  STD_LOGIC;
-	        phase   : out STD_LOGIC_VECTOR(INDEXSIZE-1 downto 0));
-	end DDS;
-
-	architecture Behavioral of DDS is
-	  signal curr_phase : unsigned(ACCUMSIZE-1 downto 0) := (others => '0');
-	begin
-
-	  AccumPhase: process(clk, clk10)
-	  begin
-	    if (rising_edge(clk)) then      
-	      if (clk10 = '1') then     
-	        curr_phase <= curr_phase + unsigned(step);
-	      end if;
-	    end if;
-	  end process AccumPhase;
-	  
-	  phase <= std_logic_vector(curr_phase(ACCUMSIZE-1 downto ACCUMSIZE-INDEXSIZE));
-	end Behavioral;
-	        \end{minted}
 	      \end{figure}
 
 	      \begin{figure}[H]
 	        \caption{VHDL for PWM}
-	        \begin{minted}{vhdl}
-	  process
-	  begin
-	    CLK <= '1'; wait for 10 NS;
-	    CLK <= '0'; wait for 10 NS;
-	  end process;
-	        \end{minted}
 	      \end{figure}
 
 	      \begin{figure}[H]
 	        \caption{VHDL for PlayCount}
-	        \begin{minted}{vhdl}
-	  process
-	  begin
-	    CLK <= '1'; wait for 10 NS;
-	    CLK <= '0'; wait for 10 NS;
-	  end process;
-	        \end{minted}
+
 	      \end{figure}
 
 	      \begin{figure}[H]
 	        \caption{VHDL for FreqLUT}
-	        \begin{minted}{vhdl}
-	library IEEE;
-	use IEEE.STD_LOGIC_1164.ALL;
-	use IEEE.NUMERIC_STD.ALL;
-
-	entity FreqLUT is
-	   Generic (  ACCUMSIZE : integer := 13;
-	          CLKFREQ     : integer := 10000);
-	          
-	    Port ( clk : in  STD_LOGIC;
-	           key_in : in  STD_LOGIC_VECTOR (7 downto 0);
-	           increment : out  STD_LOGIC_VECTOR (ACCUMSIZE-1 downto 0));
-	end FreqLUT;
-
-	architecture Behavioral of FreqLUT is
-	  constant PHASECONSTANT : integer := 2**ACCUMSIZE;
-	  constant LOWC : integer := 262;
-	  constant D : integer := 294;
-	  constant E : integer := 330;
-	  constant F : integer := 349;
-	  constant G : integer := 392;
-	  constant A : integer := 440;
-	  constant B : integer := 494;
-	  constant HIGHC : integer := 523;
-	begin
-
-	  getIncrement: process(key_in)
-	  begin
-	  
-	    if (key_in(7) = '1') then
-	      increment <= std_logic_vector(to_unsigned(LOWC * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-	    elsif (key_in(6) = '1') then
-	      increment <= std_logic_vector(to_unsigned(D * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-	    elsif (key_in(5) = '1') then
-	      increment <= std_logic_vector(to_unsigned(E * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-	    elsif (key_in(4) = '1') then
-	      increment <= std_logic_vector(to_unsigned(F * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-	    elsif (key_in(3) = '1') then
-	      increment <= std_logic_vector(to_unsigned(G * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-	    elsif (key_in(2) = '1') then
-	      increment <= std_logic_vector(to_unsigned(A * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-	    elsif (key_in(1) = '1') then
-	      increment <= std_logic_vector(to_unsigned(B * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-	    elsif (key_in(0) = '1') then
-	      increment <= std_logic_vector(to_unsigned(HIGHC * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-	    else 
-	      increment <= (others => '0');
-	    end if;
-	  
-	  end process getIncrement;
-	end Behavioral;
-	        \end{minted}
 	      \end{figure}
 
 	    \subsubsection{Resource utilization}
@@ -480,29 +394,50 @@ Specific Feature Utilization:
 
 
 
-  \subsection{Memory Map}
-    % Memory map: If you are using a memory chip or block memory in the FPGA as a complex look-up table or for data storage, show how the address and data bit patterns are partitioned among the logical variables involved (e.g., for storing sound clips, address bits 12-13 are which sound, and address bits 0- 11 are samples within a sound).
+  	\subsection{Memory Map}
+    	% Memory map: If you are using a memory chip or block memory in the FPGA as a complex look-up table or for data storage, show how the address and data bit patterns are partitioned among the logical variables involved (e.g., for storing sound clips, address bits 12-13 are which sound, and address bits 0- 11 are samples within a sound).
 
 
 
-  \subsection{Timing Diagram}
-    % A timing diagram, e.g., generated from a behavioral simulation, showing all important signals. It is not necessary to duplicate timing diagrams which may be found in a data sheet or user’s manual (e.g., for memory chips).
+	\subsection{Timing Diagram}
+		% A timing diagram, e.g., generated from a behavioral simulation, showing all important signals. It is not necessary to duplicate timing diagrams which may be found in a data sheet or user’s manual (e.g., for memory chips).
 
-    % From the synthesis report (or place and route report)!
-	% What is the minimum clock period / maximum clock speed? (This is not the delay associated with OFFSET IN or OFFSET OUT.)!
-	% Where in your design does the critical path occur? Identify the signal, component, etc.!
+		% From the synthesis report (or place and route report)!
+		% What is the minimum clock period / maximum clock speed? (This is not the delay associated with OFFSET IN or OFFSET OUT.)!
+		% Where in your design does the critical path occur? Identify the signal, component, etc.!
 
 
-  % ADDITIONAL SUBSECTIONS?
-  % 6. Copies of data sheets for any special components you used that aren’t already on the class website.
-  \subsection{Data Sheets}
+		% ADDITIONAL SUBSECTIONS?
+		% 6. Copies of data sheets for any special components you used that aren’t already on the class website.
+  	\subsection{Data Sheets}
 
-  	The proceeding pages contain data sheets for parts used in this project that are not already on the class website. They include:
+  	The proceeding pages contain data sheets for parts used in this project that are not already on the class website. They include data sheets for these parts:
 
-  	
+	\begin{itemize}
+		\item PmodAMP2
+		\item PmodBB
+    \end{itemize}  	
 
-  % 7. Computer programs (e.g., Matlab codes used to generate lookup tables, etc).
-  % 8. Other documentation. Include anything else that might be needed to understand or reproduce your design.
+	\begin{figure}[H]
+	  	\centering
+	  	\includegraphics[width=6.5in]{additionalDataSheets/PmodAMP2}
+	  	\caption{PmodAMP2 Data Sheet Page 1/2}
+	\end{figure}
+
+	\begin{figure}[H]
+	  	\centering
+	  	\includegraphics[width=6.5in, page=2]{additionalDataSheets/PmodAMP2}
+	  	\caption{PmodAMP2 Data Sheet Page 2/2}
+	\end{figure}
+
+	\begin{figure}[c]
+	  	\centering
+	  	\includegraphics[width=6.5in]{additionalDataSheets/PmodBB}
+	  	\caption{PmodBB Schematic}
+	\end{figure}
+
+	% 7. Computer programs (e.g., Matlab codes used to generate lookup tables, etc).
+	% 8. Other documentation. Include anything else that might be needed to understand or reproduce your design.
 
 
 \end{document}
