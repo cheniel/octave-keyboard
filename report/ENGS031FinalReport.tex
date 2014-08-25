@@ -9,6 +9,9 @@
 \usepackage{multicol}
 \usepackage{mdframed}
 
+\usepackage{setspace}
+\doublespacing
+
 % remove "References" title above bibiliography
 \usepackage{etoolbox}
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
@@ -34,9 +37,11 @@ The goal of this project was to create a simple one­ octave keyboard mapped to 
 This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmouth College for the Digital Electronics (ENGS031/COSC056) course. This report goes over the implementation, design, and usage of the final product, which implements all of these features.
 
 \vspace{-2.5em}
+\newpage
 \tableofcontents
 
 \newpage
+\singlespacing
 \section{Introduction: The Problem} % State the problem to be solved.
 
   The problem that this project solves is the creation of a one-octave keyboard, and the ability to produce certain sounds through circuit logic. An additional issue is representing the song that will be autoplayed.
@@ -71,9 +76,10 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     For more information on how the circuit works, see section 2.3 ``Theory of Operation.''
 
+    \vspace{-1.15em}
     \includegraphics[width=5.5in]{img/basicblock.jpg}
 
-
+  \doublespacing
   \subsection{Operating Instructions}
 
     % Operating instructions: Provide any information needed to set up and run your circuit. This is the User’s Manual part of your report.
@@ -449,6 +455,9 @@ Specific Feature Utilization:
 
 	\subsection{Timing Diagram}
 		% A timing diagram, e.g., generated from a behavioral simulation, showing all important signals. It is not necessary to duplicate timing diagrams which may be found in a data sheet or user’s manual (e.g., for memory chips).
+
+
+
 
 		% From the synthesis report (or place and route report)!
 		% What is the minimum clock period / maximum clock speed? (This is not the delay associated with OFFSET IN or OFFSET OUT.)!
