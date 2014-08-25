@@ -116,7 +116,16 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
   
     % Theory of operation: Discuss in detail how your circuit works. Start with a high-level overview of your design, illustrated by the block diagram. Give a prose description of each of the blocks and the interfaces between them. Describe what each block does and how it works. Make sure you discuss any tricks or functions that are not obvious from the logic diagram (e.g., ROMs used as lookup tables). From the information given in this section (with references to additional diagrams in the appendices), we should be able to reconstruct your design.
 
-    The circuit works
+    The key component of our keyboard project is the geneneration of sine waves of varying frequencies using a technique called direct digital synthesis (DDS). To implement this, we use a combination of a phase accumulator and a sine wave lookup table (LUT) to produce wave samples of specific frequencies. In the place of a digital-to-analog converter, we use a pulse width modulator (PWM) to convert these sine wave samples to audio.
+
+    % DANIEL ADD MORE ABOUT THE CONTROLLER
+    8 different buttons (button module extensions on the FPGA), or ``key'' serve as the main ``playable'' interface of the keyboard. In VHDL, the keys are represented as an 8-bit bus input to the controller, where each bit represents a different note. Because our keyboard is monophonic, the controller checks each bit in succession from low to high C and outputs the first note it detects to the FreqLUT. As a result, only one bit in the 8-bit key_out vector received by ToneFreq-LUT should be high at a time; otherwise, when no button is being pressed, all bits are `0'. This prevents conflicts when multiple buttons are pressed at once. The controller also takes in an LED_disable input that disables the LEDs and a song_enable that automatically plays back a pre-programmed song (here ``Kids'' by MGMT).
+
+    Key_out is then used as an index of sorts into the ToneFreq-LUT, which contains the pre-calculated phase increment values for each note, which is related to the desired frequency in the following way
+        %equation increment = fdesired * 2^N/fclk
+    where N represents the bit size of the accumulator and fclk is the frequency of the clock. We use N=13 here. This increment value is then passed on to the phase accumulator.
+
+    The phase accumulator is essentially an incrementer composed of an adder and a register which increases by the increment value every clock cycle. However, although the system is running at a frequency of about 50MHz in order to reduce noise, in actuality the phase accumulator is updating at a frequency of around 10kHz, at the clk10 signal given by the PWMCounter. As a result, clk10 here serves as an enable.
 
   \subsection{Construction and Debugging}
 
