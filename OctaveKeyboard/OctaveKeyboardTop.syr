@@ -1,16 +1,16 @@
-Release 14.4 - xst P.49d (nt64)
+Release 14.4 - xst P.49d (nt)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: OctaveKeyboardTop.prj
 
@@ -108,25 +108,25 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\ipcore_dir\SinLUT.vhd" into library work
+Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\ipcore_dir\SinLUT.vhd" into library work
 Parsing entity <SinLUT>.
 Parsing architecture <SinLUT_a> of entity <sinlut>.
-Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PWM.vhd" into library work
+Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PWM.vhd" into library work
 Parsing entity <PWM>.
 Parsing architecture <Behavioral> of entity <pwm>.
-Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PlayCount.vhd" into library work
+Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PlayCount.vhd" into library work
 Parsing entity <PlayCount>.
 Parsing architecture <Behavioral> of entity <playcount>.
-Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\FreqLUT.vhd" into library work
+Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\FreqLUT.vhd" into library work
 Parsing entity <FreqLUT>.
 Parsing architecture <Behavioral> of entity <freqlut>.
-Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\DDS.vhd" into library work
+Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\DDS.vhd" into library work
 Parsing entity <DDS>.
 Parsing architecture <Behavioral> of entity <dds>.
-Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" into library work
+Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" into library work
 Parsing entity <Controller>.
 Parsing architecture <Behavioral> of entity <controller>.
-Parsing VHDL file "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" into library work
+Parsing VHDL file "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" into library work
 Parsing entity <OctaveKeyboardTop>.
 Parsing architecture <Behavioral> of entity <octavekeyboardtop>.
 
@@ -135,10 +135,10 @@ Parsing architecture <Behavioral> of entity <octavekeyboardtop>.
 =========================================================================
 
 Elaborating entity <OctaveKeyboardTop> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:89 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 95: <debounce> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" Line 95: <debounce> remains a black-box since it has no binding entity.
 
 Elaborating entity <Controller> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd" Line 436. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd" Line 436. Case statement is complete. others clause is never selected
 
 Elaborating entity <FreqLUT> (architecture <Behavioral>) with generics from library <work>.
 
@@ -155,11 +155,11 @@ Elaborating entity <PlayCount> (architecture <Behavioral>) from library <work>.
 =========================================================================
 
 Synthesizing Unit <OctaveKeyboardTop>.
-    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd".
+    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd".
         ACCUMSIZE = 13
         INDEXSIZE = 8
         LUTOUT = 10
-INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveKeyboardTop.vhd" line 203: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" line 203: Output port <m_axis_data_tvalid> of the instance <SinFreqs> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <song_enable_sync>.
     Found 1-bit register for signal <clk_en>.
     Found 1-bit register for signal <led_disable_sync>.
@@ -168,7 +168,7 @@ INFO:Xst:3210 - "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\OctaveK
 Unit <OctaveKeyboardTop> synthesized.
 
 Synthesizing Unit <Controller>.
-    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\Controller.vhd".
+    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\Controller.vhd".
     Found 1-bit register for signal <introSelector>.
     Found 1-bit register for signal <reps>.
     Found 6-bit register for signal <curr_state>.
@@ -190,7 +190,7 @@ Synthesizing Unit <Controller>.
 Unit <Controller> synthesized.
 
 Synthesizing Unit <FreqLUT>.
-    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\FreqLUT.vhd".
+    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\FreqLUT.vhd".
         ACCUMSIZE = 13
         CLKFREQ = 10000
     Found 13-bit register for signal <increment>.
@@ -200,7 +200,7 @@ Synthesizing Unit <FreqLUT>.
 Unit <FreqLUT> synthesized.
 
 Synthesizing Unit <DDS>.
-    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\DDS.vhd".
+    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\DDS.vhd".
         ACCUMSIZE = 13
         INDEXSIZE = 8
         CLKFREQ = 100000000
@@ -212,7 +212,7 @@ Synthesizing Unit <DDS>.
 Unit <DDS> synthesized.
 
 Synthesizing Unit <PWM>.
-    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PWM.vhd".
+    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PWM.vhd".
         LUTOUT = 10
         CLKFREQ = 100000000
     Found 1-bit register for signal <pulse>.
@@ -227,7 +227,7 @@ Synthesizing Unit <PWM>.
 Unit <PWM> synthesized.
 
 Synthesizing Unit <PlayCount>.
-    Related source file is "C:\Users\F000JW7\Desktop\octave-keyboard\OctaveKeyboard\PlayCount.vhd".
+    Related source file is "\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\PlayCount.vhd".
     Found 4-bit register for signal <count>.
     Found 32-bit register for signal <clkcount>.
     Found 1-bit register for signal <tc_tick>.
@@ -668,12 +668,12 @@ clk_en         |    4.866|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.17 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.22 secs
  
 --> 
 
-Total memory usage is 276756 kilobytes
+Total memory usage is 197056 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   14 (   0 filtered)

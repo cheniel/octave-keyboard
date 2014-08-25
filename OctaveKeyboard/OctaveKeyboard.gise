@@ -188,7 +188,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1409002243" xil_pn:in_ck="5505444121408729209" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-5117152479913907826" xil_pn:start_ts="1409002231">
+    <transform xil_pn:end_ts="1409002501" xil_pn:in_ck="5505444121408729209" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-5117152479913907826" xil_pn:start_ts="1409002491">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -211,6 +211,8 @@
     <transform xil_pn:end_ts="1409002252" xil_pn:in_ck="6587502011699757708" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2681150154583735872" xil_pn:start_ts="1409002243">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="OctaveKeyboardTop.bld"/>
       <outfile xil_pn:name="OctaveKeyboardTop.ngd"/>
       <outfile xil_pn:name="OctaveKeyboardTop_ngdbuild.xrpt"/>
@@ -220,6 +222,7 @@
     <transform xil_pn:end_ts="1409002264" xil_pn:in_ck="-3196166893141264114" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-3180699873896808002" xil_pn:start_ts="1409002252">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="OctaveKeyboardTop.pcf"/>
       <outfile xil_pn:name="OctaveKeyboardTop_map.map"/>
       <outfile xil_pn:name="OctaveKeyboardTop_map.mrp"/>
@@ -233,6 +236,7 @@
     <transform xil_pn:end_ts="1409002280" xil_pn:in_ck="-1359301203038953689" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1409002264">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="OctaveKeyboardTop.ncd"/>
       <outfile xil_pn:name="OctaveKeyboardTop.pad"/>
       <outfile xil_pn:name="OctaveKeyboardTop.par"/>
@@ -248,6 +252,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="OctaveKeyboardTop.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="octavekeyboardtop.bgn"/>
@@ -260,6 +267,7 @@
     <transform xil_pn:end_ts="1409002280" xil_pn:in_ck="-3196166893141264246" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1409002274">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="OctaveKeyboardTop.twr"/>
       <outfile xil_pn:name="OctaveKeyboardTop.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
