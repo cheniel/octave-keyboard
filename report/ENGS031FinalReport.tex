@@ -49,12 +49,14 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
   The problem that this project solves is the creation of a one-octave keyboard, and the ability to produce certain sounds through circuit logic. An additional issue is representing the song that will be autoplayed.
 
+\vspace{-1em}
 \section{Design Solution}
 
   \subsection{Specifications}
   
     % Specifications: Describe what your circuit does. This section will be similar to the project proposal. List any inputs such as buttons, keypads, sensors, etc., and any outputs such as displays, LEDs, actuators, etc. Include a block diagram of your circuit as well as a diagram of the control panel, showing the locations of buttons, displays, lights, etc., relative to each other. 
 
+    \vspace{-.8em}
     \begin{multicols}{2}
       The inputs to this circuit are:
       \begin{itemize}
@@ -75,11 +77,12 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     \end{multicols}
 
-    The picture shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be generated (a copy of the LED output) which is used to obtain the appropriate increment value for each key. The phase accumulator increments with this value, and the register output value is then used as an index into the SineLUT. The wave samples obtained from the SineLUT are passed to the pulse width modulator (PWM) to produce square wave pulses at the desired frequency. The RC filter then smooths out the wave pulses to produce the note we pressed!
+    \vspace{-1em}
+    The picture shown below displays the datapath and control of the circuit. The controller (a finite state machine) takes in all of the inputs and outputs the LEDs. It emits a signal corresponding to the note that needs to be generated (a copy of the LED output) which is used to obtain the appropriate increment value for each key. The phase accumulator increments with this value, and the register output value is then used as an index into the SineLUT. The wave samples obtained from the SineLUT are passed to the pulse width modulator (PWM) to produce square wave pulses at the desired frequency. The RC filter then smooths out the wave pulses to produce the note we pressed! 
 
     For more information on how the circuit works, see section 2.3 ``Theory of Operation.''
 
-    \vspace{-1.15em}
+    \vspace{-.1em}
     \includegraphics[width=5.5in]{img/basicblock.jpg}
 
   \doublespacing
