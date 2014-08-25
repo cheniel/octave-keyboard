@@ -42,29 +42,29 @@ architecture Behavioral of FreqLUT is
     constant HIGHC : integer := 523;
 begin
     
-    getIncrement: process(key_in)
+    getIncrement: process(clk, key_in)
     begin
-    
-        if (key_in(7) = '1') then
-            increment <= std_logic_vector(to_unsigned(LOWC * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-        elsif (key_in(6) = '1') then
-            increment <= std_logic_vector(to_unsigned(D * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-        elsif (key_in(5) = '1') then
-            increment <= std_logic_vector(to_unsigned(E * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-        elsif (key_in(4) = '1') then
-            increment <= std_logic_vector(to_unsigned(F * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-        elsif (key_in(3) = '1') then
-            increment <= std_logic_vector(to_unsigned(G * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-        elsif (key_in(2) = '1') then
-            increment <= std_logic_vector(to_unsigned(A * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-        elsif (key_in(1) = '1') then
-            increment <= std_logic_vector(to_unsigned(B * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-        elsif (key_in(0) = '1') then
-            increment <= std_logic_vector(to_unsigned(HIGHC * PHASECONSTANT / CLKFREQ, ACCUMSIZE));
-        else 
-            increment <= (others => '0');
-        end if;
-    
+	     if rising_edge(clk) then
+            if (key_in(7) = '1') then
+                increment <=std_logic_vector(to_unsigned(LOWC*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
+            elsif (key_in(6) = '1') then
+                increment <=std_logic_vector(to_unsigned(D*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
+            elsif (key_in(5) = '1') then
+                increment <=std_logic_vector(to_unsigned(E*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
+            elsif (key_in(4) = '1') then
+                increment <=std_logic_vector(to_unsigned(F*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
+            elsif (key_in(3) = '1') then
+                increment <=std_logic_vector(to_unsigned(G*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
+            elsif (key_in(2) = '1') then
+                increment <=std_logic_vector(to_unsigned(A*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
+            elsif (key_in(1) = '1') then
+                increment <=std_logic_vector(to_unsigned(B*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
+            elsif (key_in(0) = '1') then
+                increment <=std_logic_vector(to_unsigned(HIGHC*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
+            else 
+                increment <= (others => '0');
+            end if;
+		  end if;
     end process getIncrement;
     
 end Behavioral;

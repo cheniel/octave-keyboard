@@ -517,7 +517,9 @@ Specific Feature Utilization:
 
     The critical path is between clkcount\textunderscore8 and clkcount\textunderscore23 in kidsCounter. The delay is 4.866ns. Here is the excerpt from the synthesis report:
 
-    \begin{lstlisting}
+    \begin{figure}[H]
+    	\caption{Critical Path information (excerpt from Synthesis Report)}
+    	\begin{lstlisting}
 Timing constraint: Default period analysis for Clock 'clk_en'
   Clock period: 4.866ns (frequency: 205.508MHz)
   Total number of paths / destination ports: 3669 / 262
@@ -544,38 +546,88 @@ Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
 ----------------------------------------
 Total                      4.866ns (1.361ns logic, 3.505ns route)
                                    (28.0% logic, 72.0% route)
-    \end{lstlisting}
+    	\end{lstlisting}
+    \end{figure}
 
     Based on this information, the maximum clock speed for this circuit is 205.508MHz, meaning the clock period must be at least 4.866ns.
+	
+    \subsection{Synthesis Warnings}
+		\vspace{-2em}
+    	\begin{figure}[H]
+   			\caption{Synthesis Warnings}
+   			\begin{lstlisting}
+WARNING:HDLCompiler:89 - 
+	"\\psf\home\Documents\ENGS031\finalproject\OctaveKeyboard\OctaveKeyboardTop.vhd" 
+	Line 95: <debounce> remains a black-box since it has no binding entity.
+WARNING:Xst:1293 - 
+	FF/Latch <PulseWM/count_13> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - 
+	FF/Latch <kidsCounter/clkcount_31> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - 
+	FF/Latch <kidsCounter/clkcount_30> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - 
+	FF/Latch <kidsCounter/clkcount_29> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - 
+	FF/Latch <kidsCounter/clkcount_28> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - 
+	FF/Latch <kidsCounter/clkcount_27> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - 
+	FF/Latch <kidsCounter/clkcount_26> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - 
+	FF/Latch <kidsCounter/clkcount_25> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - 
+	FF/Latch <kidsCounter/clkcount_24> has a constant value of 0 in block 
+	<OctaveKeyboardTop>. 
+	This FF/Latch will be trimmed during the optimization process.
+   			\end{lstlisting}
+   		\end{figure}
+
+   		None of the warnings from synthesis pose practical issues. The FF/Latch trimming is due to the usage of integers and
 
 		% ADDITIONAL SUBSECTIONS?
 		% 6. Copies of data sheets for any special components you used that aren’t already on the class website.
 	\subsection{Data Sheets}
 
-  	The proceeding pages contain data sheets for parts used in this project that are not already on the class website. They include data sheets for these parts:
+	  	The proceeding pages contain data sheets for parts used in this project that are not already on the class website. They include data sheets for these parts:
 
-	\begin{itemize}
-		\item PmodAMP2
-		\item PmodBB
-    \end{itemize}  	
+		\begin{itemize}
+			\item PmodAMP2
+			\item PmodBB
+	    \end{itemize}  	
 
-	\begin{figure}[H]
-	  	\centering
-	  	\includegraphics[width=6.5in]{additionalDataSheets/PmodAMP2}
-	  	\caption{PmodAMP2 Data Sheet Page 1/2}
-	\end{figure}
+		\begin{figure}[H]
+		  	\centering
+		  	\includegraphics[width=6.5in]{additionalDataSheets/PmodAMP2}
+		  	\caption{PmodAMP2 Data Sheet Page 1/2}
+		\end{figure}
 
-	\begin{figure}[H]
-	  	\centering
-	  	\includegraphics[width=6.5in, page=2]{additionalDataSheets/PmodAMP2}
-	  	\caption{PmodAMP2 Data Sheet Page 2/2}
-	\end{figure}
+		\begin{figure}[H]
+		  	\centering
+		  	\includegraphics[width=6.5in, page=2]{additionalDataSheets/PmodAMP2}
+		  	\caption{PmodAMP2 Data Sheet Page 2/2}
+		\end{figure}
 
-	\begin{figure}[c]
-	  	\centering
-	  	\includegraphics[width=6.5in]{additionalDataSheets/PmodBB}
-	  	\caption{PmodBB Schematic}
-	\end{figure}
+		\begin{figure}[c]
+		  	\centering
+		  	\includegraphics[width=6.5in]{additionalDataSheets/PmodBB}
+		  	\caption{PmodBB Schematic}
+		\end{figure}
 
 	% 7. Computer programs (e.g., Matlab codes used to generate lookup tables, etc).
 	% 8. Other documentation. Include anything else that might be needed to understand or reproduce your design.
