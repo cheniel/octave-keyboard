@@ -452,8 +452,13 @@ Specific Feature Utilization:
   	\subsection{Memory Map}
     	% Memory map: If you are using a memory chip or block memory in the FPGA as a complex look-up table or for data storage, show how the address and data bit patterns are partitioned among the logical variables involved (e.g., for storing sound clips, address bits 12-13 are which sound, and address bits 0- 11 are samples within a sound).
 
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=6.5in]{img/memorymap.jpg}
+        \caption{Memory Map}
+      \end{figure}
 
-
+  \newpage
 	\subsection{Timing Diagram}
 		% A timing diagram, e.g., generated from a behavioral simulation, showing all important signals. It is not necessary to duplicate timing diagrams which may be found in a data sheet or user’s manual (e.g., for memory chips).
 
@@ -486,7 +491,9 @@ Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     kidsCounter/GND_11_o_clkcount[31]_equal_1_o<31>4 
     (kidsCounter/GND_11_o_clkcount[31]_equal_1_o<31>3)
  LUT5:I1->O           13   0.254   1.098  kidsCounter/_n00281 (kidsCounter/_n0028)
- LUT4:I3->O            1   0.254   0.000  kidsCounter/clkcount_23_rstpot (kidsCounter/clkcount_23_rstpot)
+ LUT4:I3->O            1   0.254   0.000  
+    kidsCounter/clkcount_23_rstpot 
+    (kidsCounter/clkcount_23_rstpot)
  FD:D                      0.074          kidsCounter/clkcount_23
 ----------------------------------------
 Total                      4.866ns (1.361ns logic, 3.505ns route)
