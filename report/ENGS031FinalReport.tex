@@ -9,6 +9,9 @@
 \usepackage{multicol}
 \usepackage{mdframed}
 
+\usepackage{setspace}
+\doublespacing
+
 % remove "References" title above bibiliography
 \usepackage{etoolbox}
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
@@ -34,9 +37,11 @@ The goal of this project was to create a simple one­ octave keyboard mapped to 
 This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmouth College for the Digital Electronics (ENGS031/COSC056) course. This report goes over the implementation, design, and usage of the final product, which implements all of these features.
 
 \vspace{-2.5em}
+\newpage
 \tableofcontents
 
 \newpage
+\singlespacing
 \section{Introduction: The Problem} % State the problem to be solved.
 
   The problem that this project solves is the creation of a one-octave keyboard, and the ability to produce certain sounds through circuit logic. An additional issue is representing the song that will be autoplayed.
@@ -71,9 +76,10 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
     For more information on how the circuit works, see section 2.3 ``Theory of Operation.''
 
+    \vspace{-1.15em}
     \includegraphics[width=5.5in]{img/basicblock.jpg}
 
-
+  \doublespacing
   \subsection{Operating Instructions}
 
     % Operating instructions: Provide any information needed to set up and run your circuit. This is the User’s Manual part of your report.
@@ -241,6 +247,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 \section{Appendix}
   	\listoffigures
   	\listoftables
+    \singlespacing
   	% Appendices: All the diagrams, etc, you collected go here.
 
   	\newpage
@@ -451,10 +458,18 @@ Specific Feature Utilization:
   	\subsection{Memory Map}
     	% Memory map: If you are using a memory chip or block memory in the FPGA as a complex look-up table or for data storage, show how the address and data bit patterns are partitioned among the logical variables involved (e.g., for storing sound clips, address bits 12-13 are which sound, and address bits 0- 11 are samples within a sound).
 
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=6.5in]{img/memorymap.jpg}
+        \caption{Memory Map}
+      \end{figure}
 
-
+  \newpage
 	\subsection{Timing Diagram}
 		% A timing diagram, e.g., generated from a behavioral simulation, showing all important signals. It is not necessary to duplicate timing diagrams which may be found in a data sheet or user’s manual (e.g., for memory chips).
+
+
+
 
 		% From the synthesis report (or place and route report)!
 		% What is the minimum clock period / maximum clock speed? (This is not the delay associated with OFFSET IN or OFFSET OUT.)!
@@ -482,7 +497,9 @@ Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     kidsCounter/GND_11_o_clkcount[31]_equal_1_o<31>4 
     (kidsCounter/GND_11_o_clkcount[31]_equal_1_o<31>3)
  LUT5:I1->O           13   0.254   1.098  kidsCounter/_n00281 (kidsCounter/_n0028)
- LUT4:I3->O            1   0.254   0.000  kidsCounter/clkcount_23_rstpot (kidsCounter/clkcount_23_rstpot)
+ LUT4:I3->O            1   0.254   0.000  
+    kidsCounter/clkcount_23_rstpot 
+    (kidsCounter/clkcount_23_rstpot)
  FD:D                      0.074          kidsCounter/clkcount_23
 ----------------------------------------
 Total                      4.866ns (1.361ns logic, 3.505ns route)
