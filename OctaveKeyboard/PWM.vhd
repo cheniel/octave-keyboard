@@ -23,8 +23,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+-- library UNISIM;
+-- use UNISIM.VComponents.all;
 
 entity PWM is
 	 Generic (	LUTOUT	: integer := 10;
@@ -45,11 +45,12 @@ begin
 	PWM: process(clk, sample)
 	begin
 		
-		offset <= unsigned(not sample(LUTOUT-1) & sample(LUTOUT-2 downto 0)); -- two's complement to unsigned offset binary
+		-- SinLUT output from two's complement to unsigned offset binary
+		offset <= unsigned(not sample(LUTOUT-1) & sample(LUTOUT-2 downto 0)); 
 		
 		if (rising_edge(clk)) then
 		
-			count <= count + 1;
+			count <= count + 1;		-- counter running at 50Mhz, but register updating at 10khz
 			
 			if (count(9 downto 0) < offset) then	
 				pulse <= '1';

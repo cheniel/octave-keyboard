@@ -35,7 +35,6 @@ entity OctaveKeyboardTop is
 			song_enable 	: in 	STD_LOGIC;
 			tone 			: out 	STD_LOGIC;
 			shutdown 		: out 	STD_LOGIC;
-			key_out 		: out  	STD_LOGIC_VECTOR (7 downto 0);
 			led_out 		: out  	STD_LOGIC_VECTOR (7 downto 0));
 end OctaveKeyboardTop;
 
@@ -134,7 +133,6 @@ begin
 	end process clkDivider;
 
 	-- map signals
-	key_out <= controllerKeys;
 	shutdown <= '1';			-- tie shutdown signal high for speaker pmod
 
 	slowclk_buf: BUFG
