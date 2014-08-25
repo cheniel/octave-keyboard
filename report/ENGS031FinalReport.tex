@@ -41,10 +41,10 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
 \vspace{-2.5em}
 \newpage
+\singlespacing
 \tableofcontents
 
 \newpage
-\singlespacing
 \section{Introduction: The Problem} % State the problem to be solved.
 
   The problem that this project solves is the creation of a one-octave keyboard, and the ability to produce certain sounds through circuit logic. An additional issue is representing the song that will be autoplayed.
@@ -258,10 +258,10 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
   \end{thebibliography}
 
 \newpage
+\singlespacing
 \section{Appendix}
   	\listoffigures
   	\listoftables
-    \singlespacing
   	% Appendices: All the diagrams, etc, you collected go here.
 
   	\newpage
@@ -288,8 +288,14 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
       \begin{figure}[H]
         \centering
-        \includegraphics[width=6.5in]{img/KeyboardBlock.jpg}
-        \caption{Block Diagram of Keyboard}
+        \includegraphics[width=6.5in]{img/basicblock.jpg}
+        \caption{Basic Block Diagram of Keyboard}
+      \end{figure}
+
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=7in]{img/KeyboardBlock.jpg}
+        \caption{Advanced Block Diagram of Keyboard}
       \end{figure}
 
     \subsubsection{Schematic Diagram}
@@ -297,7 +303,7 @@ This project was created by Vivian Hu and Daniel Chen in Summer 2014 at Dartmout
 
       \begin{figure}[H]
         \centering
-        % \includegraphics[width=6.5in]{img/schematic.jpg}
+        \includegraphics[width=6.5in]{img/RCschematic}
         \caption{Schematic Diagram for the RC Filter}
       \end{figure}
 
@@ -576,22 +582,9 @@ WARNING:Xst:1293 -
 	FF/Latch <kidsCounter/clkcount_30> has a constant value of 0 in block 
 	<OctaveKeyboardTop>. 
 	This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - 
-	FF/Latch <kidsCounter/clkcount_29> has a constant value of 0 in block 
-	<OctaveKeyboardTop>. 
-	This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - 
-	FF/Latch <kidsCounter/clkcount_28> has a constant value of 0 in block 
-	<OctaveKeyboardTop>. 
-	This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - 
-	FF/Latch <kidsCounter/clkcount_27> has a constant value of 0 in block 
-	<OctaveKeyboardTop>. 
-	This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - 
-	FF/Latch <kidsCounter/clkcount_26> has a constant value of 0 in block 
-	<OctaveKeyboardTop>. 
-	This FF/Latch will be trimmed during the optimization process.
+...
+same error for clkcount_29 through clkcount_26
+...
 WARNING:Xst:1293 - 
 	FF/Latch <kidsCounter/clkcount_25> has a constant value of 0 in block 
 	<OctaveKeyboardTop>. 
