@@ -141,6 +141,9 @@ This project was created by Vivian Hu and Daniel Chen in the summer of 2014 (14X
 
     The controller's key\textunderscore out is then used as an index of sorts into the ToneFreq-LUT, which contains the pre-calculated phase increment values for each note, which is related to the desired frequency in the following way
         %equation increment = fdesired * 2^N/fclk
+
+    \[increment = f_{desired} \times \frac{2^N}{f_{clk}}\]
+
     where N represents the bit size of the accumulator and fclk is the frequency of the clock. We use N=13 here. This increment value is then passed on to the phase accumulator.
 
     The phase accumulator is essentially an incrementer composed of an adder and a register which increases by the increment value every clock cycle. However, although the system is running at a frequency of about 50MHz in order to reduce noise, in actuality the phase accumulator is updating at a frequency of around 10kHz, at the clk10 signal given by the PWMCounter. As a result, clk10 here serves as an enable. The phase produced by the accumulator is then passed as an input address to the SinLUT. However, because our SinLUT only takes an 8-bit phase, only the 8 most significant bits are used.
