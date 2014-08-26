@@ -19,8 +19,8 @@ entity FreqLUT is
     Generic (  ACCUMSIZE : integer := 13;
                CLKFREQ   : integer := 10000);
                     
-    Port ( clk : in  STD_LOGIC;
-           key_in : in  STD_LOGIC_VECTOR (7 downto 0);
+    Port ( clk 		 : in  STD_LOGIC;
+           key_in 	 : in  STD_LOGIC_VECTOR (7 downto 0);
            increment : out  STD_LOGIC_VECTOR (ACCUMSIZE-1 downto 0));
 end FreqLUT;
 
@@ -62,7 +62,7 @@ begin
             increment <= (others => '0');
         end if;
     end if;
-    
+
 end process getIncrement;
     
 end Behavioral;

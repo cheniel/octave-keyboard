@@ -71,10 +71,10 @@ architecture Behavioral of OctaveKeyboardTop is
     END COMPONENT;
 
     COMPONENT DDS
-        PORT (  clk     : in      STD_LOGIC;
-                clk10   : in     STD_LOGIC;
+        PORT (  clk     : in    STD_LOGIC;
+                clk10   : in    STD_LOGIC;
                 step    : in    STD_LOGIC_VECTOR(ACCUMSIZE-1 downto 0);
-                phase   : out    STD_LOGIC_VECTOR(INDEXSIZE-1 downto 0));
+                phase   : out   STD_LOGIC_VECTOR(INDEXSIZE-1 downto 0));
     END COMPONENT;
     
     COMPONENT PWM
@@ -95,7 +95,7 @@ architecture Behavioral of OctaveKeyboardTop is
     COMPONENT debounce
         PORT (  clk      : in     STD_LOGIC;
                 switch   : in     STD_LOGIC;
-                dbswitch : out     STD_LOGIC);
+                dbswitch : out    STD_LOGIC);
     END COMPONENT;
     
     COMPONENT PlayCount is
@@ -174,43 +174,43 @@ begin
 
     KeyControl: Controller
         PORT MAP (  clk         => slowclk,
-                    key_in         => keyDB, -- change to keys if simulating
+                    key_in      => keyDB, -- change to keys if simulating
                     led_disable => led_disable_sync, 
                     song_enable => song_enable_sync,
-                    beat_tick     => countdone, -- passed to PlayCount
-                    beat_en        => tempo_en, -- passed to PlayCount
-                    count_out    => count, -- passed to PlayCount
+                    beat_tick   => countdone, -- passed to PlayCount
+                    beat_en     => tempo_en, -- passed to PlayCount
+                    count_out   => count, -- passed to PlayCount
                     key_out     => controllerKeys, -- passed to FreqLUT
-                    led_out        => led_out); -- straight to LEDs
+                    led_out     => led_out); -- straight to LEDs
 
     KeyFrequencies: FreqLUT
         PORT MAP (  clk         => slowclk,
-                    key_in         => controllerKeys, -- from controller
-                    increment     => step); -- passed to DDS
+                    key_in      => controllerKeys, -- from controller
+                    increment   => step); -- passed to DDS
                       
     PhaseAccum: DDS
         PORT MAP (  clk         => slowclk,
-                    clk10        => reg_en,
+                    clk10       => reg_en,
                     step        => step, -- from freqLUT
-                    phase        => phase); -- to SinLUT
+                    phase       => phase); -- to SinLUT
                       
     PulseWM: PWM
-        PORT MAP (  clk            => slowclk,
-                    sample        => lutfreq(9 downto 0), -- from sinLUT
-                    slowclk        => reg_en, 
+        PORT MAP (  clk          => slowclk,
+                    sample       => lutfreq(9 downto 0), -- from sinLUT
+                    slowclk      => reg_en, 
                     pulse        => tone); -- to speaker
                     
     SinFreqs: SinLUT
-        PORT MAP (  aclk                  => slowclk,
-                    s_axis_phase_tvalid => '1',
+        PORT MAP (  aclk                   => slowclk,
+                    s_axis_phase_tvalid    => '1',
                     s_axis_phase_tdata     => phase, -- from phase accumulator
                     m_axis_data_tvalid     => open,
-                    m_axis_data_tdata     => lutfreq); -- to PWM
+                    m_axis_data_tdata      => lutfreq); -- to PWM
 
     kidsCounter: PlayCount
         PORT MAP    ( clk => slowclk,
-                      count_en => tempo_en, -- from controller
-                      count_to => count,    -- from controller
+                      count_en => tempo_en,  -- from controller
+                      count_to => count,     -- from controller
                       tc_tick => countDone); -- from controller
 
 end Behavioral;
