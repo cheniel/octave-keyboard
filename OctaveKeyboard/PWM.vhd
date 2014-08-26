@@ -24,9 +24,9 @@ entity PWM is
 end PWM;
 
 architecture Behavioral of PWM is
-    signal count : unsigned(13 downto 0) := (others => '0');
-    signal offset : unsigned(LUTOUT-1 downto 0) := (others => '0');
-    constant max : unsigned(13 downto 0) := "01001110001000";   -- max count value
+    signal count    : unsigned(13 downto 0) := (others => '0');
+    signal offset   : unsigned(LUTOUT-1 downto 0) := (others => '0');
+    constant max    : unsigned(13 downto 0) := "01001110001000";   -- max count value
 begin
 
     PWM: process(clk, sample)

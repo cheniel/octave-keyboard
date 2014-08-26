@@ -15,16 +15,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity PlayCount is
-    Port (  clk : in  STD_LOGIC;
-            count_en : in STD_LOGIC;
-            count_to : in  STD_LOGIC_VECTOR (3 downto 0);
-            tc_tick : out  STD_LOGIC);
+    Port (  clk 		: in  STD_LOGIC;
+            count_en 	: in STD_LOGIC;
+            count_to 	: in  STD_LOGIC_VECTOR (3 downto 0);
+            tc_tick 	: out  STD_LOGIC);
 end PlayCount;
 
 architecture Behavioral of PlayCount is
-    constant QRTR_CLK_DIV    : integer := 12500000;
-    signal   clkcount    : integer := 0;
-    signal   count        : unsigned(3 downto 0) := "0001";
+    constant QRTR_CLK_DIV   : integer := 12500000;
+    signal   clkcount    	: integer := 0;
+    signal   count        	: unsigned(3 downto 0) := "0001";
 begin
     
     -- counts for a quarter second
