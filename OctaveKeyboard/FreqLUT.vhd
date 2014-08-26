@@ -40,6 +40,7 @@ begin
     
 getIncrement: process(clk, key_in)
 begin
+
     if rising_edge(clk) then
         if (key_in(7) = '1') then
             increment <=std_logic_vector(to_unsigned(LOWC*PHASECONSTANT/CLKFREQ,ACCUMSIZE));
@@ -61,6 +62,7 @@ begin
             increment <= (others => '0');
         end if;
     end if;
+    
 end process getIncrement;
     
 end Behavioral;

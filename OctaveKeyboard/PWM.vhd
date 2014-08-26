@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: ENGS031 14X
--- Engineer: Vivian Hu, Daniel Chen
+-- Engineer: Vivian Hu and Daniel Chen
 -- 
 -- Create Date: 10:13:11 08/13/2014 
 -- Design Name: Pulse Width Modulator
@@ -15,7 +15,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity PWM is
-    Generic (  LUTOUT  : integer := 10;
+    Generic (  LUTOUT  : integer := 10);    -- SineLUT output bitsize
 
     Port (  clk     : in  STD_LOGIC;
             sample  : in  STD_LOGIC_VECTOR(LUTOUT-1 downto 0);
